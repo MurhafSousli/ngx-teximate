@@ -1,10 +1,9 @@
 import { Directive, Input, Renderer, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/take';
+import { Helper } from '../functions.helper';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/mergeMap';
-import 'rxjs/add/operator/delay';
 
 import 'rxjs/add/observable/zip';
 import 'rxjs/add/observable/timer';
@@ -16,27 +15,16 @@ import 'rxjs/add/observable/empty';
 })
 export class TeximateDirective {
 
-  arr = [];
+  itemsArr = [];
 
   /** Text input */
-  text: string[] = [];
+  textArr: string[] = [];
   @Input() teximate;
 
   /** Splite by letter/word/line */
   splitter: string;
   @Input() set tmSplitter(splitter: string) {
-    switch (splitter.toLowerCase()) {
-      case 'letter':
-        this.splitter = '';
-        break;
-      case 'word':
-        this.splitter = ' ';
-        break;
-      case 'line':
-        this.splitter = '\n';
-        break
-      default: console.warn('[texilate]: tmSplit invalid input');
-    }
+    this.splitter = Helper.getSplitter(splitter);
   }
 
   /** The classes to add to each element */
@@ -78,7 +66,7 @@ export class TeximateDirective {
       return;
     }
     //Create array of string element
-    this.text = this.teximate.split(this.splitter);
+    this.textArr = this.teximate.split(this.splitter);
 
     //Prepare host content
     this.renderer.setElementAttribute(this.el.nativeElement, 'aria-label', 'text');
@@ -104,55 +92,56 @@ export class TeximateDirective {
 
   }
 
+  /** Shuffle mode */
   shuffle(): Observable<any> {
     return Observable.zip(
-      Observable.from(this.text)
-        .map((item) => this.arr.push(this.createItem(item)))
-        .do(() => this.arr = shuffle(this.arr)),
+      Observable.from(this.textArr)
+        .map((text) => this.itemsArr.push(this.createItem(text)))
+        .do(() => this.itemsArr = Helper.shuffle(this.itemsArr)),
 
-      Observable.timer(0, 500), (item, i) => {
-        this.showItem(this.arr[i]);
+      Observable.timer(0, this.interval), (item, i) => {
+        this.showItem(this.itemsArr[i]);
       });
   }
 
+  /** Sync mode */
   sync(): Observable<any> {
-    return Observable.from(this.text)
+    return Observable.from(this.textArr)
       .map((text) => {
         let item = this.createItem(text);
         this.showItem(item);
       });
   }
 
+  /** Sequence mode */
   sequence(): Observable<any> {
-
     return Observable.zip(
-      Observable.from(this.text)
-        .map((text) => this.arr.push(this.createItem(text))),
+      Observable.from(this.textArr)
+        .map((text) => this.itemsArr.push(this.createItem(text))),
 
-      Observable.timer(0, 500), (item, i) => {
-        this.showItem(this.arr[i]);
+      Observable.timer(0, this.interval), (item, i) => {
+        this.showItem(this.itemsArr[i]);
       });
   }
 
+  /** Reverse mode */
   reverse(): Observable<any> {
 
     return Observable.zip(
-      Observable.from(this.text)
-        .map((item) => this.arr.push(this.createItem(item))),
+      Observable.from(this.textArr)
+        .map((item) => this.itemsArr.push(this.createItem(item))),
 
-      Observable.timer(0, 500), (item, i) => {
-        this.showItem(this.arr[this.arr.length - i - 1]);
+      Observable.timer(0, this.interval), (item, i) => {
+        this.showItem(this.itemsArr[this.itemsArr.length - i - 1]);
       });
-
   }
 
+  /** Create and return DOM element from the text input */
   createItem(text: string): HTMLElement {
 
     let item = this.renderer.createElement(this.el.nativeElement, 'span');
-
     this.renderer.setElementProperty(item, 'innerText', text + this.splitter);
     this.renderer.setElementAttribute(item, 'aria-hidden', 'true');
-
     this.renderer.setElementClass(item, 'animated', true);
     this.renderer.setElementStyle(item, 'visibility', 'hidden');
 
@@ -164,14 +153,11 @@ export class TeximateDirective {
       this.renderer.setElementClass(item, className, true);
     });
 
-    /**  */
-    this.renderer.setElementClass(item, this.inAnimation.class, true);
-
     return item;
   }
 
+  /** Display DOM element */
   showItem(item: HTMLElement) {
-
     this.renderer.setElementStyle(item, 'visibility', 'visible');
   }
 
@@ -195,21 +181,3 @@ export class TeximateDirective {
   }
 }
 
-
-function shuffle(array) {
-  var m = array.length, t, i;
-
-  // While there remain elements to shuffle…
-  while (m) {
-
-    // Pick a remaining element…
-    i = Math.floor(Math.random() * m--);
-
-    // And swap it with the current element.
-    t = array[m];
-    array[m] = array[i];
-    array[i] = t;
-  }
-
-  return array;
-}
