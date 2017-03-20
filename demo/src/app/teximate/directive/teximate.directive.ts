@@ -15,7 +15,7 @@ import 'rxjs/add/observable/empty';
 })
 export class TeximateDirective {
 
-  itemsArr = [];
+  itemsArr;
 
   /** Text input */
   textArr: string[] = [];
@@ -25,12 +25,6 @@ export class TeximateDirective {
   splitter: string;
   @Input() set tmSplitter(splitter: string) {
     this.splitter = Helper.getSplitter(splitter);
-  }
-
-  /** The classes to add to each element */
-  classes: string[] = [];
-  @Input() set tmClass(classes: string) {
-    this.classes = classes.split(' ');
   }
 
   /** The delay used for displaying elements */
@@ -45,26 +39,35 @@ export class TeximateDirective {
   @Input('tmIn') inAnimation;
   @Input('tmOut') outAnimation;
 
-  job$: Observable<any>;
+  // job: Observable<any>;
 
   @Input() set tmRun(flag) {
     if (flag) {
-      this.job$.subscribe();
+      // this.job
+      this.itemsArr.map(item => {
+        this.renderer.setElementClass(item, this.inAnimation.class, false);
+        this.renderer.setElementClass(item, 'bounceOut', true);
+      });
+      setTimeout(() => {
+
+        this.textFactory().subscribe();
+      }, 2000);
     }
   }
 
   constructor(private renderer: Renderer, private el: ElementRef) { }
 
   ngOnInit() {
-    this.job$ = this.job();
+    this.textFactory().subscribe();
   }
 
-  job(): Observable<any> {
+  textFactory(): Observable<any> {
     //Check if text is valid
     if (typeof this.teximate !== 'string') {
       console.warn('[texilate]: invalid input');
       return;
     }
+    this.itemsArr = [];
     //Create array of string element
     this.textArr = this.teximate.split(this.splitter);
 
@@ -96,7 +99,7 @@ export class TeximateDirective {
   shuffle(): Observable<any> {
     return Observable.zip(
       Observable.from(this.textArr)
-        .map((text) => this.itemsArr.push(this.createItem(text)))
+        .map((text, i) => this.itemsArr.push(this.createItem(text, i, 'char')))
         .do(() => this.itemsArr = Helper.shuffle(this.itemsArr)),
 
       Observable.timer(0, this.interval), (item, i) => {
@@ -107,8 +110,8 @@ export class TeximateDirective {
   /** Sync mode */
   sync(): Observable<any> {
     return Observable.from(this.textArr)
-      .map((text) => {
-        let item = this.createItem(text);
+      .map((text, i) => {
+        let item = this.createItem(text, i, 'char');
         this.showItem(item);
       });
   }
@@ -117,8 +120,10 @@ export class TeximateDirective {
   sequence(): Observable<any> {
     return Observable.zip(
       Observable.from(this.textArr)
-        .map((text) => this.itemsArr.push(this.createItem(text))),
-
+        .map((text, i) => {
+          let item = this.createItem(text, i, 'char');
+          this.showItem(item);
+        }),
       Observable.timer(0, this.interval), (item, i) => {
         this.showItem(this.itemsArr[i]);
       });
@@ -129,7 +134,10 @@ export class TeximateDirective {
 
     return Observable.zip(
       Observable.from(this.textArr)
-        .map((item) => this.itemsArr.push(this.createItem(item))),
+        .map((text, i) => {
+          let item = this.createItem(text, i, 'char');
+          this.showItem(item);
+        }),
 
       Observable.timer(0, this.interval), (item, i) => {
         this.showItem(this.itemsArr[this.itemsArr.length - i - 1]);
@@ -137,28 +145,28 @@ export class TeximateDirective {
   }
 
   /** Create and return DOM element from the text input */
-  createItem(text: string): HTMLElement {
+  createItem(text: string, i: number, className: string): HTMLElement {
 
     let item = this.renderer.createElement(this.el.nativeElement, 'span');
     this.renderer.setElementProperty(item, 'innerText', text + this.splitter);
     this.renderer.setElementAttribute(item, 'aria-hidden', 'true');
-    this.renderer.setElementClass(item, 'animated', true);
+    this.renderer.setElementStyle(item, 'display', 'inline-block');
     this.renderer.setElementStyle(item, 'visibility', 'hidden');
 
-    /** Add animation class */
-    this.renderer.setElementClass(item, this.inAnimation.class, true);
+    /** Set element class e.g. "char char1" */
+    this.renderer.setElementClass(item, className, true);
+    this.renderer.setElementClass(item, className + i, true);
 
-    /** Add classes */
-    this.classes.map((className) => {
-      this.renderer.setElementClass(item, className, true);
-    });
+    /** Add animation class */
+    this.renderer.setElementClass(item, 'animated', true);
 
     return item;
   }
 
   /** Display DOM element */
   showItem(item: HTMLElement) {
-    this.renderer.setElementStyle(item, 'visibility', 'visible');
+    this.renderer.setElementClass(item, this.inAnimation.class, true);
+    this.renderer.setElementStyle(item, 'visibility', 'inherit');
   }
 
   hoverEvent(item) {

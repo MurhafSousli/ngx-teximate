@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  text = `Hi how are you?
-  I will talk to you later.`;
+  text = `Okay alright,
+  I will talk to him about this tomorrow.`;
 
   run = false;
 }

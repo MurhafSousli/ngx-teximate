@@ -1,0 +1,24 @@
+:host{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+    position: fixed;
+    left: 1em;
+    right: 1em;
+    top: 1em;
+    bottom: 1em;
+}
+
+h1{
+    max-width: 700px;
+}
+
+button{
+    position: fixed;
+    left: 1em;
+    bottom: 1em;
+    font-size: 2em;
+    font-weight: bold;
+}
