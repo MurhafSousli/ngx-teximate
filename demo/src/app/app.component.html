@@ -1,12 +1,31 @@
-<h1 
+<!--<h1 
 [teximate]="text"
-[tmSplitter]="'word'" 
-[tmInterval]="200"
-[tmHoverClass]="'flipOutY'"
+[tmType]="'word'" 
+[tmInterval]="50"
+[tmIn]="{ class: 'lightSpeedIn', method: 'shuffle'}"
+></h1>-->
+
+<h1>
+<teximate [text]="text">
+</teximate>
+</h1>
+
+<!--<h1 
+[teximate]="anotherText"
+[tmType]="'word'" 
+[tmInterval]="50"
 [tmRun]="run"
 [tmIn]="{ class: 'lightSpeedIn', method: 'shuffle'}"
 ></h1>
 
+<h1
+[teximate]="'Hello World'"
+[tmType]="'word'" 
+[tmInterval]="50"
+[tmRun]="run"
+[tmIn]="{ class: 'lightSpeedIn', method: 'shuffle'}"></h1>-->
+
+<!--<h1>{{text}}</h1>-->
 <!--<h1 
 [teximate]="text"
 ></h1>-->

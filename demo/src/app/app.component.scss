@@ -1,7 +1,8 @@
 :host{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
     background-color: white;
 
     position: fixed;
@@ -12,7 +13,8 @@
 }
 
 h1{
-    max-width: 700px;
+    margin-left: 2em;
+    // max-width: 700px;
 }
 
 button{

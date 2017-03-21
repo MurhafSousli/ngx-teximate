@@ -1,0 +1,14 @@
+<span aria-label="text">
+
+  <div *ngFor="let line of teximate.array | async" class="line" [style.visibility]="line.visibility">
+
+    <span *ngFor="let word of line.words" class="word" [style.visibility]="word.visibility">
+
+      <span *ngFor="let letter of word.letters" class="letter" [style.visibility]="letter.visibility">
+        {{letter.text}}
+      </span>
+
+</span>
+</div>
+
+</span>

@@ -6,6 +6,8 @@ import { TeximateModule } from './teximate/teximate.module';
 
 import { AppComponent } from './app.component';
 
+import {NgProgressModule} from 'ng2-progressbar';
+
 @NgModule({
   declarations: [
     AppComponent

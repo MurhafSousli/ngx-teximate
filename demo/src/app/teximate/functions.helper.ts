@@ -17,7 +17,7 @@ export module Helper {
     }
 
     /** Create 2d array from a text */
-    function textFactory(text) {
+    export const textFactory = (text) => {
 
         let linesArr = [];
 
