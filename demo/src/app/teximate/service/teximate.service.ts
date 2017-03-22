@@ -24,7 +24,7 @@ export class TeximateService {
   worker = new Subject();
 
   lineInterval: number = 0;
-  wordInterval: number = 0;
+  wordInterval: number = 200;
   letterInterval: number = 100;
 
   constructor() {
@@ -45,7 +45,7 @@ export class TeximateService {
 
         case WorkType.SHUFFLE:
           return this.shuffle(job.textArr);
-          
+
         default:
           console.warn('[texilate]: inAnimation invalid method input');
           return Observable.empty();
@@ -174,16 +174,17 @@ export class TeximateService {
       })
   }
 
-
   shuffle(textArr): Observable<any> {
 
     let wordSync = 1;
-    let letterSync = 0;
+    let letterSync = 1;
 
     return Observable.from(textArr)
       .mergeMap((line: any, i) => {
 
         let temp = 0;
+
+        let wordArr = Helper.shuffle(line.words.slice());
 
         return Observable.of(line.words).delay(i * this.lineInterval)
           .mergeAll()
@@ -191,9 +192,11 @@ export class TeximateService {
 
             /** Word method */
             let wordIndex = j;
-            let wordItem = line.words[wordIndex].letters;
+            let wordItem = wordArr[wordIndex].letters;
             let wordDelay = ((temp * this.letterInterval) + (j * this.wordInterval)) * wordSync;
             temp = temp + wordItem.length;
+
+            let letterArr = Helper.shuffle(wordItem.slice());
 
             return Observable.of(wordItem).delay(wordDelay)
               .mergeAll()
@@ -201,7 +204,7 @@ export class TeximateService {
 
                 /** Letter method */
                 let letterIndex = k;
-                let letterItem = wordItem[letterIndex];
+                let letterItem = letterArr[letterIndex];
                 let letterDelay = k * this.letterInterval * letterSync;
 
                 return Observable.of(letterItem).delay(letterDelay)
