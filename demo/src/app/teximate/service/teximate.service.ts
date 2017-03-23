@@ -13,7 +13,7 @@ import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/observable/from';
 import 'rxjs/add/observable/of';
 
-import { Helper, WorkType, Line, Word, Letter } from './teximate.helper';
+import { Helper, WorkType, Line, Word, Letter, TeximateOptions, ElementOptions } from './teximate.helper';
 
 @Injectable()
 export class TeximateService {
@@ -23,9 +23,9 @@ export class TeximateService {
   array = new Subject();
   worker = new Subject();
 
-  lineInterval: number = 0;
-  wordInterval: number = 200;
-  letterInterval: number = 100;
+  lineInterval = 0;
+  wordInterval = 300;
+  letterInterval = 100;
 
   constructor() {
 
@@ -33,204 +33,121 @@ export class TeximateService {
 
       console.log('worker execute:', job.type);
 
-      switch (job.type.toUpperCase()) {
-        case WorkType.SEQUENCE:
-          return this.sequence(job.textArr);
+      const options: TeximateOptions = {
+        word: {
+          type: WorkType.SHUFFLE
+        },
+        letter: {
+          type: WorkType.SHUFFLE
+        }
+      };
+      return this.job(job.textArr, options);
 
-        case WorkType.REVERSE:
-          return this.reverse(job.textArr);
-
-        case WorkType.SYNC:
-          return this.sync(job.textArr);
-
-        case WorkType.SHUFFLE:
-          return this.shuffle(job.textArr);
-
-        default:
-          console.warn('[texilate]: inAnimation invalid method input');
-          return Observable.empty();
-      }
     }).subscribe();
   }
 
-  run(text) {
+  run(text, options?: TeximateOptions) {
     this.arr = Helper.textFactory(text);
-    this.worker.next({ textArr: this.arr, type: WorkType.SHUFFLE });
+
+    this.worker.next({ textArr: this.arr, options: options });
   }
 
-  sequence(textArr): Observable<any> {
+  job(textArr, options: TeximateOptions): Observable<any> {
 
-    return Observable.from(textArr)
-      .mergeMap((line: any, i) => {
+    return Observable.from(textArr).mergeMap((line: any, i) => {
 
-        let temp = 0;
+      /** To calculate a word's delay, should store the previous word length */
+      let prevWordLength = 0;
 
-        return Observable.of(line.words).delay(i * this.lineInterval)
-          .mergeAll()
-          .mergeMap((word: Word, j) => {
+      /** Shuffle line's words if word type is shuffle */
+      let lineWords;
+      if (options.word.type === WorkType.SHUFFLE) {
+        lineWords = Helper.shuffle(line.words.slice());
+      } else {
+        lineWords = line.words;
+      }
 
-            /** Word method */
-            let wordIndex = j;
-            let wordItem = line.words[wordIndex].letters;
-            let wordDelay = (temp * this.letterInterval) + (j * this.wordInterval);
-            temp = temp + wordItem.length;
+      return Observable.of(lineWords).delay(i * this.lineInterval)
+        .mergeAll()
+        .mergeMap((wordItem: Word, j) => {
 
-            return Observable.of(wordItem).delay(wordDelay)
-              .mergeAll()
-              .mergeMap((letter: Letter, k) => {
+          //Configure word array
+          const word = this.processWord(options.word.type, lineWords, j, prevWordLength);
 
-                /** Letter method */
-                let letterIndex = k;
-                let letterItem = wordItem[letterIndex];
-                let letterDelay = k * this.letterInterval;
+          //To calculate next word's delay
+          prevWordLength = prevWordLength + word.letters.length;
 
-                return Observable.of(letterItem).delay(letterDelay)
-                  .do((item: Letter) => {
+          /** Shuffle word's letter if letter type is shuffle */
+          let wordLetters;
+          if (options.letter.type === WorkType.SHUFFLE) {
+            wordLetters = Helper.shuffle(word.letters.slice());
+          } else {
+            wordLetters = word.letters;
+          }
 
-                    item.visibility = 'visible';
-                    this.array.next(textArr);
-                  })
-              })
-          })
-      })
+          return Observable.of(wordLetters).delay(word.delay)
+            .mergeAll()
+            .mergeMap((letterItem, k) => {
+
+              const letter = this.processLetter(options.letter.type, wordLetters, k);
+
+              return Observable.of(letter.item).delay(letter.delay)
+                .do((item) => {
+                  item.visibility = 'visible';
+                  this.array.next(textArr);
+                });
+            });
+        });
+    });
   }
 
-  /** Reverse mode */
-  reverse(textArr: Line[]): Observable<any> {
+  processWord(type, arr, i, prevWordLength) {
 
-    return Observable.from(textArr)
-      .mergeMap((line: any, i) => {
+    let index;
+    let delay;
 
-        let temp = 0;
-
-        return Observable.of(line.words).delay(i * this.lineInterval)
-          .mergeAll()
-          .mergeMap((word: Word, j) => {
-
-            /** Word method */
-            let wordIndex = line.words.length - j - 1;
-            let wordItem = line.words[wordIndex].letters;
-            let wordDelay = (temp * this.letterInterval) + (j * this.wordInterval);
-            temp = temp + wordItem.length;
-
-            return Observable.of(wordItem).delay(wordDelay)
-              .mergeAll()
-              .mergeMap((letter: Letter, k) => {
-
-                /** Letter method */
-                let letterIndex = wordItem.length - k - 1;
-                let letterItem = wordItem[letterIndex];
-                let letterDelay = k * this.letterInterval;
-
-                return Observable.of(letterItem).delay(letterDelay)
-                  .do((item: Letter) => {
-
-                    item.visibility = 'visible';
-                    this.array.next(textArr);
-                  })
-              })
-          })
-      })
+    switch (type) {
+      case WorkType.SYNC:
+        index = i;
+        delay = 0;
+        break;
+      case WorkType.REVERSE:
+        index = arr.length - i - 1;
+        delay = (prevWordLength * this.letterInterval) + (i * this.wordInterval);
+        break;
+      default:
+        index = i;
+        delay = (prevWordLength * this.letterInterval) + (i * this.wordInterval);
+    }
+    return {
+      letters: arr[index].letters,
+      delay: delay
+    };
   }
 
+  processLetter(type, arr, i) {
 
-  sync(textArr): Observable<any> {
+    let index;
+    let delay;
 
-    let wordSync = 1;
-    let letterSync = 0;
+    switch (type) {
+      case WorkType.SYNC:
+        index = i;
+        delay = 0;
+        break;
+      case WorkType.REVERSE:
+        index = arr.length - i - 1;
+        delay = i * this.letterInterval;
+        break;
+      default:
+        index = i;
+        delay = i * this.letterInterval;
+    }
 
-    return Observable.from(textArr)
-      .mergeMap((line: any, i) => {
-
-        let temp = 0;
-
-        return Observable.of(line.words).delay(i * this.lineInterval)
-          .mergeAll()
-          .mergeMap((word: Word, j) => {
-
-            /** Word method */
-            let wordIndex = j;
-            let wordItem = line.words[wordIndex].letters;
-            let wordDelay = ((temp * this.letterInterval) + (j * this.wordInterval)) * wordSync;
-            temp = temp + wordItem.length;
-
-            return Observable.of(wordItem).delay(wordDelay)
-              .mergeAll()
-              .mergeMap((letter: Letter, k) => {
-
-                /** Letter method */
-                let letterIndex = k;
-                let letterItem = wordItem[letterIndex];
-                let letterDelay = k * this.letterInterval * letterSync;
-
-                return Observable.of(letterItem).delay(letterDelay)
-                  .do((item: Letter) => {
-
-                    item.visibility = 'visible';
-                    this.array.next(textArr);
-                  })
-              })
-          })
-      })
-  }
-
-  shuffle(textArr): Observable<any> {
-
-    let wordSync = 1;
-    let letterSync = 1;
-
-    return Observable.from(textArr)
-      .mergeMap((line: any, i) => {
-
-        let temp = 0;
-
-        let wordArr = Helper.shuffle(line.words.slice());
-
-        return Observable.of(line.words).delay(i * this.lineInterval)
-          .mergeAll()
-          .mergeMap((word: Word, j) => {
-
-            /** Word method */
-            let wordIndex = j;
-            let wordItem = wordArr[wordIndex].letters;
-            let wordDelay = ((temp * this.letterInterval) + (j * this.wordInterval)) * wordSync;
-            temp = temp + wordItem.length;
-
-            let letterArr = Helper.shuffle(wordItem.slice());
-
-            return Observable.of(wordItem).delay(wordDelay)
-              .mergeAll()
-              .mergeMap((letter: Letter, k) => {
-
-                /** Letter method */
-                let letterIndex = k;
-                let letterItem = letterArr[letterIndex];
-                let letterDelay = k * this.letterInterval * letterSync;
-
-                return Observable.of(letterItem).delay(letterDelay)
-                  .do((item: Letter) => {
-
-                    item.visibility = 'visible';
-                    this.array.next(textArr);
-                  })
-              })
-          })
-      })
+    return {
+      item: arr[index],
+      delay: delay
+    };
   }
 
 }
-
-/**
- * 
- * 
-    return Observable.from(textArr)
-      .mergeMap((line: any, i) => Observable.of(line.words).delay(i * this.lineInterval))
-      .mergeAll()
-      .mergeMap((word: any, i) => Observable.of(word.letters).delay(i * this.wordInterval))
-      .mergeAll()
-      .mergeMap((letter: any, i) => Observable.of(letter).delay(i * this.letterInterval))
-      .do((item: Letter) => {
-        item.visibility = 'visible';
-        this.array.next(textArr);
-      })
- */
