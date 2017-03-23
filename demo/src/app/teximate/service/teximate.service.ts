@@ -35,10 +35,11 @@ export class TeximateService {
 
       const options: TeximateOptions = {
         word: {
-          type: WorkType.SHUFFLE
+          type: WorkType.SHUFFLE,
         },
         letter: {
-          type: WorkType.SHUFFLE
+          type: WorkType.SHUFFLE,
+          class: 'slideInDown'
         }
       };
       return this.job(job.textArr, options);
@@ -71,10 +72,10 @@ export class TeximateService {
         .mergeAll()
         .mergeMap((wordItem: Word, j) => {
 
-          //Configure word array
+          /** Process word (calculate index & delay according to word's type) */
           const word = this.processWord(options.word.type, lineWords, j, prevWordLength);
 
-          //To calculate next word's delay
+          /** To calculate next word's delay */
           prevWordLength = prevWordLength + word.letters.length;
 
           /** Shuffle word's letter if letter type is shuffle */
@@ -89,11 +90,14 @@ export class TeximateService {
             .mergeAll()
             .mergeMap((letterItem, k) => {
 
+              /** Process letter (calculate index & delay according to letter's type) */
               const letter = this.processLetter(options.letter.type, wordLetters, k);
 
               return Observable.of(letter.item).delay(letter.delay)
                 .do((item) => {
+                  /** Apply changes to the letter then update the view */
                   item.visibility = 'visible';
+                  item.class = 'animated ' + options.letter.class;
                   this.array.next(textArr);
                 });
             });

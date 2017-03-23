@@ -4,7 +4,8 @@
 
     <span *ngFor="let word of line.words" class="word" [style.visibility]="word.visibility">
 
-      <span *ngFor="let letter of word.letters" class="letter" [style.visibility]="letter.visibility">
+      <span *ngFor="let letter of word.letters" [class]="'letter ' + letter.class"
+       [style.visibility]="letter.visibility">
         {{letter.text}}
       </span>
 

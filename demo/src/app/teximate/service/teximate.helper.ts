@@ -71,6 +71,7 @@ export interface Word {
 export interface Letter {
   visibility: string;
   text: string;
+  class?: string;
 }
 
 export interface TeximateOptions {
@@ -81,6 +82,7 @@ export interface TeximateOptions {
 
 export interface ElementOptions {
   type;
+  class?;
 }
 
 
