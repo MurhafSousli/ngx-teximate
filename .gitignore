@@ -1,1 +1,8 @@
-# Created by .ignore support plugin (hsz.mobi)
+# Node
+node_modules
+dist
+coverage
+npm-debug.log
+debug.log
+/.idea/
+/.vscode/

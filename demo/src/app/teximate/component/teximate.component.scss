@@ -1,16 +1,11 @@
-.line, .word, .letter{
-
-}
-
-.line{
-
-}
-
-.word{
+.word, .letter{
     display: inline-block;
+    //  fix for poor ios performance 
+    transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+}
+.word{ 
     margin-right: 8px;
-}
-
-.letter{
-    display: inline-block;
 }
