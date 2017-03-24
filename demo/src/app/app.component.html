@@ -6,9 +6,14 @@
 ></h1>-->
 
 <h1>
-<teximate [text]="text">
-</teximate>
+    <teximate #teximate [text]="text" [effect]="options">
+    </teximate>
 </h1>
+
+<!--<h1>
+    <teximate [text]="anotherText" [effect]="options">
+    </teximate>
+</h1>-->
 
 <!--<h1 
 [teximate]="anotherText"
@@ -29,5 +34,8 @@
 <!--<h1 
 [teximate]="text"
 ></h1>-->
-
-<button (click)="run = !run">test</button>
+<div class="test-container">
+    <button (click)="test1()">Change text</button>
+    <button (click)="test2()">Exit Effect</button>
+    <button (click)="test3()">Effect</button>
+</div>

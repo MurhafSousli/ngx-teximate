@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // align-items: center;
     background-color: white;
 
     position: fixed;
@@ -17,10 +16,13 @@ h1{
     // max-width: 700px;
 }
 
-button{
+.test-container{
     position: fixed;
     left: 1em;
     bottom: 1em;
-    font-size: 2em;
-    font-weight: bold;
+
+    button{
+        font-size: 1.5em;
+        font-weight: bold;
+    }
 }

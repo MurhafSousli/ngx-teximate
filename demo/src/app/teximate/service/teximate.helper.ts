@@ -18,32 +18,35 @@ export module Helper {
     const linesArr: Line[] = [];
     /** get text's lines */
     const lines = text.split('\n');
-    lines.map((line) => {
+    lines.map((line, i) => {
 
       const wordArr: Word[] = [];
       /** get line's words and filter empty words */
       const words = line.split(' ');
-      words.filter(word => word !== '').map((word) => {
+      words.filter(word => word !== '').map((word, j) => {
 
         const letterArr: Letter[] = [];
         /** get word's letters */
-        const letters = word.split('');
-        letters.map((letter) => {
+        const letters = word.split(/(?!$)/u);
+        letters.map((letter, k) => {
 
           letterArr.push({
             text: letter,
+            class: ' letter' + (k + 1),
             visibility: 'hidden'
           });
         });
 
         wordArr.push({
           letters: letterArr,
+          class: ' word' + (j + 1),
           visibility: 'hidden'
         });
       });
 
       linesArr.push({
         words: wordArr,
+        class: ' line' + (i + 1),
         visibility: 'hidden'
       });
     });
@@ -60,30 +63,42 @@ export const WorkType = {
 
 export interface Line {
   visibility: string;
+  class: string;
   words: Word[];
 }
 
 export interface Word {
   visibility: string;
+  class: string;
   letters: Letter[];
+  animateClass?: string;
 }
 
 export interface Letter {
   visibility: string;
+  class: string;
   text: string;
-  class?: string;
+  animateClass?: string;
 }
 
 export interface TeximateOptions {
-  line?: ElementOptions;
-  word?: ElementOptions;
-  letter?: ElementOptions;
+  type?: string;
+  animation?: {
+    name;
+    duration;
+  }
+  word?: {
+    type;
+    class?;
+    delay?;
+  }
+  letter?: {
+    type;
+    class?;
+    delay?;
+  }
 }
 
-export interface ElementOptions {
-  type;
-  class?;
-}
 
 
 /**

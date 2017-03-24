@@ -5,9 +5,7 @@ import { TeximateComponent } from './component/teximate.component';
 import { TeximateService } from './service/teximate.service';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   providers: [TeximateService],
   declarations: [TeximateDirective, TeximateComponent],
   exports: [TeximateDirective, TeximateComponent]

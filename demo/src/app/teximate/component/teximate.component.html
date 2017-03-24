@@ -1,15 +1,15 @@
 <span aria-label="text">
 
-  <div *ngFor="let line of teximate.array | async" class="line" [style.visibility]="line.visibility">
+  <div *ngFor="let line of teximate.array | async" [class]="'line' + line.class" [style.visibility]="line.visibility">
 
-    <span *ngFor="let word of line.words" class="word" [style.visibility]="word.visibility">
+    <span *ngFor="let word of line.words" [class]="'word' + word.class + word.animateClass" [style.visibility]="word.visibility">
 
-      <span *ngFor="let letter of word.letters" [class]="'letter ' + letter.class"
+      <span *ngFor="let letter of word.letters" [class]="'letter' + letter.class + letter.animateClass"
        [style.visibility]="letter.visibility">
         {{letter.text}}
       </span>
 
-</span>
-</div>
+    </span>
+  </div>
 
 </span>
