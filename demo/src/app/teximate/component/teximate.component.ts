@@ -35,10 +35,12 @@ export class TeximateComponent implements OnChanges, OnDestroy {
 
   ngOnChanges(changes: SimpleChanges) {
 
+    console.log(changes);
+
     if (changes['effect']) {
       this.options = Object.assign({}, this.options, changes['effect'].currentValue);
     }
-    if (changes['text']) {
+    if (changes['text'] && changes['text'].currentValue) {
       this.content = changes['text'].currentValue;
     }
 
@@ -47,7 +49,7 @@ export class TeximateComponent implements OnChanges, OnDestroy {
 
   runEffect(options) {
 
-    this.teximate.runEffect(options);
+    // this.teximate.runEffect(options);
   }
 
   setAnimationDuration(duration) {
@@ -66,5 +68,6 @@ export class TeximateComponent implements OnChanges, OnDestroy {
     this.teximate.array.unsubscribe();
     this.teximate.worker.unsubscribe();
   }
+
 
 }

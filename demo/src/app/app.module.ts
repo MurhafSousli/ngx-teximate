@@ -6,7 +6,9 @@ import { TeximateModule } from './teximate/teximate.module';
 
 import { AppComponent } from './app.component';
 
-import {NgProgressModule} from 'ng2-progressbar';
+import { NgProgressModule } from 'ng2-progressbar';
+
+import { FullpageModule } from './fullpage';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import {NgProgressModule} from 'ng2-progressbar';
     BrowserModule,
     FormsModule,
     HttpModule,
-    TeximateModule
+    TeximateModule,
+    FullpageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

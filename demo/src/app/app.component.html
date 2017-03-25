@@ -1,14 +1,113 @@
+<div class="test-container">
+    <button (click)="test1()">test 1</button>
+    <button (click)="test2()">test 2</button>
+    <!--<button (click)="test3()">Effect</button>-->
+</div>
+<div class="demo">
+    <h1>
+        <teximate #teximate [text]="text" [effect]="options"
+        >
+        </teximate>
+    </h1>
+</div>
+<!--
+<h1>
+    <teximate #teximate [text]="'Angular Text animation'" [effect]="options">
+    </teximate>
+</h1>-->
+
+<div class="component-outer">
+    <div class="component">
+        <i class="tag-name" [textContent]="'<teximate '"></i>
+
+        <span class="input-wrapper">
+      <span class="input-name">text</span> =
+        <i class="input">
+        <input [(ngModel)]="text">
+      </i>
+        </span>
+
+        <span class="input-wrapper">
+       <span class="input-name">options.type</span> =
+        <i class="input">
+        <select [ngModel]="options.type"
+             (ngModelChange)="updateType($event)">
+          <option *ngFor="let p of optionsTypes" [ngValue]="p">{{p}}</option>
+        </select>
+      </i>
+        </span>
+
+        <span class="input-wrapper">
+       <span class="input-name">animation.class</span> =
+        <i class="input">
+        <select [ngModel]="options.animation.name"
+             (ngModelChange)="updateAnimationClass($event)">
+          <option *ngFor="let p of animateCss" [ngValue]="p">{{p}}</option>
+        </select>
+      </i>
+        </span>
+
+        <span class="input-wrapper">
+      <span class="input-name">animation.duration</span> =
+        <i class="input">
+        <input [ngModel]="options.animation.duration" (ngModelChange)="updateAnimationDuration($event)">
+      </i>
+        </span>
+
+
+        <span class="input-wrapper">
+       <span class="input-name">word.type</span> =
+        <i class="input">
+        <select [ngModel]="options.word.type"
+             (ngModelChange)="updateWordType($event)">
+          <option *ngFor="let p of workType" [ngValue]="p">{{p}}</option>
+        </select>
+      </i>
+        </span>
+
+         <span class="input-wrapper">
+      <span class="input-name">word.delay</span> =
+        <i class="input">
+        <input [ngModel]="options.word.delay" (ngModelChange)="updateWordDelay($event)">
+      </i>
+        </span>
+
+
+        <span class="input-wrapper">
+       <span class="input-name">letter.type</span> =
+        <i class="input">
+        <select [ngModel]="options.letter.type"
+             (ngModelChange)="updateLetterType($event)">
+          <option *ngFor="let p of workType" [ngValue]="p">{{p}}</option>
+        </select>
+      </i>
+        </span>
+
+         <span class="input-wrapper">
+      <span class="input-name">letter.delay</span> =
+        <i class="input">
+        <input [ngModel]="options.letter.delay" (ngModelChange)="updateLetterDelay($event)">
+      </i>
+        </span>
+
+        <i class="tag-name" [textContent]="' ></teximate>'"></i>
+    </div>
+</div>
+
+
+<!--<span class="input-wrapper">
+      <span class="input-name">repeat</span> =
+        <i class="input">
+        <input type="checkbox" [(ngModel)]="repeat"><span>{{(repeat)?"true":"false"}}</span>
+      </i>
+        </span>-->
+
 <!--<h1 
 [teximate]="text"
 [tmType]="'word'" 
 [tmInterval]="50"
 [tmIn]="{ class: 'lightSpeedIn', method: 'shuffle'}"
 ></h1>-->
-
-<h1>
-    <teximate #teximate [text]="text" [effect]="options">
-    </teximate>
-</h1>
 
 <!--<h1>
     <teximate [text]="anotherText" [effect]="options">
@@ -34,8 +133,3 @@
 <!--<h1 
 [teximate]="text"
 ></h1>-->
-<div class="test-container">
-    <button (click)="test1()">Change text</button>
-    <button (click)="test2()">Exit Effect</button>
-    <button (click)="test3()">Effect</button>
-</div>
