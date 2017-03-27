@@ -21,34 +21,35 @@ import { Helper, WorkType, Line, Word, Letter, TeximateOptions } from './teximat
 @Injectable()
 export class TeximateService {
 
+  /** The text array coming from text factory */
   arr: Line[] = [];
-
-  array = new Subject();
+  /** a worker to teximate the array */
   worker = new Subject();
+  /** the teximated text to be displayed on the view */
+  text = new Subject();
 
   constructor() {
 
     this.worker.switchMap((job: any) => {
-
-      // console.log('worker execute:', job.options);
-
-      return this.job(job.textArr, job.options);
+      console.log('worker execute:', job.type);
+      return (job.type === 'word') ?
+        this.wordsJob(job.textArr, job.options) :
+        this.lettersJob(job.textArr, job.options)
 
     }).subscribe();
   }
 
-
-  run(text: string, options: TeximateOptions) {    
+  run(text: string, options: TeximateOptions, type: string) {
+    
     this.arr = Helper.textFactory(text);
-    this.worker.next({ textArr: this.arr, options: options });
+    this.worker.next({ textArr: this.arr, options: options, type: type });
   }
 
-  runEffect(options: TeximateOptions) {
-    this.worker.next({ textArr: this.arr, options: options });
+  runEffect(options: TeximateOptions, type: string) {
+    this.worker.next({ textArr: this.arr, options: options, type: type });
   }
 
-
-  job(textArr, options: TeximateOptions): Observable<any> {
+  lettersJob(textArr, options: TeximateOptions): Observable<any> {
 
     return Observable.from(textArr)
       .mergeMap((line: any, i) => {
@@ -74,11 +75,6 @@ export class TeximateService {
               wordLetters = word.letters;
             }
 
-            /** Apply changes to the letter then update the view */
-            wordItem.visibility = 'visible';
-            /** set animation and custom classes */
-            wordItem.animateClass = ` animated ${options.animation.name}`;
-
             return Observable.of(wordLetters).delay(word.delay)
               .mergeAll()
               .mergeMap((letterItem, k) => {
@@ -91,11 +87,40 @@ export class TeximateService {
 
                     /** Apply changes to the letter then update the view */
                     letterItem.visibility = 'visible';
-                    /** set animation and custom classes */
+                    /** Set animation and custom classes */
                     letterItem.animateClass = ` animated ${options.animation.name}`;
-                    this.array.next(textArr);
+                    /** Update the array */
+                    this.text.next(textArr);
                   });
               });
+          });
+      });
+  }
+
+  wordsJob(textArr, options: TeximateOptions): Observable<any> {
+
+    return Observable.from(textArr)
+      .mergeMap((line: any, i) => {
+
+        return Observable.of(line.words)
+          .mergeAll()
+          .mergeMap((wordItem: Word, j) => {
+
+            /** Process word (calculate index & delay according to word's type)
+             *  in this case `options.letter.delay` must be 0 */
+            const word = this.processWord(options, line.words, j, 0);
+
+            return Observable.of(word)
+              .delay(word.delay)
+              .do(() => {
+
+                /** Apply changes to the letter then update the view */
+                wordItem.visibility = 'visible';
+                /** Set animation and custom classes */
+                wordItem.animateClass = ` animated ${options.animation.name}`;
+                /** Update the array */
+                this.text.next(textArr);
+              })
           });
       });
   }
@@ -150,3 +175,4 @@ export class TeximateService {
   }
 
 }
+

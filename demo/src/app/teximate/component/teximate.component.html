@@ -1,6 +1,6 @@
 <span aria-label="text">
 
-  <div *ngFor="let line of teximate.array | async" [class]="'line' + line.class" [style.visibility]="line.visibility">
+  <div *ngFor="let line of teximate.text | async" [class]="'line' + line.class" [style.visibility]="line.visibility">
 
     <span *ngFor="let word of line.words" [class]="'word' + word.class + word.animateClass" [style.visibility]="word.visibility">
 

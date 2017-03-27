@@ -1,0 +1,106 @@
+$cmpBg: #111111;
+$cmpColor:#2C7CD1;
+$inputName:#7afaff  ;
+$inputColor: #ff5b5b;
+$inputBg: #1c1c1c;;
+
+:host{
+    flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.demo{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.test-container{
+    position: fixed;
+    left: 1em;
+    top: 1em;
+
+    button{
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+}
+
+.component-outer{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+}
+
+.component{
+  margin-bottom: .8em;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $cmpBg;
+  color: $inputName;
+  padding: .8em;
+  font-family: monospace;
+
+  .tag-name,.input-name, .input-wrapper, .input, input{
+    padding: 0;
+  }
+
+  .tag-name{
+    color: $cmpColor;
+    line-height: 2em;
+    font-weight: bold;
+  }
+
+  .input-name{
+    color: $inputName;
+    
+    &:before{
+      content: "[";
+      color: $inputName;
+    }
+    &:after{
+      content: "]";
+      color: $inputName;
+    }
+  }
+  .input-wrapper{
+    margin: 3px 3px 3px 15px ;
+    display: flex;
+    align-items: center;
+  }
+  .input{
+    width: auto;
+    color:$inputColor;
+    &:before{
+      content: '"';
+    }
+    &:after{
+      content: '"';
+    }
+
+    span{
+      color: $inputColor;
+      font-style: normal;
+    }
+    input, select{
+      color: $inputColor;
+      border:0;
+      font-family: monospace;
+      outline: 0;
+      background-color: $inputBg;
+    }
+    input{
+      width: 50px;
+    }
+  }
+}
+
+
+.text-input{
+  width: 150px !important;
+}
