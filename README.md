@@ -14,8 +14,8 @@ A simple module for CSS3 text animations | [live demo](https://murhafsousli.gith
 
 ### Teximate does 2 things:
 
- - Creates lines, words and letters elements from a text, so they can be styled individually using their classes.
- - Animates words or letters using animate.css
+ - Creates (lines, words and letters) elements from a text
+ - Animates them using animate.css
 
 ## Installation
 
@@ -37,7 +37,7 @@ map: {
 
 Here is a working [plunker](https://plnkr.co/edit/DqQ9mUVcNbAc2vOgGZVy?p=preview)
 
-## Add Teximate module
+## Usage
 
 Import **TeximateModule** in your root module
 
@@ -64,8 +64,7 @@ or import it using the CDN
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
 ```
 
-## Usage
- 
+Now you can use **Teximate** component:
 
 ```ts
 <teximate [text]="text" [type]="type" [effect]="options"></teximate>
@@ -126,38 +125,35 @@ Note that the css rules should be in the global `style.css`. otherwise the style
 ### Teximate Options:
 
 
-  - `text: string`                          text to be displayed
+  - `text: string`                        text to be displayed
 
-  - `type: string`                          either `'word'` or `'letter'`, play animation on your words/letters
+  - `type: string`                        either `'word'` or `'letter'`, play animation on your words/letters
 
-  - `options: TeximateOptions`               choose animation class and its duration
+  - `options: TeximateOptions`            choose animation class and its duration
  
 ```
-  - options:                                effect options
-      animation: { 
-        name: string                        animation class name (animate.css)
-        duration: number                    animation duration in ms (setting css animation-duration)
-      },
-      word: { 
-        type: string                        (SEQUENCE, REVERSE, SHUFFLE, SYNC)
-        delay: number                       delay between each word and the next one in ms
-      },
-      letter: { 
-        type: :string                       (SEQUENCE, REVERSE, SHUFFLE, SYNC)
-        delay: number                       delay after each letter and the next one in ms
-      }
-    };
-
-  type = 'letter';
+options: {                                effect options
+    animation: { 
+        name: string                      animation class name (animate.css)
+        duration: number                  animation duration in ms (setting css animation-duration)
+    },
+    word: { 
+        type: string                      order (SEQUENCE, REVERSE, SHUFFLE, SYNC)
+        delay: number                     delay between each word and the next one in ms
+    },
+    letter: { 
+        type: :string                     order (SEQUENCE, REVERSE, SHUFFLE, SYNC)
+        delay: number                     delay after each letter and the next one in ms
+    }
+};
 ```
-
 
 ## TODO
 
  - On hover animation
  - On click animation
  
- What else? If you find this module helpful, support it with a star ⭐, this will help me to push updates more frequently.
+ What else? If you find this module helpful support it with a star ⭐, this will help me to push updates more frequently.
 
 ## Author
 
