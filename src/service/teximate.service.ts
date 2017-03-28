@@ -14,7 +14,7 @@ import 'rxjs/add/observable/from';
 import 'rxjs/add/observable/of';
 
 import { Helper } from '../helper/teximate.helper';
-import { TeximateOptions, TeximateOrder,Line, Word, Letter } from '../helper/teximate.class';
+import { TeximateOptions, TeximateOrder, Line, Word, Letter } from '../helper/teximate.class';
 
 /** This service is not meant to be used outside TeximateModule
  *  Each component instance has service instance
@@ -41,16 +41,20 @@ export class TeximateService {
     }).subscribe();
   }
 
+  /** Create new text and run the effect on it */
   run(text: string, options: TeximateOptions, type: string) {
 
     this.arr = Helper.textFactory(text);
     this.worker.next({ textArr: this.arr, options: options, type: type });
   }
 
+  /** Run effect on an existing text */
   runEffect(options: TeximateOptions, type: string) {
+
     this.worker.next({ textArr: this.arr, options: options, type: type });
   }
 
+  /** Animation effect for letters */
   lettersJob(textArr, options: TeximateOptions): Observable<any> {
 
     return Observable.from(textArr)
@@ -59,12 +63,21 @@ export class TeximateService {
         /** To calculate a word's delay */
         let prevWordLength = 0;
 
-        return Observable.of(line.words)
+        /** Shuffle line's word if word type is shuffle */
+        let lineWords;
+        if (options.word.type === TeximateOrder.SHUFFLE) {
+          console.log(options.letter.type);
+          lineWords = Helper.shuffle(line.words.slice());
+        } else {
+          lineWords = line.words;
+        }
+
+        return Observable.of(lineWords)
           .mergeAll()
           .mergeMap((wordItem: Word, j) => {
 
             /** Process word (calculate index & delay according to word's type) */
-            const word = Helper.processWord(options, line.words, j, prevWordLength);
+            const word = Helper.processWord(options, lineWords, j, prevWordLength);
 
             /** To calculate next word's delay */
             prevWordLength = prevWordLength + word.letters.length;
@@ -87,9 +100,9 @@ export class TeximateService {
                 return Observable.of(letter.item).delay(letter.delay)
                   .do((letterItem: Letter) => {
 
-                    /** Apply changes to the letter then update the view */
+                    /** Display the letter */
                     letterItem.visibility = 'visible';
-                    /** Set animation and custom classes */
+                    /** Set animation class */
                     letterItem.animateClass = ` animated ${options.animation.name}`;
                     /** Update the array */
                     this.text.next(textArr);
@@ -99,26 +112,35 @@ export class TeximateService {
       });
   }
 
+  /** Animation effect for words */
   wordsJob(textArr, options: TeximateOptions): Observable<any> {
 
     return Observable.from(textArr)
       .mergeMap((line: any, i) => {
 
-        return Observable.of(line.words)
+        /** Shuffle line's word if word type is shuffle */
+        let lineWords;
+        if (options.word.type === TeximateOrder.SHUFFLE) {
+          lineWords = Helper.shuffle(line.words.slice());
+        } else {
+          lineWords = line.words;
+        }
+
+        return Observable.of(lineWords)
           .mergeAll()
           .mergeMap((wordItem: Word, j) => {
 
             /** Process word (calculate index & delay according to word's type)
              *  in this case `options.letter.delay` must be 0 */
-            const word = Helper.processWord(options, line.words, j, 0);
+            const word = Helper.processWord(options, lineWords, j, 0);
 
             return Observable.of(word)
               .delay(word.delay)
               .do(() => {
 
-                /** Apply changes to the letter then update the view */
+                /** display the word */
                 wordItem.visibility = 'visible';
-                /** Set animation and custom classes */
+                /** Set animation class */
                 wordItem.animateClass = ` animated ${options.animation.name}`;
                 /** Update the array */
                 this.text.next(textArr);
