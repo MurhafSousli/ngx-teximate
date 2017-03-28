@@ -53,7 +53,7 @@ import {TeximateModule} from "ng-teximate";
 ```
 Teximate uses [animate.css](https://daneden.github.io/animate.css/) to animate words/letters.
 
-install it `npm install animate.css --save` and in your global style import it
+install it `npm install animate.css --save` and import it in your global style
 
 ```css
 /* You can add global styles to this file, and also import other style files */
@@ -69,7 +69,7 @@ or import it using the CDN
  
 
 ```ts
-<teximate #teximate [text]="text" [type]="type" [effect]="options"></teximate>
+<teximate [text]="text" [type]="type" [effect]="options"></teximate>
 ```
 
 ```ts
@@ -109,14 +109,16 @@ Most often you won't need to use `ViewChild` and call `runEffect` because you ca
 You can also access any line, word or letter by by its class, for example you can apply the following css rules in the global `style.css`
 
 ```css
+// apply style to all letters
 .letter{
   text-shadow: 1px 1px 1px rgba(#000, .5);
 }
-.word1{
-   background-color: red;
-}
+// apply style to the second letter of a word
 .letter2{
    color: blue;
+}
+.word1{
+   background-color: red;
 }
 ```
 

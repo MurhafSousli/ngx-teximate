@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b31e51b2-3fbd-4c7a-a29d-44821b633af7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/directive/teximate.directive.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/directive/teximate.directive.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/functions.helper.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/service/teximate.helper.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/teximate.class.ts" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CHANGELOG.md" afterPath="$PROJECT_DIR$/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/app.component.html" afterPath="$PROJECT_DIR$/demo/src/app/app.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/app.component.scss" afterPath="$PROJECT_DIR$/demo/src/app/app.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/app.module.ts" afterPath="$PROJECT_DIR$/demo/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/header/header.component.html" afterPath="$PROJECT_DIR$/demo/src/app/header/header.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/header/header.component.scss" afterPath="$PROJECT_DIR$/demo/src/app/header/header.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/header/header.component.ts" afterPath="$PROJECT_DIR$/demo/src/app/header/header.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/main/main.component.html" afterPath="$PROJECT_DIR$/demo/src/app/main/main.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/main/main.component.scss" afterPath="$PROJECT_DIR$/demo/src/app/main/main.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/main/main.component.ts" afterPath="$PROJECT_DIR$/demo/src/app/main/main.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/teximate/component/teximate.component.ts" afterPath="$PROJECT_DIR$/demo/src/app/teximate/component/teximate.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/teximate/index.ts" afterPath="$PROJECT_DIR$/demo/src/app/teximate/index.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/teximate/service/teximate.service.ts" afterPath="$PROJECT_DIR$/demo/src/app/teximate/service/teximate.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/teximate/teximate.module.ts" afterPath="$PROJECT_DIR$/demo/src/app/teximate/teximate.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/index.html" afterPath="$PROJECT_DIR$/demo/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/styles.scss" afterPath="$PROJECT_DIR$/demo/src/styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -83,17 +60,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            <state relative-caret-position="17">
+              <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -327,16 +304,15 @@
       <option name="presentableId" value="Default" />
       <updated>1490222984914</updated>
       <workItem from="1490222986420" duration="763000" />
-      <workItem from="1490656878575" duration="9552000" />
+      <workItem from="1490656878575" duration="9815000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10315000" />
+    <option name="totallyTimeSpent" value="10578000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2470238" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -501,14 +477,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/src/app/teximate/component/teximate.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-442">
@@ -588,6 +556,14 @@
             </folding>
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -29,13 +29,13 @@ export class TeximateComponent implements OnChanges, OnDestroy {
 
   @Input() type: string;
 
-  @Input() inEffect;
+  @Input() effect;
 
   // @Input() hoverEffect;
 
   // @Input() clickEffect;
 
-  constructor(private teximate: TeximateService, private renderer: Renderer2, el: ElementRef) {
+  constructor(public teximate: TeximateService, private renderer: Renderer2, el: ElementRef) {
 
     /** create dynamic style (to avoid applying css rules' vendors for each element in the template) */
     this.style = this.renderer.createElement('style');
@@ -44,7 +44,7 @@ export class TeximateComponent implements OnChanges, OnDestroy {
 
   ngOnChanges(changes: SimpleChanges) {
 
-    console.log(changes['type'])
+    // console.log(changes['type'])
 
     let reloadText = changes['text'] && changes['text'].firstChange;
 
@@ -59,10 +59,10 @@ export class TeximateComponent implements OnChanges, OnDestroy {
       this.jobType = changes['type'].currentValue;
     }
 
-    if (changes['inEffect']) {
+    if (changes['effect']) {
 
-      this.jobEffect = Object.assign({}, this.jobEffect, changes['inEffect'].currentValue);
-      this.setAnimationDuration(changes['inEffect'].currentValue.animation.duration);
+      this.jobEffect = Object.assign({}, this.jobEffect, changes['effect'].currentValue);
+      this.setAnimationDuration(changes['effect'].currentValue.animation.duration);
     }
 
     if (reloadText) {

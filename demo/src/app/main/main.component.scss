@@ -65,7 +65,6 @@ $inputBg: #1c1c1c;;
   .input-wrapper{
     margin: 3px 3px 3px 15px ;
     display: flex;
-    align-items: center;
   }
   .input{
     width: auto;
@@ -94,7 +93,20 @@ $inputBg: #1c1c1c;;
   }
 }
 
+p{
+  margin: .2em 0;
+}
 
 .text-input{
-  width: 150px !important;
+  width: 200px !important;
+}
+
+.input-center{
+  align-items: center;
+}
+
+.inline-space{
+    display: inline-block;
+    width: 30px;
+    height: 10px;
 }

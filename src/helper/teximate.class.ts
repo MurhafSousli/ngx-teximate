@@ -23,17 +23,17 @@ export interface TeximateOptions {
   animation?: {
     name;
     duration;
-  }
+  };
   word?: {
     type;
     class?;
     delay?;
-  }
+  };
   letter?: {
     type;
     class?;
     delay?;
-  }
+  };
 }
 
 export const TeximateOrder = {

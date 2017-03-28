@@ -1,7 +1,7 @@
 {
   "name": "ng-teximate",
   "version": "0.5.0",
-  "description": "Angular text animation module",
+  "description": "A simple module for CSS3 text animations.",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:MurhafSousli/ng-teximate.git"
@@ -22,7 +22,8 @@
     "letters",
     "lettering",
     "words",
-    "lines"
+    "lines",
+    "css3"
   ],
   "author": "Murhaf Sousli <murhafsousi@gmail.com>",
   "license": "MIT",
@@ -33,24 +34,22 @@
     "test": " gulp test"
   },
   "dependencies": {
-    "@angular/common": "2.0.0",
-    "@angular/core": "2.0.0",
-    "@angular/http": "2.0.0",
+    "@angular/common": "4.0.0",
+    "@angular/core": "4.0.0",
     "rxjs": "5.1.0"
   },
   "devDependencies": {
-    "@angular/compiler": "2.0.0",
-    "@angular/compiler-cli": "0.6.2",
-    "@angular/platform-browser": "2.0.0",
-    "@angular/platform-browser-dynamic": "2.0.0",
-    "@angular/platform-server": "2.0.0",
-    "@angular/router": "3.0.0",
+    "@angular/compiler": "4.0.0",
+    "@angular/compiler-cli": "4.0.0",
+    "@angular/platform-browser": "4.0.0",
+    "@angular/platform-browser-dynamic": "4.0.0",
+    "@angular/platform-server": "4.0.0",
     "@types/jasmine": "2.5.41",
     "@types/node": "^6.0.58",
     "angular2-template-loader": "^0.6.0",
     "autoprefixer": "^6.6.1",
     "awesome-typescript-loader": "^3.0.0-beta.18",
-    "codelyzer": "1.0.0-beta.0",
+    "codelyzer": "3.0.0-beta.4",
     "core-js": "2.4.1",
     "css-loader": "^0.26.1",
     "cssnano": "^3.7.4",
@@ -62,7 +61,7 @@
     "gulp-inline-ng2-template": "^4.0.0",
     "gulp-postcss": "^6.2.0",
     "gulp-sass": "^3.1.0",
-    "gulp-tslint": "^6.1.1",
+    "gulp-tslint": "^7.1.0",
     "gulp-util": "^3.0.7",
     "html-loader": "^0.4.4",
     "istanbul-instrumenter-loader": "1.2.0",
@@ -83,14 +82,13 @@
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-uglify": "^1.0.1",
     "run-sequence": "^1.2.2",
-    "rxjs": "5.0.0-beta.12",
     "source-map-loader": "^0.1.5",
     "to-string-loader": "^1.1.5",
-    "tslint": "^3.15.1",
-    "typescript": "2.0.2",
+    "tslint": "^4.5.1",
+    "typescript": "2.2.2",
     "webpack": "2.2.0-rc.4",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "2.2.0-rc.0",
-    "zone.js": "0.6.21"
+    "zone.js": "0.8.5"
   }
 }
