@@ -14,8 +14,8 @@ A simple module for CSS3 text animations | [live demo](https://murhafsousli.gith
 
 ### Teximate does 2 things:
 
- - Create lines, words and letters elements from a text, so they can be styled individually using their classes.
- - Animate words or letters using animate.css.
+ - Creates lines, words and letters elements from a text, so they can be styled individually using their classes.
+ - Animates words or letters using animate.css
 
 ## Installation
 
@@ -49,7 +49,7 @@ import {TeximateModule} from "ng-teximate";
   ]
 })
 ```
-Teximate uses [animate.css](https://daneden.github.io/animate.css/) to animate words/letters.
+Teximate uses [animate.css](https://daneden.github.io/animate.css/) to animate the words/letters.
 
 install it `npm install animate.css --save` and in your global style import it
 
@@ -59,6 +59,7 @@ install it `npm install animate.css --save` and in your global style import it
 ```
 
 or import it using the CDN 
+
 ```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
 ```
@@ -83,7 +84,7 @@ export class SomeComponent {
 
   type = 'letter';
   
-  // Apply another effect using component reference
+  // another way to apply an effect using component reference
 
   @ViewChild(TeximateComponent) teximate: TeximateComponent;
 
@@ -102,9 +103,11 @@ export class SomeComponent {
 }  
 ```
 
-You can run a new effect automatically by changing the inputs, alternatively you can use the component reference and call `runEffect(options, type)` manually.
+Run an effect automatically by changing the inputs. another way is to use the component reference and call `runEffect(options, type)`.
 
-You can also access any line, word or letter by by its class, for example you can apply the following css rules in the global `style.css`
+Add styles to lines, words and letters of the text by using the classes `.line` `.word` `.letter`
+ 
+for example:
 
 ```css
 .letter{
@@ -118,25 +121,30 @@ You can also access any line, word or letter by by its class, for example you ca
 }
 ```
 
+Note that the css rules should be in the global `style.css`. otherwise the style won't effect the text if you add them from your component style unless you use `encapsulation: ViewEncapsulation.None` on it.
+
 ### Teximate Options:
 
 
   - `text: string`                          text to be displayed
 
-  - `type: string`                          either 'word' or 'letter' to apply animation on letters or words
+  - `type: string`                          either `'word'` or `'letter'`, play animation on your words/letters
 
+  - `options: TeximateOptions`               choose animation class and its duration
+ 
+```
   - options:                                effect options
       animation: { 
-        name: 'zoomInLeft',                 animation class name from (animate.css)
-        duration: 1000                      animation duration ()
+        name: string                        animation class name (animate.css)
+        duration: number                    animation duration in ms (setting css animation-duration)
       },
       word: { 
-        type: TeximateOrder.SHUFFLE, 
-        delay: 100 
+        type: string                        (SEQUENCE, REVERSE, SHUFFLE, SYNC)
+        delay: number                       delay between each word and the next one in ms
       },
       letter: { 
-        type: TeximateOrder.SHUFFLE, 
-        delay: 50 
+        type: :string                       (SEQUENCE, REVERSE, SHUFFLE, SYNC)
+        delay: number                       delay after each letter and the next one in ms
       }
     };
 
@@ -144,14 +152,19 @@ You can also access any line, word or letter by by its class, for example you ca
 ```
 
 
-NOTE that this won't effect if you add the from your component style unless you activate `ViewEncapsulation.None` on it.
-
 ## TODO
 
  - On hover animation
  - On click animation
  
- What else? Support this module by giving it a star, this will help it to get updates and fixes more frequently
+ What else? If you find this module helpful, support it with a star ⭐, this will help me to push updates more frequently.
+
+## Author
+
+ **[Murhaf Sousli](http://murhafsousli.com)**
+
+ - [github/murhafsousli](https://github.com/MurhafSousli)
+ - [twitter/murhafsousli](https://twitter.com/MurhafSousli)
 
 ## Issues
 
