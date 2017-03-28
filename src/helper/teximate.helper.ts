@@ -1,3 +1,5 @@
+import {Line, Word, Letter, TeximateOrder} from './teximate.class';
+
 export module Helper {
 
   /** Shuffle Array */
@@ -52,53 +54,57 @@ export module Helper {
     });
     return linesArr;
   };
+
+
+  export const processWord = (options, arr, i, prevWordLength) => {
+
+    let index;
+    let delay;
+
+    switch (options.word.type) {
+      case TeximateOrder.SYNC:
+        index = i;
+        delay = 0;
+        break;
+      case TeximateOrder.REVERSE:
+        index = arr.length - i - 1;
+        delay = (prevWordLength * options.letter.delay) + (i * options.word.delay);
+        break;
+      default:
+        index = i;
+        delay = (prevWordLength * options.letter.delay) + (i * options.word.delay);
+    }
+    return {
+      letters: arr[index].letters,
+      delay: delay
+    };
+  };
+
+  export const processLetter = (options, arr, i) => {
+
+    let index;
+    let delay;
+
+    switch (options.letter.type) {
+      case TeximateOrder.SYNC:
+        index = i;
+        delay = 0;
+        break;
+      case TeximateOrder.REVERSE:
+        index = arr.length - i - 1;
+        delay = i * options.letter.delay;
+        break;
+      default:
+        index = i;
+        delay = i * options.letter.delay;
+    }
+
+    return {
+      item: arr[index],
+      delay: delay
+    };
+  };
 }
-
-export const WorkType = {
-  SEQUENCE: 'SEQUENCE',
-  REVERSE: 'REVERSE',
-  SYNC: 'SYNC',
-  SHUFFLE: 'SHUFFLE'
-};
-
-export interface Line {
-  visibility: string;
-  class: string;
-  words: Word[];
-}
-
-export interface Word {
-  visibility: string;
-  class: string;
-  letters: Letter[];
-  animateClass?: string;
-}
-
-export interface Letter {
-  visibility: string;
-  class: string;
-  text: string;
-  animateClass?: string;
-}
-
-export interface TeximateOptions {
-  type?: string;
-  animation?: {
-    name;
-    duration;
-  }
-  word?: {
-    type;
-    class?;
-    delay?;
-  }
-  letter?: {
-    type;
-    class?;
-    delay?;
-  }
-}
-
 
 
 /**

@@ -1,7 +1,7 @@
 <div class="demo container">
-    <h1>
+    <h2>
         <teximate #teximate [text]="text" [type]="type" [inEffect]="options"></teximate>
-    </h1>
+    </h2>
 </div>
 
 <div class="component-outer container">
@@ -23,7 +23,7 @@
        <span class="input-name">type</span> =
         <i class="input">
         <select [(ngModel)]="type">
-          <option *ngFor="let p of optionsTypes" [ngValue]="p">{{p}}</option>
+          <option *ngFor="let p of texiTypes" [ngValue]="p">{{p}}</option>
         </select>
       </i>
         </span>
@@ -56,7 +56,7 @@
             <i class="input-object" [textContent]="'{ type: '"></i>
 
             <select [ngModel]="options.word.type" (ngModelChange)="updateWordType($event)">
-              <option *ngFor="let p of workType" [ngValue]="p">{{p}}</option>
+              <option *ngFor="let p of texiOrders" [ngValue]="p">{{p}}</option>
             </select>
 
             <!-- Word Delay -->
@@ -74,7 +74,7 @@
               <!-- Letter Type -->
               <i class="input-object" [textContent]="'{ type: '"></i>
               <select [ngModel]="options.letter.type" (ngModelChange)="updateLetterType($event)">
-                <option *ngFor="let p of workType" [ngValue]="p">{{p}}</option>
+                <option *ngFor="let p of texiOrders" [ngValue]="p">{{p}}</option>
               </select>
 
               <!-- Letter Delay -->

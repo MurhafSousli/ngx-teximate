@@ -5,7 +5,7 @@ $inputColor: #ff5b5b;
 $inputBg: #1c1c1c;;
 
 :host{
-    flex: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,14 +19,9 @@ $inputBg: #1c1c1c;;
 }
 
 .test-container{
-    position: fixed;
-    left: 1em;
-    top: 1em;
-
-    button{
-        font-size: 1.2em;
-        font-weight: bold;
-    }
+  position: fixed;
+  left: 1em;
+  top: 1em;
 }
 
 .component-outer{
@@ -38,7 +33,6 @@ $inputBg: #1c1c1c;;
 }
 
 .component{
-  margin-bottom: .8em;
   display: flex;
   flex-wrap: wrap;
   background-color: $cmpBg;

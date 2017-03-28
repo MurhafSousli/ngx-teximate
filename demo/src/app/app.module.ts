@@ -6,12 +6,14 @@ import { TeximateModule } from './teximate/teximate.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
+import { RibbonComponent } from './ribbon/ribbon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MainComponent
+    MainComponent,
+    RibbonComponent
   ],
   imports: [
     BrowserModule,

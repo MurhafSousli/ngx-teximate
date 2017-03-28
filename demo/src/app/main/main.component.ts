@@ -1,26 +1,38 @@
-import { Component, ViewChild, SimpleChanges, OnChanges } from '@angular/core';
-
-import { TeximateComponent, TeximateOptions, WorkType } from '../teximate';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { TeximateComponent, TeximateOptions, TeximateOrder } from '../teximate';
 
 @Component({
   selector: 'main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrls: ['./main.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainComponent {
 
-  
-  text = 'It’s kind of fun to do the impossible. 🔥';
+  text = "A window of opportunity won't open itself.. 👾";
 
   options: TeximateOptions = {
-    animation: { name: 'fadeIn', duration: 300 },
-    word: { type: WorkType.SHUFFLE, delay: 100 },
-    letter: { type: WorkType.REVERSE, delay: 50 }
+    animation: { name: 'zoomInLeft', duration: 1000 },
+    word: { type: TeximateOrder.SHUFFLE, delay: 100 },
+    letter: { type: TeximateOrder.SHUFFLE, delay: 50 }
   };
 
   type = 'letter';
 
   @ViewChild(TeximateComponent) teximate: TeximateComponent;
+
+  ngOnInit(){
+
+    const options: TeximateOptions = {
+      animation: { name: 'bounce', duration: 1000 },
+      word: { type: TeximateOrder.SEQUENCE, delay: 100 },
+      letter: { type: TeximateOrder.SEQUENCE, delay: 50 }
+    };
+
+    setTimeout(()=>{
+      this.teximate.runEffect(options, 'letter');
+    }, 2500);
+  }
 
   updateAnimationClass(className) {
     this.options = Object.assign({}, this.options, {
@@ -33,7 +45,7 @@ export class MainComponent {
       animation: Object.assign({}, this.options.animation, { duration: duration })
     });
   }
-  
+
   updateWordType(type) {
     this.options = Object.assign({}, this.options, {
       word: Object.assign({}, this.options.word, { type: type })
@@ -61,17 +73,17 @@ export class MainComponent {
   //   'reverse',
   //   'sync'
   // ];
-   workType = [
+  texiOrders = [
     'SEQUENCE',
     'SHUFFLE',
     'REVERSE',
     'SYNC'
   ];
 
-  optionsTypes = [
+  texiTypes = [
     'letter',
     'word'
-  ]
+  ];
 
   animateCss = [
     'bounce',
