@@ -1,14 +1,6 @@
 sudo: required
 dist: trusty
 
-#install google chrome, using addons
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
-
 language: node_js
 node_js:
   - "6"
@@ -19,6 +11,4 @@ before_script:
   - npm install --quiet -g gulp-cli
   - npm install
 
-script: gulp test:ci
-
-after_success: gulp coveralls
+script: gulp build

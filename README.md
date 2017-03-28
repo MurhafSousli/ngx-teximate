@@ -1,4 +1,4 @@
-[![npm](https://img.shields.io/npm/v/ng-teximate.svg?maxAge=2592000?style=plastic)](https://www.npmjs.com/package/ng-teximate) [![Travis branch](https://travis-ci.org/MurhafSousli/ng-teximate.svg?branch=master)](https://github.com/MurhafSousli/ng-teximate) [![npm](https://img.shields.io/npm/dt/ng-teximate.svg?maxAge=2592000?style=plastic)](https://www.npmjs.com/package/ng-teximate)
+[![npm](https://img.shields.io/npm/v/ng-teximate.svg?maxAge=2592000?style=plastic)](https://www.npmjs.com/package/ng-teximate) [![Travis branch](https://travis-ci.org/MurhafSousli/ng-teximate.svg?branch=master)](https://travis-ci.org/MurhafSousli/ng-teximate) [![npm](https://img.shields.io/npm/dt/ng-teximate.svg?maxAge=2592000?style=plastic)](https://www.npmjs.com/package/ng-teximate)
      
 <p align="center">
   <img height="300px" width="300px" src="https://cdn.rawgit.com/MurhafSousli/ng-teximate/9acbe5dd/assets/logo.svg" style="max-width:100%;">
@@ -67,7 +67,7 @@ or import it using the CDN
  
 
 ```ts
-<teximate #teximate [text]="text" [type]="type" [effect]="options"></teximate>
+<teximate [text]="text" [type]="type" [effect]="options"></teximate>
 ```
 
 ```ts
@@ -83,7 +83,7 @@ export class SomeComponent {
 
   type = 'letter';
   
-  // Create another effect without
+  // Apply another effect using component reference
 
   @ViewChild(TeximateComponent) teximate: TeximateComponent;
 
@@ -102,7 +102,7 @@ export class SomeComponent {
 }  
 ```
 
-Most often you won't need to use `ViewChild` and call `runEffect` because you can run the effect automatically by changing inputs.
+You can run a new effect automatically by changing the inputs, alternatively you can use the component reference and call `runEffect(options, type)` manually.
 
 You can also access any line, word or letter by by its class, for example you can apply the following css rules in the global `style.css`
 
@@ -117,6 +117,32 @@ You can also access any line, word or letter by by its class, for example you ca
    color: blue;
 }
 ```
+
+### Teximate Options:
+
+
+  - `text: string`                          text to be displayed
+
+  - `type: string`                          either 'word' or 'letter' to apply animation on letters or words
+
+  - options:                                effect options
+      animation: { 
+        name: 'zoomInLeft',                 animation class name from (animate.css)
+        duration: 1000                      animation duration ()
+      },
+      word: { 
+        type: TeximateOrder.SHUFFLE, 
+        delay: 100 
+      },
+      letter: { 
+        type: TeximateOrder.SHUFFLE, 
+        delay: 50 
+      }
+    };
+
+  type = 'letter';
+```
+
 
 NOTE that this won't effect if you add the from your component style unless you activate `ViewEncapsulation.None` on it.
 
