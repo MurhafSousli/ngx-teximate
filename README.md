@@ -1,8 +1,4 @@
-[![npm](https://img.shields.io/npm/v/npm.svg?style=plastic)](https://www.npmjs.com/package/ng-teximate) [![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg?style=plastic)](https://github.com/MurhafSousli/ng-teximate/tree/master) [![npm](https://img.shields.io/npm/dt/express.svg?style=plastic)](https://www.npmjs.com/package/ng-teximate)
- 
- <img data-canonical-src="https://www.npmjs.com/package/ng-teximate" src="https://img.shields.io/npm/v/ng-teximate.svg?maxAge=2592000?style=plastic">
-<img data-canonical-src="https://travis-ci.org/MurhafSousli/ng-teximate" src="https://travis-ci.org/MurhafSousli/ng-teximate.svg?branch=master">
-<img data-canonical-src="https://www.npmjs.com/package/ng-teximate" src="https://img.shields.io/npm/dt/ng-teximate.svg?maxAge=2592000?style=plastic">
+[![npm](https://img.shields.io/npm/v/ng-teximate.svg?maxAge=2592000?style=plastic)](https://www.npmjs.com/package/ng-teximate) [![Travis branch](https://travis-ci.org/MurhafSousli/ng-teximate.svg?branch=master)](https://github.com/MurhafSousli/ng-teximate) [![npm](https://img.shields.io/npm/dt/ng-teximate.svg?maxAge=2592000?style=plastic)](https://www.npmjs.com/package/ng-teximate)
      
 <p align="center">
   <img height="300px" width="300px" src="https://cdn.rawgit.com/MurhafSousli/ng-teximate/9acbe5dd/assets/logo.svg" style="max-width:100%;">
