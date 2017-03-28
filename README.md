@@ -164,7 +164,7 @@ options: {                                effect options
 
 ## Issues
 
-If you identify any errors in this module, or have an idea for an improvement, please open an [issue](https://github.com/MurhafSousli/ng2-teximate/issues). I am excited to see what the community thinks of this project, and I would love your input!
+If you identify any errors in this module, or have an idea for an improvement, please open an [issue](https://github.com/MurhafSousli/ng-teximate/issues). I am excited to see what the community thinks of this project, and I would love your input!
 
 ## License
 
