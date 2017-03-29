@@ -51,14 +51,14 @@ import {TeximateModule} from "ng-teximate";
 ```
 Teximate uses [animate.css](https://daneden.github.io/animate.css/) to animate the words/letters.
 
-install it `npm install animate.css --save` and in your global style import it
+install it `npm install animate.css --save` and import it in your global style
 
 ```css
 /* You can add global styles to this file, and also import other style files */
 @import '~animate.css';
 ```
 
-or import it using the CDN 
+another way is to use it from the CDN 
 
 ```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
@@ -67,7 +67,7 @@ or import it using the CDN
 Now you can use **Teximate** component:
 
 ```ts
-<teximate [text]="text" [type]="type" [effect]="options"></teximate>
+<teximate [text]="text" [type]="type" [effect]="options" [hover]="hover"></teximate>
 ```
 
 ```ts
@@ -76,13 +76,18 @@ export class SomeComponent {
   text = 'It’s kind of fun to do the impossible. 👾';
 
   options: TeximateOptions = {
+    type: 'letter',
     animation: { name: 'zoomInLeft', duration: 1000 },
     word: { type: TeximateOrder.SHUFFLE, delay: 100 },
     letter: { type: TeximateOrder.SHUFFLE, delay: 50 }
   };
 
-  type = 'letter';
-  
+  hover: TeximateHover = {
+    type: 'letter',
+    in: 'zoomOutUp',
+    out: 'bounceInDown'
+  };
+
   // another way to apply an effect using component reference
 
   @ViewChild(TeximateComponent) teximate: TeximateComponent;
@@ -90,19 +95,22 @@ export class SomeComponent {
   ngOnInit(){
 
     const diffOptions: TeximateOptions = {
+      type: 'word',
       animation: { name: 'bounce', duration: 1000 },
       word: { type: TeximateOrder.SEQUENCE, delay: 100 },
       letter: { type: TeximateOrder.SEQUENCE, delay: 50 }
     };
 
     setTimeout(()=>{
-      this.teximate.runEffect(diffOptions, 'letter');
+      this.teximate.runEffect(diffOptions);
     }, 2500);
   }
 }  
 ```
 
-Run an effect automatically by changing the inputs. another way is to use the component reference and call `runEffect(options, type)`.
+Teximate animates the text automatically by changing the inputs. you can manually run the animation using the component reference and then call `teximate.runEffect(options)`.
+
+### Styling:
 
 Add styles to lines, words and letters of the text by using the classes `.line` `.word` `.letter`
  
@@ -122,17 +130,16 @@ for example:
 
 Note that the css rules should be in the global `style.css`. otherwise the style won't effect the text if you add them from your component style unless you use `encapsulation: ViewEncapsulation.None` on it.
 
-### Teximate Options:
+### Teximate Inputs:
 
 
   - `text: string`                        text to be displayed
 
-  - `type: string`                        either `'word'` or `'letter'`, play animation on your words/letters
-
-  - `options: TeximateOptions`            choose animation class and its duration
+  - `effect: TeximateOptions`             choose animation class and its duration
  
 ```
-options: {                                effect options
+options: {                                
+    type: string                          either `'word'` or `'letter'`
     animation: { 
         name: string                      animation class name (animate.css)
         duration: number                  animation duration in ms (setting css animation-duration)
@@ -148,12 +155,22 @@ options: {                                effect options
 };
 ```
 
-## TODO
+ - `hover: TeximateHover`                 choose hover animation classes
 
- - On hover animation
- - On click animation
+```
+options: {                                
+    type: string                          'word' or 'letter' or 'off'
+    in: string                            mouseover in animation class name
+    out: string                           mouseover out animation class name
+};
+```
+
+When mouse is over an animated element it the `in` animation starts, the `out` animtion starts after the animation duration.
+
+
+ ******
  
- What else? If you find this module helpful support it with a star ⭐, this will help me to push updates more frequently.
+What else? If you find this module helpful support it with a star ⭐, this will help me to push updates more frequently.
 
 ## Author
 
