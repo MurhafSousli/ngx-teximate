@@ -1,4 +1,4 @@
-import {Line, Word, Letter, TeximateOrder} from './teximate.class';
+import { TeximateOrder } from './teximate.class';
 
 export module Helper {
 
@@ -14,48 +14,6 @@ export module Helper {
     return array;
   };
 
-  /** Return 3d array from the text */
-  export const textFactory = (text): Line[] => {
-
-    const linesArr: Line[] = [];
-    /** get text's lines */
-    const lines = text.split('\n');
-    lines.map((line, i) => {
-
-      const wordArr: Word[] = [];
-      /** get line's words and filter empty words */
-      const words = line.split(' ');
-      words.filter(word => word !== '').map((word, j) => {
-
-        const letterArr: Letter[] = [];
-        /** get word's letters */
-        const letters = word.split(/(?!$)/u);
-        letters.map((letter, k) => {
-
-          letterArr.push({
-            text: letter,
-            class: ' letter' + (k + 1),
-            visibility: 'hidden'
-          });
-        });
-
-        wordArr.push({
-          letters: letterArr,
-          class: ' word' + (j + 1),
-          visibility: 'hidden'
-        });
-      });
-
-      linesArr.push({
-        words: wordArr,
-        class: ' line' + (i + 1),
-        visibility: 'hidden'
-      });
-    });
-    return linesArr;
-  };
-
-
   export const processWord = (options, arr, i, prevWordLength) => {
 
     let index;
@@ -68,9 +26,10 @@ export module Helper {
         break;
       case TeximateOrder.REVERSE:
         index = arr.length - i - 1;
-        delay = (prevWordLength * options.letter.delay) + (i * options.word.delay);
+        delay = (prevWordLength * options.letter.delay) + (index * options.word.delay);
         break;
       default:
+        // SEQUENCE
         index = i;
         delay = (prevWordLength * options.letter.delay) + (i * options.word.delay);
     }
@@ -95,6 +54,7 @@ export module Helper {
         delay = i * options.letter.delay;
         break;
       default:
+        // SEQUENCE
         index = i;
         delay = i * options.letter.delay;
     }
