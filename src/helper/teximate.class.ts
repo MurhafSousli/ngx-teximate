@@ -9,6 +9,7 @@ export interface Word {
   class: string;
   letters: Letter[];
   animateClass?: string;
+  hover?;
 }
 
 export interface Letter {
@@ -16,6 +17,7 @@ export interface Letter {
   class: string;
   text: string;
   animateClass?: string;
+  hover?;
 }
 
 export interface TeximateOptions {
@@ -28,12 +30,20 @@ export interface TeximateOptions {
     type;
     class?;
     delay?;
+    hover?;
   };
   letter?: {
     type;
     class?;
     delay?;
+    hover?;
   };
+}
+
+export interface TeximateHover{
+  type: string;
+  in?: string;
+  out?: string;
 }
 
 export const TeximateOrder = {

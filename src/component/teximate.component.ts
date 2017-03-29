@@ -1,7 +1,16 @@
-import { Component, OnChanges, Input, Renderer2, ElementRef, SimpleChanges, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
-import { TeximateOptions, TeximateOrder } from '../helper/teximate.class';
+import {
+  Component,
+  OnChanges,
+  Input,
+  Renderer2,
+  ElementRef,
+  SimpleChanges,
+  ChangeDetectionStrategy,
+  OnDestroy
+} from '@angular/core';
+import {TeximateOptions, TeximateOrder, TeximateHover} from '../helper/teximate.class';
 
-import { TeximateService } from '../service/teximate.service';
+import {TeximateService} from '../service/teximate.service';
 
 @Component({
   selector: 'teximate',
@@ -16,24 +25,25 @@ export class TeximateComponent implements OnChanges, OnDestroy {
 
   jobText: string = 'Teximate is working';
 
-  jobType: string = 'letter';
+  jobHover: TeximateHover = {
+    type: 'off',
+    in: undefined,
+    out: undefined
+  };
 
   /** Default effect */
   jobEffect: TeximateOptions = {
-    animation: { name: 'fadeIn', duration: 300 },
-    word: { type: TeximateOrder.SEQUENCE, delay: 100 },
-    letter: { type: TeximateOrder.SHUFFLE, delay: 50 }
+    type: 'letter',
+    animation: {name: 'fadeIn', duration: 300},
+    word: {type: TeximateOrder.SEQUENCE, delay: 100},
+    letter: {type: TeximateOrder.SHUFFLE, delay: 50}
   };
 
   @Input() text: string;
 
-  @Input() type: string;
+  @Input() hover;
 
   @Input() effect;
-
-  // @Input() hoverEffect;
-
-  // @Input() clickEffect;
 
   constructor(public teximate: TeximateService, private renderer: Renderer2, el: ElementRef) {
 
@@ -44,41 +54,42 @@ export class TeximateComponent implements OnChanges, OnDestroy {
 
   ngOnChanges(changes: SimpleChanges) {
 
-    // console.log(changes['type'])
-
-    let reloadText = changes['text'] && changes['text'].firstChange;
+    let reload: boolean = changes['text'] && changes['text'].firstChange;
 
     if (changes['text'] && changes['text'].currentValue) {
 
       this.jobText = changes['text'].currentValue;
-      reloadText = true;
+      reload = true;
     }
 
-    if (changes['type'] && changes['type'].currentValue) {
-
-      this.jobType = changes['type'].currentValue;
+    if (changes['hover'] && changes['hover'].currentValue) {
+      this.jobHover = Object.assign({}, this.jobEffect, changes['hover'].currentValue);
+      reload = true;
     }
 
     if (changes['effect']) {
 
       this.jobEffect = Object.assign({}, this.jobEffect, changes['effect'].currentValue);
       this.setAnimationDuration(changes['effect'].currentValue.animation.duration);
+      if (!changes['effect'].firstChange && changes['effect'].previousValue.type !== changes['effect'].currentValue.type) {
+        reload = true;
+      }
     }
 
-    if (reloadText) {
-      this.teximate.run(this.jobText, this.jobEffect, this.jobType);
+    if (reload) {
+      this.teximate.createEffect(this.jobText, this.jobEffect, this.jobHover);
     } else {
-      this.teximate.runEffect(this.jobEffect, this.jobType);
+      this.teximate.runEffect(this.jobEffect);
     }
   }
 
-  runEffect(options: TeximateOptions, type: string) {
+  runEffect(options: TeximateOptions) {
     /** Run effect to the existing text (should be used from component ref
      * e.g. :
      * ViewChild(TeximateComponent) tx;
      * tx.runEffect(options);
      * */
-    this.teximate.runEffect(options, type);
+    this.teximate.runEffect(options);
   }
 
   setAnimationDuration(duration) {

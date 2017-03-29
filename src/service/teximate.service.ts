@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import {Observable} from 'rxjs/Observable';
+import {Subject} from 'rxjs/Subject';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
@@ -13,8 +13,8 @@ import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/observable/from';
 import 'rxjs/add/observable/of';
 
-import { Helper } from '../helper/teximate.helper';
-import { TeximateOptions, TeximateOrder, Line, Word, Letter } from '../helper/teximate.class';
+import {Helper} from '../helper/teximate.helper';
+import {TeximateOptions, TeximateOrder, TeximateHover, Line, Word, Letter} from '../helper/teximate.class';
 
 /** This service is not meant to be used outside TeximateModule
  *  Each component instance has service instance
@@ -34,30 +34,30 @@ export class TeximateService {
     this.worker.switchMap((job: any) => {
       // console.log('worker execute:', job.type);
 
-      return (job.type === 'word') ?
-        this.wordsJob(job.textArr, job.options) :
-        this.lettersJob(job.textArr, job.options)
+      return (job.options.type === 'letter') ?
+        this.lettersJob(job.options) :
+        this.wordsJob(job.options);
 
     }).subscribe();
   }
 
   /** Create new text and run the effect on it */
-  run(text: string, options: TeximateOptions, type: string) {
+  createEffect(text: string, options: TeximateOptions, hover?: TeximateHover) {
 
-    this.arr = Helper.textFactory(text);
-    this.worker.next({ textArr: this.arr, options: options, type: type });
+    this.arr = this.textFactory(text, options, hover);
+    this.worker.next({options: options, hover: hover});
   }
 
   /** Run effect on an existing text */
-  runEffect(options: TeximateOptions, type: string) {
+  runEffect(options: TeximateOptions) {
 
-    this.worker.next({ textArr: this.arr, options: options, type: type });
+    this.worker.next({options: options});
   }
 
   /** Animation effect for letters */
-  lettersJob(textArr, options: TeximateOptions): Observable<any> {
+  lettersJob(options: TeximateOptions): Observable<any> {
 
-    return Observable.from(textArr)
+    return Observable.from(this.arr)
       .mergeMap((line: any) => {
 
         /** To calculate a word's delay */
@@ -66,7 +66,6 @@ export class TeximateService {
         /** Shuffle line's word if word type is shuffle */
         let lineWords;
         if (options.word.type === TeximateOrder.SHUFFLE) {
-          console.log(options.letter.type);
           lineWords = Helper.shuffle(line.words.slice());
         } else {
           lineWords = line.words;
@@ -92,30 +91,22 @@ export class TeximateService {
 
             return Observable.of(wordLetters).delay(word.delay)
               .mergeAll()
-              .mergeMap((letterItem, k) => {
+              .mergeMap((letterInstance, k) => {
 
-                /** Process letter (calculate index & delay according to letter's type) */
+                /** Process letter (calculate index & delay according to requested order) */
                 const letter = Helper.processLetter(options, wordLetters, k);
 
                 return Observable.of(letter.item).delay(letter.delay)
-                  .do((letterItem: Letter) => {
-
-                    /** Display the letter */
-                    letterItem.visibility = 'visible';
-                    /** Set animation class */
-                    letterItem.animateClass = ` animated ${options.animation.name}`;
-                    /** Update the array */
-                    this.text.next(textArr);
-                  });
+                  .do((letterItem: Letter) => this.updateItem(letterItem, options));
               });
           });
       });
   }
 
   /** Animation effect for words */
-  wordsJob(textArr, options: TeximateOptions): Observable<any> {
+  wordsJob(options: TeximateOptions): Observable<any> {
 
-    return Observable.from(textArr)
+    return Observable.from(this.arr)
       .mergeMap((line: any, i) => {
 
         /** Shuffle line's word if word type is shuffle */
@@ -130,25 +121,98 @@ export class TeximateService {
           .mergeAll()
           .mergeMap((wordItem: Word, j) => {
 
-            /** Process word (calculate index & delay according to word's type)
+            /** Process word (calculate index & delay according to requested order)
              *  in this case `options.letter.delay` must be 0 */
             const word = Helper.processWord(options, lineWords, j, 0);
 
             return Observable.of(word)
               .delay(word.delay)
-              .do(() => {
-
-                /** display the word */
-                wordItem.visibility = 'visible';
-                /** Set animation class */
-                wordItem.animateClass = ` animated ${options.animation.name}`;
-                /** Update the array */
-                this.text.next(textArr);
-              })
+              .do(() => this.updateItem(wordItem, options));
           });
       });
   }
 
+  updateItem(item: Letter | Word, options: TeximateOptions) {
+    /** Display the letter */
+    item.visibility = 'visible';
+
+    /** Set animation class */
+    item.animateClass = ` animated ${options.animation.name}`;
+
+    /** Update the array */
+    this.text.next(this.arr);
+  }
+
+  /** Set word/letter hover animation */
+  setItemHover(item: Letter | Word, options: TeximateOptions, hover: TeximateHover) {
+
+    return () => {
+      /** hover in effect */
+      if (hover.in) {
+        item.animateClass = ` animated ${hover.in}`;
+      }
+      /** hover out effect */
+      if (hover.out) {
+        setTimeout(() => {
+          item.animateClass = ` animated ${hover.out}`;
+          this.text.next(this.arr);
+        }, options.animation.duration);
+      }
+    };
+
+  }
+
+  /** Return 3d array from the text */
+  textFactory(text: string, options: TeximateOptions, hover: TeximateHover) {
+
+    const linesArr: Line[] = [];
+    /** get text's lines */
+    const lines = text.split('\n');
+    lines.map((line, i) => {
+
+      const wordArr: Word[] = [];
+      /** get line's words and filter empty words */
+      const words = line.split(' ');
+      words.filter(word => word !== '').map((word, j) => {
+
+        const letterArr: Letter[] = [];
+        /** get word's letters */
+        const letters = word.split(/(?!$)/u);
+        letters.map((letter, k) => {
+
+          const letterItem: Letter = {
+            text: letter,
+            class: ' letter' + (k + 1),
+            animateClass: '',
+            visibility: (options.type === 'word') ? 'visible' : 'hidden',
+            hover: () => {
+            }
+          };
+          if (hover.type === 'letter') {
+            letterItem.hover = this.setItemHover(letterItem, options, hover);
+          }
+          letterArr.push(letterItem);
+        });
+
+        const wordItem: Word = {
+          letters: letterArr,
+          class: ' word' + (j + 1),
+          visibility: 'hidden',
+          hover: () => {
+          }
+        };
+        if (hover.type === 'word') {
+          wordItem.hover = this.setItemHover(wordItem, options, hover);
+        }
+        wordArr.push(wordItem);
+      });
+
+      linesArr.push({
+        words: wordArr,
+        class: ' line' + (i + 1),
+        visibility: 'hidden'
+      });
+    });
+    return linesArr;
+  }
 }
-
-
