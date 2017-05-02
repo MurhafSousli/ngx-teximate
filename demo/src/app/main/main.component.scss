@@ -86,6 +86,10 @@ $inputBg: #1c1c1c;;
       font-family: monospace;
       outline: 0;
       background-color: $inputBg;
+
+      &:disabled{
+        color: gray;
+      }
     }
     input{
       width: 50px;
@@ -109,4 +113,8 @@ p{
     display: inline-block;
     width: 30px;
     height: 10px;
+}
+
+.disabled{
+  text-decoration: line-through;
 }

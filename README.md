@@ -14,8 +14,8 @@ A simple module for CSS3 text animations | [live demo](https://murhafsousli.gith
 
 ### Teximate does 2 things:
 
- - Creates (lines, words and letters) elements from a text
- - Animates them using animate.css
+ - Creates lines, words and letters elements from a text
+ - Animates words or letters using animate.css
 
 ## Installation
 
@@ -51,7 +51,7 @@ import {TeximateModule} from "ng-teximate";
 ```
 Teximate uses [animate.css](https://daneden.github.io/animate.css/) to animate the words/letters.
 
-install it `npm install animate.css --save` and import it in your global style
+Install it `npm install animate.css --save` and import it in your global style
 
 ```css
 /* You can add global styles to this file, and also import other style files */
@@ -117,6 +117,7 @@ Add styles to lines, words and letters of the text by using the classes `.line` 
 for example:
 
 ```css
+/** Add the custom css in the global style, not in the component stylesheet */
 .letter{
   text-shadow: 1px 1px 1px rgba(#000, .5);
 }

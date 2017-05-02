@@ -1,0 +1,16 @@
+<span aria-label="text">
+
+  <p *ngFor="let line of teximate.text | async" [class]="'line' + line.class" [style.visibility]="line.visibility">
+
+    <span *ngFor="let word of line.words" [class]="'word' + word.class + word.animateClass"
+     [style.visibility]="word.visibility" (mouseover)="word.hover()">
+
+      <span *ngFor="let letter of word.letters" [class]="'letter' + letter.class + letter.animateClass"
+       [style.visibility]="letter.visibility" (mouseover)="letter.hover()">
+        {{letter.text}}
+      </span>
+
+    </span>
+  </p>
+
+</span>

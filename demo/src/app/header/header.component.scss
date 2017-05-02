@@ -1,14 +1,21 @@
 .header{
     width: 100%;
-    margin-top: 20px;
+    margin-top: 1em;
     display: flex;
 }
 
 .logo{
-    width: 200px;
+    width: 150px;
 }
 .header-text{
     margin-left: 20px;
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    p {
+        margin-top: 0;
+    }
 }
 
 h1{
@@ -34,7 +41,7 @@ h1{
         50%{background-position:100% 11%}
         100%{background-position:0% 90%}
     }
-    @keyframes ColorTransition { 
+    @keyframes ColorTransition {
         0%{background-position:0% 90%}
         50%{background-position:100% 11%}
         100%{background-position:0% 90%}
