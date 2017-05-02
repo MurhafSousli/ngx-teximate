@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import {Observable} from 'rxjs/Observable';
-import {Subject} from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
@@ -9,12 +9,14 @@ import 'rxjs/add/operator/mergeAll';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/takeWhile';
+import 'rxjs/add/operator/catch';
 
 import 'rxjs/add/observable/from';
 import 'rxjs/add/observable/of';
 
-import {Helper} from '../helper/teximate.helper';
-import {TeximateOptions, TeximateOrder, TeximateHover, Line, Word, Letter} from '../helper/teximate.class';
+import { Helper } from '../helper/teximate.helper';
+import { TeximateOptions, TeximateOrder, TeximateHover, Line, Word, Letter } from '../helper/teximate.class';
 
 /** This service is not meant to be used outside TeximateModule
  *  Each component instance has service instance
@@ -27,31 +29,37 @@ export class TeximateService {
   /** a worker to teximate the array */
   worker = new Subject();
   /** the teximated text to be displayed on the view */
-  text = new Subject();
+  text = new Subject(); 
 
   constructor() {
 
-    this.worker.switchMap((job: any) => {
-      // console.log('worker execute:', job.type);
+    this.worker
+      .takeWhile(() => !this.text.closed)
+      .switchMap((job: any) => {
+        // console.log('worker execute:', job.type);
 
-      return (job.options.type === 'letter') ?
-        this.lettersJob(job.options) :
-        this.wordsJob(job.options);
-
-    }).subscribe();
+        return (job.options.type === 'letter') ?
+          this.lettersJob(job.options) :
+          this.wordsJob(job.options);
+      })
+      .catch(res => {
+        console.log('[Teximate]:', res);
+        return Observable.of(null)
+      })
+      .subscribe();
   }
 
   /** Create new text and run the effect on it */
   createEffect(text: string, options: TeximateOptions, hover?: TeximateHover) {
 
     this.arr = this.textFactory(text, options, hover);
-    this.worker.next({options: options, hover: hover});
+    this.worker.next({ options: options, hover: hover });
   }
 
   /** Run effect on an existing text */
   runEffect(options: TeximateOptions) {
 
-    this.worker.next({options: options});
+    this.worker.next({ options: options });
   }
 
   /** Animation effect for letters */
@@ -97,7 +105,7 @@ export class TeximateService {
                 const letter = Helper.processLetter(options, wordLetters, k);
 
                 return Observable.of(letter.item).delay(letter.delay)
-                  .do((letterItem: Letter) => this.updateItem(letterItem, options));
+                  .do((letterItem: Letter) => this.updateItem(letterItem, options))
               });
           });
       });
@@ -148,16 +156,12 @@ export class TeximateService {
 
     return () => {
       /** hover in effect */
-      if (hover.in) {
-        item.animateClass = ` animated ${hover.in}`;
-      }
+      item.animateClass = ` animated ${(hover.in) ? hover.in : ''}`;
       /** hover out effect */
-      if (hover.out) {
-        setTimeout(() => {
-          item.animateClass = ` animated ${hover.out}`;
-          this.text.next(this.arr);
-        }, options.animation.duration);
-      }
+      setTimeout(() => {
+        item.animateClass = ` animated ${(hover.out) ? hover.out : ''}`;
+        this.text.next(this.arr);
+      }, options.animation.duration);
     };
 
   }
