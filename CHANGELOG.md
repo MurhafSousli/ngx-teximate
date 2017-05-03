@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.2
+
+ - fix(word class) closes [#11](https://github.com/MurhafSousli/ng-teximate/issues/11)
+
 ## 0.6.1
 
  - fix(hover effect) abilitiy to set use `hover.in` or `hover.out` alone

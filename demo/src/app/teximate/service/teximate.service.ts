@@ -29,7 +29,7 @@ export class TeximateService {
   /** a worker to teximate the array */
   worker = new Subject();
   /** the teximated text to be displayed on the view */
-  text = new Subject(); 
+  text = new Subject();
 
   constructor() {
 
@@ -187,7 +187,7 @@ export class TeximateService {
           const letterItem: Letter = {
             text: letter,
             class: ' letter' + (k + 1),
-            animateClass: '',
+            animateClass: ' animated ',
             visibility: (options.type === 'word') ? 'visible' : 'hidden',
             hover: () => {
             }
@@ -201,6 +201,7 @@ export class TeximateService {
         const wordItem: Word = {
           letters: letterArr,
           class: ' word' + (j + 1),
+          animateClass: ' animated ',
           visibility: 'hidden',
           hover: () => {
           }
