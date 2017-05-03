@@ -16,6 +16,7 @@ $inputBg: #1c1c1c;;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 1em;
 }
 
 .test-container{
@@ -117,4 +118,8 @@ p{
 
 .disabled{
   text-decoration: line-through;
+}
+
+i {
+  font-style: normal;
 }

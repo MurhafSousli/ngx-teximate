@@ -21,8 +21,8 @@ export class MainComponent implements OnInit {
 
   hover: TeximateHover = {
     type: 'letter',
-    in: 'zoomOutUp',
-    out: 'bounceInDown'
+    in: 'zoomIn',
+    out: 'rubberBand'
   };
 
   texiTypes;
