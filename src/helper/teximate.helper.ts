@@ -14,7 +14,13 @@ export module Helper {
     return array;
   };
 
-  export const processWord = (options, arr, i, prevWordLength) => {
+  /**
+   * Process a word, returns words letters' array and the delay used to display 
+   * such as { ['a', 'b', 'c'], 3500 }
+   */
+  export const processWord = (options, arr, i, relativeIndex) => {
+
+    // relativeIndex: is the word index relative to the letters sequence
 
     let index;
     let delay;
@@ -26,12 +32,12 @@ export module Helper {
         break;
       case TeximateOrder.REVERSE:
         index = arr.length - i - 1;
-        delay = (prevWordLength * options.letter.delay) + (index * options.word.delay);
+        delay = (relativeIndex * options.letter.delay) + (index * options.word.delay);
         break;
       default:
         // SEQUENCE
         index = i;
-        delay = (prevWordLength * options.letter.delay) + (i * options.word.delay);
+        delay = (relativeIndex * options.letter.delay) + (i * options.word.delay);
     }
     return {
       letters: arr[index].letters,
@@ -39,6 +45,10 @@ export module Helper {
     };
   };
 
+  /** 
+   * Process a letter, returns the letter content and the delay used to display
+   * such as { 'a', 1500 }
+   */
   export const processLetter = (options, arr, i) => {
 
     let index;

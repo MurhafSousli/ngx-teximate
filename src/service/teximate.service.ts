@@ -24,11 +24,11 @@ import { TeximateOptions, TeximateOrder, TeximateHover, Line, Word, Letter } fro
 @Injectable()
 export class TeximateService {
 
-  /** The text array coming from text factory */
+  /** The processed text */
   arr: Line[] = [];
-  /** a worker to teximate the array */
+  /** A worker to do the job async */
   worker = new Subject();
-  /** the teximated text to be displayed on the view */
+  /** A state used to update the template */
   text = new Subject();
 
   constructor() {
@@ -49,10 +49,13 @@ export class TeximateService {
       .subscribe();
   }
 
-  /** Create new text and run the effect on it */
+  /** Run effect on a new text */
   createEffect(text: string, options: TeximateOptions, hover?: TeximateHover) {
 
+    // Get a processed text to work with
     this.arr = this.textFactory(text, options, hover);
+
+    // Send the job to the worker
     this.worker.next({ options: options, hover: hover });
   }
 
@@ -62,34 +65,29 @@ export class TeximateService {
     this.worker.next({ options: options });
   }
 
-  /** Animation effect for letters */
+  /** The magic that runs the effect on letters */
   lettersJob(options: TeximateOptions): Observable<any> {
 
     return Observable.from(this.arr)
       .mergeMap((line: any) => {
 
-        /** To calculate a word's delay */
-        let prevWordLength = 0;
+        // A temp variable used to calculate word's index relative to letters sequence
+        let relativeIndex = 0;
 
-        /** Shuffle line's word if word type is shuffle */
-        let lineWords;
-        if (options.word.type === TeximateOrder.SHUFFLE) {
-          lineWords = Helper.shuffle(line.words.slice());
-        } else {
-          lineWords = line.words;
-        }
+        // Shuffle words if shuffle is ordered
+        let lineWords = (options.word.type === TeximateOrder.SHUFFLE) ? Helper.shuffle(line.words.slice(0)) : line.words;
 
         return Observable.of(lineWords)
           .mergeAll()
           .mergeMap((wordItem: Word, j) => {
 
-            /** Process word (calculate index & delay according to word's type) */
-            const word = Helper.processWord(options, lineWords, j, prevWordLength);
+            // Process word (calculate index & delay according to word's type)
+            const word = Helper.processWord(options, lineWords, j, relativeIndex);
 
-            /** To calculate next word's delay */
-            prevWordLength = prevWordLength + word.letters.length;
+            // Set the index for the next word relative to letter sequence
+            relativeIndex += word.letters.length;
 
-            /** Shuffle word's letter if letter type is shuffle */
+            // Shuffle letters if letter type is shuffle
             let wordLetters;
             if (options.letter.type === TeximateOrder.SHUFFLE) {
               wordLetters = Helper.shuffle(word.letters.slice());
@@ -111,26 +109,21 @@ export class TeximateService {
       });
   }
 
-  /** Animation effect for words */
+  /** The magic that runs the effect on words */
   wordsJob(options: TeximateOptions): Observable<any> {
 
     return Observable.from(this.arr)
       .mergeMap((line: any, i) => {
 
-        /** Shuffle line's word if word type is shuffle */
-        let lineWords;
-        if (options.word.type === TeximateOrder.SHUFFLE) {
-          lineWords = Helper.shuffle(line.words.slice());
-        } else {
-          lineWords = line.words;
-        }
+        // Shuffle words if shuffle is ordered
+        let lineWords = (options.word.type === TeximateOrder.SHUFFLE) ? Helper.shuffle(line.words.slice(0)) : line.words;
 
         return Observable.of(lineWords)
           .mergeAll()
           .mergeMap((wordItem: Word, j) => {
 
-            /** Process word (calculate index & delay according to requested order)
-             *  in this case `options.letter.delay` must be 0 */
+            // Process word (calculate index & delay according to word's type)
+            // in this case `options.letter.delay` must be 0
             const word = Helper.processWord(options, lineWords, j, 0);
 
             return Observable.of(word)
@@ -166,7 +159,7 @@ export class TeximateService {
 
   }
 
-  /** Return 3d array from the text */
+  /** Process and convert text string into a workable text */
   textFactory(text: string, options: TeximateOptions, hover: TeximateHover) {
 
     const linesArr: Line[] = [];
