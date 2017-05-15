@@ -1,6 +1,6 @@
 {
   "name": "ng-teximate",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "A simple module for CSS3 text animations.",
   "repository": {
     "type": "git",

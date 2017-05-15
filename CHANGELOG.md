@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.3
+
+ - refactor(TeximateService)
+ - refactor(Helper)
+ - add and improve code documentation
+
 ## 0.6.2
 
  - fix(word class) closes [#11](https://github.com/MurhafSousli/ng-teximate/issues/11)
