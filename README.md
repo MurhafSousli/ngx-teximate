@@ -24,7 +24,7 @@ ___
 
 Install it with npm
 
-`npm install ng-teximate --save`
+`npm install --save ng-teximate`
 
 ### SystemJS
 
@@ -61,7 +61,7 @@ Install it `npm install animate.css --save` and import it in your global style
 @import '~animate.css';
 ```
 
-another way is to import in `index.html` using the CDN 
+Another way is to import it in `index.html` using the CDN 
 
 ```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
