@@ -1,15 +1,18 @@
-[![npm](https://img.shields.io/npm/v/ng-teximate.svg?maxAge=2592000?style=plastic)](https://www.npmjs.com/package/ng-teximate) [![Travis branch](https://travis-ci.org/MurhafSousli/ng-teximate.svg?branch=master)](https://travis-ci.org/MurhafSousli/ng-teximate) [![npm](https://img.shields.io/npm/dt/ng-teximate.svg?maxAge=2592000?style=plastic)](https://www.npmjs.com/package/ng-teximate)
-     
 <p align="center">
-  <img height="300px" width="300px" src="https://cdn.rawgit.com/MurhafSousli/ng-teximate/9acbe5dd/assets/logo.svg" style="max-width:100%;">
-  </p>
+  <img height="150px" width="150px" style="text-align: center;" src="https://cdn.rawgit.com/MurhafSousli/ng-teximate/9acbe5dd/assets/logo.svg">
+  <h1 align="center">Angular Teximate</h1>
+  <p align="center">A simple module for CSS3 text animations.</p>
+</p>
 
-<h1 align="center">Angular Teximate</h1>
+[![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://murhafsousli.github.io/ng-teximate)
+[![npm](https://img.shields.io/npm/v/ng-teximate.svg?maxAge=2592000?style=plastic)](https://www.npmjs.com/package/ng-teximate) 
+[![Travis branch](https://travis-ci.org/MurhafSousli/ng-teximate.svg?branch=master)](https://travis-ci.org/MurhafSousli/ng-teximate) 
+[![npm](https://img.shields.io/npm/dt/ng-teximate.svg?maxAge=2592000?style=plastic)](https://www.npmjs.com/package/ng-teximate)
+[![npm](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](/LICENSE)
 
-<p align="center"><img src="https://cdn.rawgit.com/MurhafSousli/ng-teximate/9acbe5dd/assets/preview.gif" style="max-width:100%;"></a>
-  </p>
+___
 
-A simple module for CSS3 text animations | [live demo](https://murhafsousli.github.io/ng-teximate/)
+<p align="center"><img src="https://cdn.rawgit.com/MurhafSousli/ng-teximate/9acbe5dd/assets/preview.gif" style="max-width:100%;"></a></p>
 
 
 ### Teximate does 2 things:
@@ -21,7 +24,7 @@ A simple module for CSS3 text animations | [live demo](https://murhafsousli.gith
 
 Install it with npm
 
-`npm install ng-teximate --save`
+`npm install --save ng-teximate`
 
 ### SystemJS
 
@@ -58,57 +61,62 @@ Install it `npm install animate.css --save` and import it in your global style
 @import '~animate.css';
 ```
 
-another way is to use it from the CDN 
+Another way is to import it in `index.html` using the CDN 
 
 ```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
 ```
 
 Now you can use **Teximate** component:
 
 ```ts
-<teximate [text]="text" [type]="type" [effect]="options" [hover]="hover"></teximate>
+<teximate [text]="text" [effect]="effectOptions" [hover]="hoverOptions"></teximate>
 ```
 
 ```ts
 export class SomeComponent {
 
-  text = 'It’s kind of fun to do the impossible. 👾';
+  text = 'Teximate is working...';
 
-  options: TeximateOptions = {
+  effectOptions: TeximateOptions = {
     type: 'letter',
     animation: { name: 'zoomInLeft', duration: 1000 },
     word: { type: TeximateOrder.SHUFFLE, delay: 100 },
     letter: { type: TeximateOrder.SHUFFLE, delay: 50 }
   };
 
-  hover: TeximateHover = {
+  hoverOptions: TeximateHover = {
     type: 'letter',
     in: 'zoomOutUp',
     out: 'bounceInDown'
   };
-
-  // another way to apply an effect using component reference
-
-  @ViewChild(TeximateComponent) teximate: TeximateComponent;
-
-  ngOnInit(){
-
-    const diffOptions: TeximateOptions = {
-      type: 'word',
-      animation: { name: 'bounce', duration: 1000 },
-      word: { type: TeximateOrder.SEQUENCE, delay: 100 },
-      letter: { type: TeximateOrder.SEQUENCE, delay: 50 }
-    };
-
-    setTimeout(()=>{
-      this.teximate.runEffect(diffOptions);
-    }, 2500);
-  }
 }  
 ```
 
-Teximate animates the text automatically by changing the inputs. you can manually run the animation using the component reference and then call `teximate.runEffect(options)`.
+Teximate animates the text automatically by changing the inputs. 
+
+Moreover, You can manually run an animation using the component reference and then call `teximate.runEffect(options)`.
+
+**Example:**
+
+```ts
+@ViewChild(TeximateComponent) teximate: TeximateComponent;
+
+ngOnInit(){
+
+  const diffOptions: TeximateOptions = {
+    type: 'letter',
+    animation: { name: 'jello', duration: 1000 },
+    word: { type: TeximateOrder.SEQUENCE, delay: 100 },
+    letter: { type: TeximateOrder.SEQUENCE, delay: 50 }
+  };
+
+  // run a different animation after 2 seconds
+  setTimeout(()=>{
+    this.teximate.runEffect(diffOptions, 'letter');
+  }, 2000);
+}
+```
 
 ### Styling:
 
@@ -183,7 +191,3 @@ What else? If you find this module helpful support it with a star ⭐, this will
 ## Issues
 
 If you identify any errors in this module, or have an idea for an improvement, please open an [issue](https://github.com/MurhafSousli/ng-teximate/issues). I am excited to see what the community thinks of this project, and I would love your input!
-
-## License
-
-[![npm](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](/LICENSE)
