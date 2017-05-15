@@ -1,16 +1,6 @@
-import {
-  Component,
-  OnChanges,
-  Input,
-  Renderer2,
-  ElementRef,
-  SimpleChanges,
-  ChangeDetectionStrategy,
-  OnDestroy
-} from '@angular/core';
-import {TeximateOptions, TeximateOrder, TeximateHover} from '../helper/teximate.class';
-
-import {TeximateService} from '../service/teximate.service';
+import { Component, OnChanges, Input, Renderer2, ElementRef, SimpleChanges, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
+import { TeximateOptions, TeximateOrder, TeximateHover } from '../helper/teximate.class';
+import { TeximateService } from '../service/teximate.service';
 
 @Component({
   selector: 'teximate',
@@ -34,9 +24,9 @@ export class TeximateComponent implements OnChanges, OnDestroy {
   /** Default effect */
   jobEffect: TeximateOptions = {
     type: 'letter',
-    animation: {name: 'fadeIn', duration: 300},
-    word: {type: TeximateOrder.SEQUENCE, delay: 100},
-    letter: {type: TeximateOrder.SHUFFLE, delay: 50}
+    animation: { name: 'fadeIn', duration: 300 },
+    word: { type: TeximateOrder.SEQUENCE, delay: 100 },
+    letter: { type: TeximateOrder.SHUFFLE, delay: 50 }
   };
 
   @Input() text: string;
@@ -83,12 +73,14 @@ export class TeximateComponent implements OnChanges, OnDestroy {
     }
   }
 
+  /** 
+    * Run effect to the existing text
+    * (using component ref) e.g. :
+    * ViewChild(TeximateComponent) tx;
+    * tx.runEffect(options);
+    */
   runEffect(options: TeximateOptions) {
-    /** Run effect to the existing text (should be used from component ref
-     * e.g. :
-     * ViewChild(TeximateComponent) tx;
-     * tx.runEffect(options);
-     * */
+
     this.teximate.runEffect(options);
   }
 
