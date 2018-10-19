@@ -1,0 +1,29 @@
+{
+  "name": "ngx-teximate",
+  "description": "Angular text animations component",
+  "version": "1.0.0-beta",
+  "repository": {
+  "type": "git",
+  "url": "git+ssh://git@github.com:MurhafSousli/ngx-teximate.git"
+},
+  "homepage": "https://github.com/MurhafSousli/ngx-teximate#readme",
+  "bugs": {
+    "url": "https://github.com/MurhafSousli/ngx-teximate/issues"
+  },
+  "keywords": [
+    "angular",
+    "teximate",
+    "animate",
+    "animation",
+    "text",
+    "letters",
+    "words"
+  ],
+  "author": "Murhaf Sousli <murhafsousi@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/core": "^6.0.0",
+    "@angular/common": "^6.0.0",
+    "@angular/animations": "^6.0.0"
+  }
+}

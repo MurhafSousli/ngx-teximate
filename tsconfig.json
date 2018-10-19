@@ -1,36 +1,29 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "lib": [
-      "es6",
-      "dom"
-    ],
-    "moduleResolution": "node",
-    "declaration": true,
-    "emitDecoratorMetadata": true,
-    "noImplicitAny": false,
-    "experimentalDecorators": true,
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
     "sourceMap": true,
-    "noEmitOnError": false,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
     "typeRoots": [
       "node_modules/@types"
-    ]
-  },
-  "files": [
-    "./src/index.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "demo",
-    "coverage",
-    "config",
-    "src/**/*.spec.ts"
-  ],
-  "awesomeTypescriptLoaderOptions": {
-    "useWebpackText": true
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "teximate": [
+        "dist/teximate"
+      ],
+      "teximate/*": [
+        "dist/teximate/*"
+      ]
+    }
   }
 }

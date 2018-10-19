@@ -1,0 +1,21 @@
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.mat-chip {
+  transition: background-color ease-out 1s;
+}
+
+.changed {
+  background-color: rgb(151, 255, 218) !important;
+  transition: unset !important;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.events {
+  margin-bottom: 2em;
+}
