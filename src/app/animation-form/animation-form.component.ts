@@ -197,7 +197,7 @@ const leaveAnimations = [
   {
     name: 'flipOutY',
     value: flipOutY
-  }
+  },
   {
     name: 'rotateIn',
     value: rotateIn

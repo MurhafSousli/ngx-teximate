@@ -1,23 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {TextFieldModule} from '@angular/cdk/text-field';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSliderModule } from '@angular/material/slider';
+import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatInputModule } from '@angular/material/input';
+import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatSelectModule } from '@angular/material/select';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
-import { AppComponent } from './app.component';
 import { TeximateModule } from './teximate';
+
+import { AppComponent } from './app.component';
 import { AnimationFormComponent } from './animation-form/animation-form.component';
-import { HttpClientModule } from '@angular/common/http';
 import { GithubRepoComponent } from './github-repo/github-repo.component';
 
 @NgModule({
@@ -35,7 +35,6 @@ import { GithubRepoComponent } from './github-repo/github-repo.component';
     MatButtonToggleModule,
     TextFieldModule,
     MatIconModule,
-    MatCardModule,
     MatSelectModule,
     MatToolbarModule,
     MatSliderModule,
@@ -44,7 +43,6 @@ import { GithubRepoComponent } from './github-repo/github-repo.component';
     MatChipsModule,
     TeximateModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

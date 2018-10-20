@@ -12,7 +12,7 @@ import { Teximate, TextAnimation } from './teximate';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  toggleTeximate = true;
+  // toggleTeximate = true;
   text = 'Everyday I am 1% better than yesterday';
   enterAnimation: TextAnimation = {
     animation: fadeInDown,
@@ -40,7 +40,6 @@ export class AppComponent {
     const safeURL = this.sanitizer.bypassSecurityTrustResourceUrl('assets/logo.svg');
     this.iconRegistry.addSvgIcon('logo', safeURL);
   }
-
 
   onAnimationStart(e: string) {
     this.startClass.next(true);

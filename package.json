@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "build-demo": "ng build --prod --base-href https://murhafsousli.github.io/ngx-teximate/",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
