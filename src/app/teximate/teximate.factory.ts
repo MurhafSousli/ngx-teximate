@@ -1,6 +1,6 @@
 import { Word, Letter, Paragraph } from './teximate.model';
 
-/** Process and convert text string into a workable text */
+/** Convert text string into a workable text */
 export function teximateFactory(text: string) {
   const paragraphArr: Paragraph[] = [];
 

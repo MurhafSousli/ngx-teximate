@@ -20,7 +20,25 @@ import {
   bounceOutUp,
   bounceOutDown,
   bounceOutLeft,
-  bounceOutRight
+  bounceOutRight,
+  lightSpeedIn,
+  lightSpeedOut,
+  flipIn,
+  flipInX,
+  flipInY,
+  flipOutX,
+  flipOutY,
+  flipOut,
+  rotateIn,
+  rotateInDirection,
+  rotateInDownLeft,
+  rotateInDownRight,
+  rotateInUpLeft,
+  rotateInUpRight,
+  rotateOutUpLeft,
+  rotateOutUpRight,
+  rotateOutDownLeft,
+  rotateOutDownRight
 } from 'ng-animate';
 import { TextAnimation } from '../teximate';
 
@@ -92,6 +110,38 @@ const enterAnimations = [
   {
     name: 'fadeInRight',
     value: fadeInRight
+  },
+  {
+    name: 'lightSpeedIn',
+    value: lightSpeedIn
+  },
+  {
+    name: 'flipInX',
+    value: flipInX
+  },
+  {
+    name: 'flipInY',
+    value: flipInY
+  },
+  {
+    name: 'rotateIn',
+    value: rotateIn
+  },
+  {
+    name: 'rotateInUpLeft',
+    value: rotateInUpLeft
+  },
+  {
+    name: 'rotateInUpRight',
+    value: rotateInUpRight
+  },
+  {
+    name: 'rotateInDownLeft',
+    value: rotateInDownLeft
+  },
+  {
+    name: 'rotateInDownRight',
+    value: rotateInDownRight
   }
 ];
 
@@ -135,5 +185,37 @@ const leaveAnimations = [
   {
     name: 'fadeOutRight',
     value: fadeOutRight
+  },
+  {
+    name: 'lightSpeedOut',
+    value: lightSpeedOut
+  },
+  {
+    name: 'flipOutX',
+    value: flipOutX
+  },
+  {
+    name: 'flipOutY',
+    value: flipOutY
+  }
+  {
+    name: 'rotateIn',
+    value: rotateIn
+  },
+  {
+    name: 'rotateOutUpLeft',
+    value: rotateOutUpLeft
+  },
+  {
+    name: 'rotateOutUpRight',
+    value: rotateOutUpRight
+  },
+  {
+    name: 'rotateOutDownLeft',
+    value: rotateOutDownLeft
+  },
+  {
+    name: 'rotateOutDownRight',
+    value: rotateOutDownRight
   }
 ];

@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4fef3cd-e3cf-4463-8d3f-7c9777d759e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/teximate/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects/teximate/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/animation-form/animation-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/animation-form/animation-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/animation-form/animation-form.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/animation-form/animation-form.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/teximate/src/lib/teximate.factory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/teximate/src/lib/teximate.factory.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/teximate/src/lib/teximate.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/teximate/src/lib/teximate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/teximate/src/lib/teximate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/projects/teximate/src/lib/teximate.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/animation-form/animation-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/animation-form/animation-form.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/teximate/teximate.factory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/teximate/teximate.factory.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/teximate/teximate.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/teximate/teximate.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/teximate/teximate.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/teximate/teximate.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/teximate/teximate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/teximate/teximate.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -102,43 +100,48 @@
         <counts>
           <entry key="LICENSE" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="html" value="6" />
-          <entry key="json" value="3" />
-          <entry key="md" value="1" />
-          <entry key="scss" value="4" />
+          <entry key="html" value="10" />
+          <entry key="json" value="6" />
+          <entry key="md" value="2" />
+          <entry key="scss" value="8" />
           <entry key="svg" value="1" />
-          <entry key="ts" value="12" />
+          <entry key="ts" value="24" />
+          <entry key="yaml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="6" />
-          <entry key="JSON" value="3" />
-          <entry key="Markdown" value="1" />
+          <entry key="HTML" value="10" />
+          <entry key="JSON" value="6" />
+          <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="SCSS" value="4" />
+          <entry key="SCSS" value="8" />
           <entry key="SVG" value="1" />
-          <entry key="TypeScript" value="12" />
+          <entry key="TypeScript" value="24" />
+          <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="LICENSE" value="1" />
-          <entry key="html" value="422" />
-          <entry key="json" value="3" />
-          <entry key="md" value="5" />
-          <entry key="scss" value="442" />
-          <entry key="ts" value="1772" />
+          <entry key="html" value="478" />
+          <entry key="json" value="9" />
+          <entry key="md" value="11" />
+          <entry key="scss" value="501" />
+          <entry key="ts" value="2085" />
+          <entry key="txt" value="11" />
+          <entry key="yml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="422" />
-          <entry key="JSON" value="3" />
-          <entry key="Markdown" value="5" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="SCSS" value="442" />
-          <entry key="TypeScript" value="1772" />
+          <entry key="HTML" value="478" />
+          <entry key="JSON" value="9" />
+          <entry key="Markdown" value="11" />
+          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="SCSS" value="501" />
+          <entry key="TypeScript" value="2085" />
+          <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -148,40 +151,87 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-793">
-              <caret line="113" column="50" selection-start-line="113" selection-start-column="50" selection-end-line="113" selection-end-column="50" />
+            <state relative-caret-position="311">
+              <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="92">
+                <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/teximate/ng-package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/teximate/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dist/teximate/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-527" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.factory.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/teximate/index.ts">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.model.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
               <folding>
-                <element signature="e#0#186#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="37" column="67" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="46" lean-forward="true" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.scss">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -206,19 +256,24 @@
         <option value="$PROJECT_DIR$/projects/teximate/src/lib/index.ts" />
         <option value="$PROJECT_DIR$/projects/teximate/src/public_api.ts" />
         <option value="$PROJECT_DIR$/src/app/app.component.scss" />
-        <option value="$PROJECT_DIR$/src/app/animation-form/animation-form.component.ts" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/teximate/teximate.scss" />
         <option value="$PROJECT_DIR$/src/app/animation-form/animation-form.component.scss" />
         <option value="$PROJECT_DIR$/src/app/animation-form/animation-form.component.html" />
-        <option value="$PROJECT_DIR$/projects/teximate/package.json" />
         <option value="$PROJECT_DIR$/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/src/app/teximate/teximate.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/teximate/teximate.html" />
-        <option value="$PROJECT_DIR$/src/app/app.component.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/LICENSE" />
+        <option value="$PROJECT_DIR$/src/app/teximate/teximate.scss" />
+        <option value="$PROJECT_DIR$/src/app/teximate/teximate.html" />
+        <option value="$PROJECT_DIR$/src/app/animation-form/animation-form.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/github-repo/github-repo.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/github-repo/github-repo.component.html" />
+        <option value="$PROJECT_DIR$/src/app/github-repo/github-repo.component.scss" />
+        <option value="$PROJECT_DIR$/src/app/app.component.html" />
+        <option value="$PROJECT_DIR$/src/app/teximate/teximate.factory.ts" />
         <option value="$PROJECT_DIR$/src/app/teximate/teximate.ts" />
+        <option value="$PROJECT_DIR$/projects/teximate/package.json" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -258,6 +313,17 @@
             <path>
               <item name="ngx-teximate" type="b2602c69:ProjectViewProjectNode" />
               <item name="ngx-teximate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ngx-teximate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ngx-teximate" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ngx-teximate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ngx-teximate" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="teximate" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -338,24 +404,23 @@
       <workItem from="1539927144370" duration="13682000" />
       <workItem from="1539944371805" duration="728000" />
       <workItem from="1539952376805" duration="1215000" />
-      <workItem from="1539978423102" duration="26195000" />
+      <workItem from="1539978423102" duration="29207000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41820000" />
+    <option name="totallyTimeSpent" value="44832000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.74496645" visible="true" weight="0.18177028" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7447447" visible="true" weight="0.18177028" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" sideWeight="0.25503355" side_tool="true" visible="true" weight="0.18177028" />
+      <window_info id="npm" order="2" sideWeight="0.25525525" side_tool="true" visible="true" weight="0.18177028" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.17951542" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.17951542" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -364,7 +429,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.07599119" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.15088105" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2665198" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -398,46 +463,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/teximate/index.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/logo.svg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.factory.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="21" lean-forward="true" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/animation-form/animation-form.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/animation-form/animation-form.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.component.scss">
       <provider selected="true" editor-type-id="text-editor">
@@ -446,30 +473,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projects/teximate/ng-package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/teximate/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="460">
-            <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -483,65 +490,156 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="16" />
+        <state relative-caret-position="253">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/github-repo/github-repo.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/animation-form/animation-form.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-149">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/animation-form/animation-form.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/github-repo/github-repo.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/github-repo/github-repo.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
           <folding>
-            <element signature="e#0#53#0" expanded="true" />
+            <element signature="n#style#0;n#path#1;n#svg#0;n#a#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/animation-form/animation-form.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+        <state relative-caret-position="3393">
+          <caret line="210" column="27" selection-start-line="210" selection-start-column="27" selection-end-line="210" selection-end-column="27" />
           <folding>
             <element signature="e#0#97#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="322">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-793">
-          <caret line="113" column="50" selection-start-line="113" selection-start-column="50" selection-end-line="113" selection-end-column="50" />
+        <state relative-caret-position="460">
+          <caret line="26" column="18" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="18" />
           <folding>
-            <element signature="e#0#186#0" expanded="true" />
+            <element signature="e#0#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="37" column="67" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
+        <state relative-caret-position="943">
+          <caret line="41" column="22" lean-forward="true" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.html">
+    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.factory.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/teximate/index.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="92">
+            <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/teximate/ng-package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
-          <caret line="6" column="46" lean-forward="true" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/projects/teximate/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        <state relative-caret-position="25">
+          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/teximate/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-527" />
       </provider>
     </entry>
   </component>

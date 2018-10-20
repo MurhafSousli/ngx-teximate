@@ -2,7 +2,6 @@ import {
   Component,
   Input,
   Output,
-  ViewChild,
   AfterViewInit,
   OnChanges,
   OnDestroy,
@@ -65,9 +64,6 @@ export class Teximate implements AfterViewInit, OnChanges, OnDestroy {
   /** Stream that emits when animation is done */
   @Output() done = new EventEmitter();
 
-  /** Text wrapper */
-  @ViewChild('textWrapper') textWrapper: ElementRef;
-
   /** Teximate animations */
   players = new Map<string, AnimationPlayer>();
 
@@ -111,7 +107,7 @@ export class Teximate implements AfterViewInit, OnChanges, OnDestroy {
   }
 
   ngOnDestroy() {
-    // TODO: use players.forEach to destroy players
+    // TODO: Use players.forEach to destroy players
     if (this.players.has('enter')) {
       this.players.get('enter').destroy();
     }
@@ -123,7 +119,24 @@ export class Teximate implements AfterViewInit, OnChanges, OnDestroy {
     }
   }
 
-  updateAnimations() {
+  /**
+   * Register a new animation
+   */
+  registerAnimation(config: PlayerConfig): AnimationPlayer {
+    const player = this.buildAnimation(config).create(this.el.nativeElement);
+    /** TODO: Investigate why onStart and onDone fire only once */
+    player.onStart(() => {
+      this._isPlaying = true;
+      this.start.emit(config.id);
+    });
+    player.onDone(() => {
+      this._isPlaying = false;
+      this.done.emit(config.id);
+    });
+    return this.players.set(config.id, player).get(config.id);
+  }
+
+  private updateAnimations() {
     this.zone.runOutsideAngular(() => {
       if (this.enter) {
         const enterPlayer = this.registerAnimation({...this.enter, id: 'enter', isEnter: true});
@@ -139,29 +152,15 @@ export class Teximate implements AfterViewInit, OnChanges, OnDestroy {
   }
 
   /**
-   * Register a new animation
-   */
-  registerAnimation(config: PlayerConfig): AnimationPlayer {
-    const player = this.buildAnimation(config).create(this.textWrapper.nativeElement);
-    player.onStart(() => {
-      this._isPlaying = true;
-      this.start.emit(config.id);
-    });
-    player.onDone(() => {
-      this._isPlaying = false;
-      this.done.emit(config.id);
-    });
-    return this.players.set(config.id, player).get(config.id);
-  }
-
-  /**
    * Build animation
    */
   private buildAnimation(config: PlayerConfig): AnimationFactory {
+    /** TODO: Use ':enter' and ':leave' for enter and leave animations */
     return this.animationBuilder.build([
       query(
         `.teximate-${config.type}`,
         [
+          // This is a workaround for enter animation to work
           style({opacity: config.isEnter ? 0 : 1}),
           stagger(config.delay, [useAnimation(config.animation)])
         ]

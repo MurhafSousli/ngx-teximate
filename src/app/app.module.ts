@@ -18,11 +18,13 @@ import { AppComponent } from './app.component';
 import { TeximateModule } from './teximate';
 import { AnimationFormComponent } from './animation-form/animation-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GithubRepoComponent } from './github-repo/github-repo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AnimationFormComponent
+    AnimationFormComponent,
+    GithubRepoComponent
   ],
   imports: [
     BrowserModule,

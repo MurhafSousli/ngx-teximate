@@ -53,8 +53,8 @@ Now you can use **Teximate** component:
 ```
 
 ```ts
-import { fadeInDown } from 'ng-animate';
 import { TextAnimation } from 'ngx-teximate';
+import { fadeInDown } from 'ng-animate';
 
 export class AppComponent {
 
@@ -68,7 +68,7 @@ export class AppComponent {
 }  
 ```
 
-See [stackblitz demo]()
+See the [stackblitz demo](https://stackblitz.com/edit/ngx-teximate).
 
 ## Issues
 

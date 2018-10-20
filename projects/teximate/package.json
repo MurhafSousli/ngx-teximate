@@ -3,10 +3,10 @@
   "description": "Angular text animations component",
   "version": "0.1.0",
   "repository": {
-  "type": "git",
-  "url": "git+ssh://git@github.com:MurhafSousli/ngx-teximate.git"
-},
-  "homepage": "https://github.com/MurhafSousli/ngx-teximate#readme",
+    "type": "git",
+    "url": "git+ssh://git@github.com:MurhafSousli/ngx-teximate.git"
+  },
+  "homepage": "https://github.com/MurhafSousli/ngx-teximate",
   "bugs": {
     "url": "https://github.com/MurhafSousli/ngx-teximate/issues"
   },
@@ -19,6 +19,7 @@
     "letters",
     "words"
   ],
+  "private": false,
   "author": "Murhaf Sousli <murhafsousi@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
