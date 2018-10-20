@@ -1,177 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b31e51b2-3fbd-4c7a-a29d-44821b633af7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/bundles/ng-teximate.umd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/component/teximate.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/component/teximate.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/component/teximate.component.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/component/teximate.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/helper/teximate.class.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/helper/teximate.class.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/helper/teximate.class.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/helper/teximate.class.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/helper/teximate.helper.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/helper/teximate.helper.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/helper/teximate.helper.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/index.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/index.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/index.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/service/teximate.service.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/service/teximate.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/service/teximate.service.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/service/teximate.service.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/teximate.module.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/teximate.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/teximate.module.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/src/app/teximate/teximate.module.metadata.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ng-teximate.iml" afterPath="$PROJECT_DIR$/.idea/ng-teximate.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CHANGELOG.md" afterPath="$PROJECT_DIR$/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/helpers.js" afterPath="$PROJECT_DIR$/config/helpers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/karma-test-shim.js" afterPath="$PROJECT_DIR$/config/karma-test-shim.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/karma.conf.js" afterPath="$PROJECT_DIR$/config/karma.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/webpack.test.js" afterPath="$PROJECT_DIR$/config/webpack.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/.angular-cli.json" afterPath="$PROJECT_DIR$/demo/.angular-cli.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/.editorconfig" afterPath="$PROJECT_DIR$/demo/.editorconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/.gitignore" afterPath="$PROJECT_DIR$/demo/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/README.md" afterPath="$PROJECT_DIR$/demo/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/e2e/app.e2e-spec.ts" afterPath="$PROJECT_DIR$/demo/e2e/app.e2e-spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/e2e/app.po.ts" afterPath="$PROJECT_DIR$/demo/e2e/app.po.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/e2e/tsconfig.e2e.json" afterPath="$PROJECT_DIR$/demo/e2e/tsconfig.e2e.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/karma.conf.js" afterPath="$PROJECT_DIR$/demo/karma.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/package.json" afterPath="$PROJECT_DIR$/demo/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/protractor.conf.js" afterPath="$PROJECT_DIR$/demo/protractor.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/app.component.html" afterPath="$PROJECT_DIR$/demo/src/app/app.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/app.component.spec.ts" afterPath="$PROJECT_DIR$/demo/src/app/app.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/app.component.ts" afterPath="$PROJECT_DIR$/demo/src/app/app.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/app.module.ts" afterPath="$PROJECT_DIR$/demo/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/header/header.component.html" afterPath="$PROJECT_DIR$/demo/src/app/header/header.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/header/header.component.spec.ts" afterPath="$PROJECT_DIR$/demo/src/app/header/header.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/header/header.component.ts" afterPath="$PROJECT_DIR$/demo/src/app/header/header.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/main/main.component.html" afterPath="$PROJECT_DIR$/demo/src/app/main/main.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/main/main.component.scss" afterPath="$PROJECT_DIR$/demo/src/app/main/main.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/main/main.component.spec.ts" afterPath="$PROJECT_DIR$/demo/src/app/main/main.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/main/main.component.ts" afterPath="$PROJECT_DIR$/demo/src/app/main/main.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/ribbon/ribbon.component.scss" afterPath="$PROJECT_DIR$/demo/src/app/ribbon/ribbon.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/ribbon/ribbon.component.spec.ts" afterPath="$PROJECT_DIR$/demo/src/app/ribbon/ribbon.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/app/ribbon/ribbon.component.ts" afterPath="$PROJECT_DIR$/demo/src/app/ribbon/ribbon.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/assets/icons/browserconfig.xml" afterPath="$PROJECT_DIR$/demo/src/assets/icons/browserconfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/assets/icons/manifest.json" afterPath="$PROJECT_DIR$/demo/src/assets/icons/manifest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/assets/icons/safari-pinned-tab.svg" afterPath="$PROJECT_DIR$/demo/src/assets/icons/safari-pinned-tab.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/environments/environment.prod.ts" afterPath="$PROJECT_DIR$/demo/src/environments/environment.prod.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/environments/environment.ts" afterPath="$PROJECT_DIR$/demo/src/environments/environment.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/index.html" afterPath="$PROJECT_DIR$/demo/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/main.ts" afterPath="$PROJECT_DIR$/demo/src/main.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/polyfills.ts" afterPath="$PROJECT_DIR$/demo/src/polyfills.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/styles.scss" afterPath="$PROJECT_DIR$/demo/src/styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/test.ts" afterPath="$PROJECT_DIR$/demo/src/test.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/tsconfig.app.json" afterPath="$PROJECT_DIR$/demo/src/tsconfig.app.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/tsconfig.spec.json" afterPath="$PROJECT_DIR$/demo/src/tsconfig.spec.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/src/typings.d.ts" afterPath="$PROJECT_DIR$/demo/src/typings.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/tsconfig.json" afterPath="$PROJECT_DIR$/demo/tsconfig.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/tslint.json" afterPath="$PROJECT_DIR$/demo/tslint.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/karma.conf.js" afterPath="$PROJECT_DIR$/karma.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/service/teximate.service.ts" afterPath="$PROJECT_DIR$/src/service/teximate.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsconfig-aot.json" afterPath="$PROJECT_DIR$/tsconfig-aot.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsconfig.json" afterPath="$PROJECT_DIR$/tsconfig.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tslint.json" afterPath="$PROJECT_DIR$/tslint.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
+    <list default="true" id="f4fef3cd-e3cf-4463-8d3f-7c9777d759e4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/animation-form/animation-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/animation-form/animation-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/animation-form/animation-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/animation-form/animation-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FUSProjectUsageTrigger">
+    <session id="1998507446">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="875" />
+          <entry key="json" value="64" />
+          <entry key="md" value="546" />
+          <entry key="scss" value="208" />
+          <entry key="ts" value="1798" />
+          <entry key="txt" value="30" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="875" />
+          <entry key="JSON" value="64" />
+          <entry key="Markdown" value="546" />
+          <entry key="PLAIN_TEXT" value="30" />
+          <entry key="SCSS" value="208" />
+          <entry key="TypeScript" value="1798" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="Angular2LanguageService" value="1" />
+          <entry key="TsLintLanguageService" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="5" />
+          <entry key="json" value="3" />
+          <entry key="md" value="1" />
+          <entry key="scss" value="5" />
+          <entry key="ts" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="5" />
+          <entry key="JSON" value="3" />
+          <entry key="Markdown" value="1" />
+          <entry key="SCSS" value="5" />
+          <entry key="TypeScript" value="13" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-710119348">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="Angular2LanguageService" value="3" />
+          <entry key="TsLintLanguageService" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="LICENSE" value="1" />
+          <entry key="gitignore" value="1" />
+          <entry key="html" value="12" />
+          <entry key="json" value="6" />
+          <entry key="md" value="2" />
+          <entry key="scss" value="8" />
+          <entry key="svg" value="1" />
+          <entry key="ts" value="27" />
+          <entry key="yaml" value="1" />
+          <entry key="yml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="12" />
+          <entry key="JSON" value="6" />
+          <entry key="Markdown" value="2" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="SCSS" value="8" />
+          <entry key="SVG" value="1" />
+          <entry key="TypeScript" value="27" />
+          <entry key="YAML" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="LICENSE" value="1" />
+          <entry key="html" value="487" />
+          <entry key="json" value="9" />
+          <entry key="md" value="11" />
+          <entry key="scss" value="501" />
+          <entry key="ts" value="2106" />
+          <entry key="txt" value="11" />
+          <entry key="yml" value="18" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="487" />
+          <entry key="JSON" value="9" />
+          <entry key="Markdown" value="11" />
+          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="SCSS" value="501" />
+          <entry key="TypeScript" value="2106" />
+          <entry key="YAML" value="18" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo/src/app/main/main.component.ts">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/animation-form/animation-form.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+            <state relative-caret-position="3485">
+              <caret line="199" column="4" selection-start-line="199" selection-start-column="4" selection-end-line="199" selection-end-column="4" />
               <folding>
-                <element signature="e#0#78#0" expanded="true" />
-                <marker date="1490754430085" expanded="true" signature="2663:2668" ph="[...]" />
+                <element signature="e#0#97#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-              <folding />
+            <state relative-caret-position="334">
+              <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+              <folding>
+                <element signature="e#0#53#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="17">
-                <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-                <folding>
-                  <marker date="1490694818181" expanded="true" signature="1268:1343" ph="{...}" />
-                  <marker date="1490694818181" expanded="true" signature="3199:3245" ph="{...}" />
-                  <marker date="1490694818181" expanded="true" signature="3252:3281" ph="{...}" />
-                  <marker date="1490694818181" expanded="true" signature="3290:3309" ph="{...}" />
-                </folding>
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CHANGELOG.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="34">
-                <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo/src/styles.scss">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="79" lean-forward="false" selection-start-line="0" selection-start-column="79" selection-end-line="0" selection-end-column="79" />
-              <folding />
+            <state relative-caret-position="311">
+              <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="-368">
+              <caret line="8" column="57" lean-forward="true" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/animation-form/animation-form.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -180,12 +206,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>WorkType</find>
-      <find>ng2-sharebuttons</find>
+      <find>enter</find>
+      <find>leaveAnimation</find>
     </findStrings>
     <replaceStrings>
-      <replace>TeximateOrder</replace>
-      <replace>ng-teximate</replace>
+      <replace>leave</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -194,83 +219,105 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/demo/src/app/teximate/teximate.module.ts" />
-        <option value="$PROJECT_DIR$/demo/src/app/header/header.component.ts" />
-        <option value="$PROJECT_DIR$/demo/src/app/teximate/service/teximate.helper.ts" />
-        <option value="$PROJECT_DIR$/demo/src/app/teximate/teximate.class.ts" />
-        <option value="$PROJECT_DIR$/demo/src/app/teximate/helper/teximate.class.ts" />
-        <option value="$PROJECT_DIR$/demo/src/app/teximate/helper/teximate.helper.ts" />
-        <option value="$PROJECT_DIR$/demo/src/app/teximate/service/teximate.service.ts" />
-        <option value="$PROJECT_DIR$/demo/src/app/teximate/index.ts" />
-        <option value="$PROJECT_DIR$/demo/src/app/teximate/component/teximate.component.ts" />
-        <option value="$PROJECT_DIR$/demo/src/app/main/main.component.ts" />
-        <option value="$PROJECT_DIR$/CHANGELOG.md" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/app/teximate/teximate.model.ts" />
+        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/projects/teximate/src/lib/index.ts" />
+        <option value="$PROJECT_DIR$/projects/teximate/src/public_api.ts" />
+        <option value="$PROJECT_DIR$/src/app/app.component.scss" />
+        <option value="$PROJECT_DIR$/src/app/animation-form/animation-form.component.scss" />
+        <option value="$PROJECT_DIR$/src/app/teximate/teximate.module.ts" />
+        <option value="$PROJECT_DIR$/LICENSE" />
+        <option value="$PROJECT_DIR$/src/app/teximate/teximate.scss" />
+        <option value="$PROJECT_DIR$/src/app/teximate/teximate.html" />
+        <option value="$PROJECT_DIR$/src/app/github-repo/github-repo.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/github-repo/github-repo.component.html" />
+        <option value="$PROJECT_DIR$/src/app/github-repo/github-repo.component.scss" />
+        <option value="$PROJECT_DIR$/src/app/app.component.html" />
+        <option value="$PROJECT_DIR$/src/app/teximate/teximate.factory.ts" />
+        <option value="$PROJECT_DIR$/src/app/teximate/teximate.ts" />
+        <option value="$PROJECT_DIR$/projects/teximate/package.json" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/app/animation-form/animation-form.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/animation-form/animation-form.component.html" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/demo/node_modules" />
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+      <path value="$PROJECT_DIR$/projects/teximate/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng-teximate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ng-teximate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="ngx-teximate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ngx-teximate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ngx-teximate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ngx-teximate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ngx-teximate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ngx-teximate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ngx-teximate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ngx-teximate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="animation-form" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="add_unversioned_files" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Murhaf\Documents\GitHub\ng-teximate\demo\src\app\teximate\helper" />
-    </key>
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="C:\Users\Murhaf\Desktop\github\ngx-teximate\node_modules\tslint" />
+    <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/node_modules/protractor" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="ts.external.directory.path" value="C:\Users\Murhaf\Desktop\Github\ngx-teximate\node_modules\typescript\lib" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -284,385 +331,303 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
-      <method />
-    </configuration>
-    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
-      <node-interpreter value="project" />
-      <working-dir value="" />
-      <envs />
-      <scope-kind value="ALL" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
-      <config-file value="" />
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Tests" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="$PROJECT_DIR$/src/karma.conf.js" />
+      <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
+      <working-directory value="$PROJECT_DIR$" />
       <node-interpreter value="project" />
       <envs />
-      <method />
+      <method v="2" />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
+    <configuration name="E2E Tests" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
       <envs />
-      <method />
+      <method v="2" />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
+    <configuration name="Angular Application" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:4200">
+      <method v="2" />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
-    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
-      <option name="cucumberJsArguments" value="" />
-      <option name="executablePath" />
-      <option name="filePath" />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+    <configuration name="Angular CLI Server" type="js.build_tools.npm" factoryName="npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
-      <scripts />
+      <scripts>
+        <script value="start" />
+      </scripts>
       <node-interpreter value="project" />
       <envs />
-      <method />
+      <method v="2" />
     </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory />
-      <pass-parent-env>true</pass-parent-env>
+    <configuration name="build-demo" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build-demo" />
+      </scripts>
+      <node-interpreter value="project" />
       <envs />
-      <ui />
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
-      <method />
+      <method v="2" />
     </configuration>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+    <list>
+      <item itemvalue="JavaScript Debug.Angular Application" />
+      <item itemvalue="Karma.Tests" />
+      <item itemvalue="Protractor.E2E Tests" />
+      <item itemvalue="npm.Angular CLI Server" />
+      <item itemvalue="npm.build-demo" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build-demo" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b31e51b2-3fbd-4c7a-a29d-44821b633af7" name="Default" comment="" />
-      <created>1490222984914</created>
+      <changelist id="f4fef3cd-e3cf-4463-8d3f-7c9777d759e4" name="Default Changelist" comment="" />
+      <created>1539927137882</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1490222984914</updated>
-      <workItem from="1490222986420" duration="763000" />
-      <workItem from="1490656878575" duration="9815000" />
-      <workItem from="1490687358980" duration="3718000" />
-      <workItem from="1490754576336" duration="7000" />
+      <updated>1539927137882</updated>
+      <workItem from="1539927144370" duration="13682000" />
+      <workItem from="1539944371805" duration="728000" />
+      <workItem from="1539952376805" duration="1215000" />
+      <workItem from="1539978423102" duration="29907000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14303000" />
+    <option name="totallyTimeSpent" value="45532000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296131" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7446154" visible="true" weight="0.18177028" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" sideWeight="0.25538462" side_tool="true" visible="true" weight="0.18177028" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28414097" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="9" weight="0.07599119" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2654185" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/demo/node_modules/karma/config.tpl.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/ng/index.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/ng/index.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/enum/index.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/enum/index.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/pipe/index.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/pipe/index.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/class/index.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/class/index.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/guard/index.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/guard/index.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/module/index.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/module/index.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/service/index.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/service/index.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/component/index.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/component/index.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/directive/index.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/directive/index.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/interface/index.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/@angular/cli/blueprints/interface/index.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/Reflect.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/Reflect.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-definemetadata.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-definemetadata.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-getmetadatakeys.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-getmetadatakeys.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-metadata.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-metadata.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-getmetadata.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-getmetadata.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-getownmetadata.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-getownmetadata.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-getownmetadatakeys.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-getownmetadatakeys.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-hasownmetadata.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-hasownmetadata.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-decorate.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-decorate.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-deletemetadata.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-deletemetadata.js.map" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-hasmetadata.js" />
-        <option value="$PROJECT_DIR$/demo/node_modules/reflect-metadata/test/reflect-hasmetadata.js.map" />
-      </list>
-    </option>
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/demo/src/app/main/main.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#78#0" expanded="true" />
-            <marker date="1490754430085" expanded="true" signature="2663:2668" ph="[...]" />
-          </folding>
+        <state relative-caret-position="207">
+          <caret line="9" column="73" lean-forward="true" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/projects/teximate/src/lib/index.ts" />
+    <entry file="file://$PROJECT_DIR$/projects/teximate/tslint.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/teximate/src/public_api.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tslint.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-          <folding />
+        <state relative-caret-position="207">
+          <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="34">
-            <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-            <folding />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/src/assets/logo.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/src/styles.scss">
+    <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="79" lean-forward="false" selection-start-line="0" selection-start-column="79" selection-end-line="0" selection-end-column="79" />
-          <folding />
+        <state relative-caret-position="23">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="253">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/github-repo/github-repo.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/animation-form/animation-form.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-149">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/github-repo/github-repo.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/github-repo/github-repo.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="n#style#0;n#path#1;n#svg#0;n#a#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="943">
+          <caret line="41" column="22" lean-forward="true" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.factory.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/teximate/index.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/teximate/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-527" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/animation-form/animation-form.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3485">
+          <caret line="199" column="4" selection-start-line="199" selection-start-column="4" selection-end-line="199" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/teximate/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/teximate/teximate.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/teximate/ng-package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="714">
-            <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-            <folding>
-              <marker date="1490694818181" expanded="true" signature="1268:1343" ph="{...}" />
-              <marker date="1490694818181" expanded="true" signature="3199:3245" ph="{...}" />
-              <marker date="1490694818181" expanded="true" signature="3252:3281" ph="{...}" />
-              <marker date="1490694818181" expanded="true" signature="3290:3309" ph="{...}" />
-            </folding>
+          <first_editor relative-caret-position="-809">
+            <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/src/app/teximate/helper/teximate.class.ts" />
-    <entry file="file://$PROJECT_DIR$/demo/src/app/main/main.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        <state relative-caret-position="-368">
+          <caret line="8" column="57" lean-forward="true" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
           <folding>
-            <element signature="e#0#78#0" expanded="true" />
-            <marker date="1490754430085" expanded="true" signature="2663:2668" ph="[...]" />
+            <element signature="e#0#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="153">
-            <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-            <folding>
-              <marker date="1490694818181" expanded="true" signature="1268:1343" ph="{...}" />
-              <marker date="1490694818181" expanded="true" signature="3199:3245" ph="{...}" />
-              <marker date="1490694818181" expanded="true" signature="3252:3281" ph="{...}" />
-              <marker date="1490694818181" expanded="true" signature="3290:3309" ph="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="34">
-            <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/src/styles.scss">
+    <entry file="file://$PROJECT_DIR$/src/app/animation-form/animation-form.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="79" lean-forward="false" selection-start-line="0" selection-start-column="79" selection-end-line="0" selection-end-column="79" />
-          <folding />
+        <state relative-caret-position="253">
+          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/src/app/teximate/teximate.module.ts" />
-    <entry file="file://$PROJECT_DIR$/demo/src/app/teximate/functions.helper.ts" />
-    <entry file="file://$PROJECT_DIR$/demo/src/app/teximate/directive/teximate.directive.ts" />
-    <entry file="file://$PROJECT_DIR$/demo/src/app/header/header.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/src/app/ribbon/ribbon.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/src/app/teximate/service/teximate.service.ts" />
-    <entry file="file://$PROJECT_DIR$/demo/src/app/teximate/index.ts" />
-    <entry file="file://$PROJECT_DIR$/demo/src/app/teximate/helper/teximate.class.ts" />
-    <entry file="file://$PROJECT_DIR$/demo/src/app/teximate/helper/teximate.helper.ts" />
-    <entry file="file://$PROJECT_DIR$/demo/src/app/teximate/teximate.module.ts" />
-    <entry file="file://$PROJECT_DIR$/demo/src/app/teximate/component/teximate.component.ts" />
-    <entry file="file://$PROJECT_DIR$/demo/src/app/main/main.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#78#0" expanded="true" />
-            <marker date="1490754430085" expanded="true" signature="2663:2668" ph="[...]" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/src/styles.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="79" lean-forward="false" selection-start-line="0" selection-start-column="79" selection-end-line="0" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="34">
-            <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="17">
-            <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-            <folding>
-              <marker date="1490694818181" expanded="true" signature="1268:1343" ph="{...}" />
-              <marker date="1490694818181" expanded="true" signature="3199:3245" ph="{...}" />
-              <marker date="1490694818181" expanded="true" signature="3252:3281" ph="{...}" />
-              <marker date="1490694818181" expanded="true" signature="3290:3309" ph="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
+        <state relative-caret-position="161">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
         </state>
       </provider>
     </entry>

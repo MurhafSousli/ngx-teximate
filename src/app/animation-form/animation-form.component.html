@@ -1,0 +1,54 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <form [formGroup]="form">
+      <div class="lab-section">
+        <h6>Event</h6>
+        <div class="lab-control">
+          <mat-button-toggle-group formControlName="id" aria-label="Animation Toggle" color="primary">
+            <mat-button-toggle value="enter">Enter</mat-button-toggle>
+            <mat-button-toggle value="leave">Leave</mat-button-toggle>
+            <mat-button-toggle value="default" [disabled]="true">Default</mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+      </div>
+
+      <div class="lab-section">
+        <h6>Type</h6>
+        <div class="lab-control">
+          <mat-button-toggle-group formControlName="type">
+            <mat-button-toggle value="paragraph">Paragraph</mat-button-toggle>
+            <mat-button-toggle value="word">Word</mat-button-toggle>
+            <mat-button-toggle value="letter">Letter</mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+      </div>
+
+      <div class="lab-section">
+        <h6>Animation</h6>
+        <div class="lab-control">
+          <mat-form-field>
+            <mat-select formControlName="animation">
+              <mat-option *ngFor="let animation of animations[form.controls['id'].value]" [value]="animation.value">
+                {{animation.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="lab-section">
+        <h6>Delay (ms)</h6>
+        <div class="lab-control">
+          <mat-slider formControlName="delay" [step]="50" [min]="-500" [max]="500" [thumbLabel]="true"></mat-slider>
+        </div>
+      </div>
+
+      <div class="lab-control buttons">
+        <button mat-fab (click)="play.emit(form.value)">
+          <mat-icon>play_arrow</mat-icon>
+        </button>
+      </div>
+    </form>
+
+  </mat-toolbar-row>
+</mat-toolbar>

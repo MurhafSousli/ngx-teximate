@@ -1,0 +1,34 @@
+.lab-section {
+  padding-right: 20px;
+}
+
+.lab-control {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+h6 {
+  margin: 0.3em 0;
+}
+
+.mat-slider-horizontal {
+  width: 250px;
+}
+
+.mat-toolbar-row {
+  height: unset;
+  font-size: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  flex: 1;
+  display: flex;
+  justify-content: stretch;
+}

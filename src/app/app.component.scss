@@ -1,0 +1,52 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.logo {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .mat-icon {
+    height: 100px;
+    width: 100px;
+    font-size: 100px;
+  }
+}
+
+.container {
+  flex: 1;
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mat-chip {
+  transition: background-color ease-out 1s;
+}
+
+.changed {
+  background-color: rgb(151, 255, 218) !important;
+  transition: unset !important;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.events {
+  margin-bottom: 2em;
+}

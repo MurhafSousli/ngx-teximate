@@ -1,0 +1,50 @@
+<div class="logo">
+  <mat-icon [svgIcon]="'logo'"></mat-icon>
+  <p>
+    <b>ngx-teximate</b>
+  </p>
+</div>
+
+<div class="container">
+
+  <div class="preview">
+    <h1>
+      <!-- *ngIf="toggleTeximate"-->
+      <teximate #teximate
+                [text]="text"
+                [enter]="enterAnimation"
+                [leave]="leaveAnimation"
+                [animation]="defaultAnimation"
+                (start)="onAnimationStart($event)"
+                (done)="onAnimationDone($event)">
+      </teximate>
+    </h1>
+  </div>
+
+  <div class="editor">
+    <div>
+      <mat-form-field>
+        <textarea matInput
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="4"
+                  [(ngModel)]="text"></textarea>
+      </mat-form-field>
+      <!--<button mat-button color="danger" (click)="toggleTeximate = !toggleTeximate">{{toggleTeximate ? 'OFF' : 'ON'}}</button>-->
+    </div>
+
+    <div class="events">
+      <mat-chip-list>
+        <mat-chip [class.changed]="startClass | async" disabled>Start</mat-chip>
+        <mat-chip [class.changed]="doneClass | async" disabled>Done</mat-chip>
+        <mat-chip [selected]="teximate.isPlaying" color="accent" disabled>isPlaying: {{teximate.isPlaying}}</mat-chip>
+      </mat-chip-list>
+    </div>
+  </div>
+
+</div>
+
+<app-github-repo></app-github-repo>
+
+<app-animation-form (value)="onAnimationValue($event)" (play)="play($event)"></app-animation-form>
