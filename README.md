@@ -40,7 +40,7 @@ import { TeximateModule } from 'ngx-teximate';
 
 @NgModule({
   imports: [
-    BrowserAnimationsModule,  // Add this only in your root module
+    BrowserAnimationsModule,  // Add this only in the root module
     TeximateModule
   ]
 })
@@ -49,7 +49,7 @@ import { TeximateModule } from 'ngx-teximate';
 Now you can use **Teximate** component:
 
 ```xml
-<teximate [text]="text" [enterAnimation]="enterAnimation"></teximate>
+<teximate [text]="text" [enter]="enterAnimation"></teximate>
 ```
 
 ```ts
@@ -58,7 +58,7 @@ import { TextAnimation } from 'ngx-teximate';
 
 export class AppComponent {
 
- text = 'Everyday I am 1% better than yesterday';
+ text = 'Lorem ipsum dolor sit amet.';
  
   enterAnimation: TextAnimation = {
     animation: fadeInDown,

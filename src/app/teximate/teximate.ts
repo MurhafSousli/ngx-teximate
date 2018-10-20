@@ -4,6 +4,7 @@ import {
   Output,
   ViewChild,
   AfterViewInit,
+  OnChanges,
   OnDestroy,
   NgZone,
   ElementRef,
@@ -33,7 +34,7 @@ import { Paragraph, PlayerConfig, TextAnimation } from './teximate.model';
   styleUrls: ['./teximate.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Teximate implements AfterViewInit, OnDestroy {
+export class Teximate implements AfterViewInit, OnChanges, OnDestroy {
 
   /** Set text */
   @Input('text') set setText(text: string) {
@@ -41,10 +42,10 @@ export class Teximate implements AfterViewInit, OnDestroy {
   }
 
   /** Animation that triggers on init */
-  @Input() enterAnimation: TextAnimation;
+  @Input() enter: TextAnimation;
 
   /** Animation that triggers on destroy */
-  @Input() leaveAnimation: TextAnimation;
+  @Input() leave: TextAnimation;
 
   /** Animation that triggers with the play() function */
   @Input() animation: TextAnimation;
@@ -67,31 +68,69 @@ export class Teximate implements AfterViewInit, OnDestroy {
   /** Text wrapper */
   @ViewChild('textWrapper') textWrapper: ElementRef;
 
+  /** Teximate animations */
+  players = new Map<string, AnimationPlayer>();
+
   /** Teximate state */
   private _state = new BehaviorSubject<string>('');
   state: Observable<Paragraph[]>;
 
   /** Teximate playing state */
   private _isPlaying: boolean;
+  private _isViewInit: boolean;
+
   get isPlaying() {
     return this._isPlaying;
   }
 
-  /** Teximate animations */
-  players = new Map<string, AnimationPlayer>();
+  get enterPlayer(): AnimationPlayer {
+    return this.players.get('enter');
+  }
 
-  constructor(private animationBuilder: AnimationBuilder, private zone: NgZone) {
+  get leavePlayer(): AnimationPlayer {
+    return this.players.get('leave');
+  }
+
+  get defaultPlayer(): AnimationPlayer {
+    return this.players.get('default');
+  }
+
+  constructor(private animationBuilder: AnimationBuilder, private zone: NgZone, private el: ElementRef) {
     this.state = this._state.pipe(map((text: string) => teximateFactory(text)));
   }
 
   ngAfterViewInit() {
+    this._isViewInit = true;
+    this.updateAnimations();
+  }
+
+  ngOnChanges() {
+    if (this._isViewInit) {
+      this.updateAnimations();
+    }
+  }
+
+  ngOnDestroy() {
+    // TODO: use players.forEach to destroy players
+    if (this.players.has('enter')) {
+      this.players.get('enter').destroy();
+    }
+    if (this.players.has('leave')) {
+      this.players.get('leave').destroy();
+    }
+    if (this.players.has('default')) {
+      this.players.get('default').destroy();
+    }
+  }
+
+  updateAnimations() {
     this.zone.runOutsideAngular(() => {
-      if (this.enterAnimation) {
-        const enterAnimation = this.registerAnimation({...this.enterAnimation, id: 'enter', isEnter: true});
-        enterAnimation.play();
+      if (this.enter) {
+        const enterPlayer = this.registerAnimation({...this.enter, id: 'enter', isEnter: true});
+        enterPlayer.play();
       }
-      if (this.leaveAnimation) {
-        this.registerAnimation({...this.leaveAnimation, id: 'leave'});
+      if (this.leave) {
+        this.registerAnimation({...this.leave, id: 'leave'});
       }
       if (this.animation) {
         this.registerAnimation({id: 'default', ...this.animation});
@@ -99,17 +138,11 @@ export class Teximate implements AfterViewInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() {
-    this.players.forEach((player: AnimationPlayer) => player.destroy());
-  }
-
   /**
    * Register a new animation
-   * @param config
    */
   registerAnimation(config: PlayerConfig): AnimationPlayer {
-    const builder = this.buildAnimation(config);
-    const player = builder.create(this.textWrapper.nativeElement);
+    const player = this.buildAnimation(config).create(this.textWrapper.nativeElement);
     player.onStart(() => {
       this._isPlaying = true;
       this.start.emit(config.id);
@@ -123,7 +156,6 @@ export class Teximate implements AfterViewInit, OnDestroy {
 
   /**
    * Build animation
-   * @param config
    */
   private buildAnimation(config: PlayerConfig): AnimationFactory {
     return this.animationBuilder.build([
@@ -132,8 +164,7 @@ export class Teximate implements AfterViewInit, OnDestroy {
         [
           style({opacity: config.isEnter ? 0 : 1}),
           stagger(config.delay, [useAnimation(config.animation)])
-        ],
-        {optional: true}
+        ]
       )
     ]);
   }

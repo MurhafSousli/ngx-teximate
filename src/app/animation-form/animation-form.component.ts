@@ -10,7 +10,17 @@ import {
   fadeInUp,
   fadeInDown,
   fadeInLeft,
-  fadeInRight
+  fadeInRight,
+  fadeOut,
+  fadeOutUp,
+  fadeOutDown,
+  fadeOutLeft,
+  fadeOutRight,
+  bounceOut,
+  bounceOutUp,
+  bounceOutDown,
+  bounceOutLeft,
+  bounceOutRight
 } from 'ng-animate';
 import { TextAnimation } from '../teximate';
 
@@ -22,7 +32,10 @@ import { TextAnimation } from '../teximate';
 })
 export class AnimationFormComponent implements OnInit {
 
-  enterAnimations = enterAnimations;
+  animations = {
+    enter: enterAnimations,
+    leave: leaveAnimations
+  };
   form = new FormGroup({
     id: new FormControl('enter'),
     type: new FormControl('letter'),
@@ -31,6 +44,7 @@ export class AnimationFormComponent implements OnInit {
   });
 
   @Output() value = new EventEmitter<TextAnimation>();
+  @Output() play = new EventEmitter<TextAnimation>();
 
   ngOnInit() {
     this.form.valueChanges.subscribe((e: TextAnimation) => this.value.emit(e));
@@ -78,5 +92,48 @@ const enterAnimations = [
   {
     name: 'fadeInRight',
     value: fadeInRight
+  }
+];
+
+const leaveAnimations = [
+  {
+    name: 'bounceOut',
+    value: bounceOut
+  },
+  {
+    name: 'bounceOutUp',
+    value: bounceOutUp
+  },
+  {
+    name: 'bounceOutDown',
+    value: bounceOutDown
+  },
+  {
+    name: 'bounceOutLeft',
+    value: bounceOutLeft
+  },
+  {
+    name: 'bounceOutRight',
+    value: bounceOutRight
+  },
+  {
+    name: 'fadeOut',
+    value: fadeOut
+  },
+  {
+    name: 'fadeOutUp',
+    value: fadeOutUp
+  },
+  {
+    name: 'fadeOutDown',
+    value: fadeOutDown
+  },
+  {
+    name: 'fadeOutLeft',
+    value: fadeOutLeft
+  },
+  {
+    name: 'fadeOutRight',
+    value: fadeOutRight
   }
 ];

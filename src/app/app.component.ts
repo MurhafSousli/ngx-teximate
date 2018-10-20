@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
-import { fadeInDown, slideOutRight } from 'ng-animate';
+import { Component, ViewChild } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material';
 import { Subject } from 'rxjs';
-import { TextAnimation } from './teximate';
+
+import { fadeInDown, slideOutRight } from 'ng-animate';
+import { Teximate, TextAnimation } from './teximate';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +12,7 @@ import { TextAnimation } from './teximate';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  toggleTeximate = true;
   text = 'Everyday I am 1% better than yesterday';
   enterAnimation: TextAnimation = {
     animation: fadeInDown,
@@ -25,11 +29,18 @@ export class AppComponent {
     delay: 50,
     type: 'letter'
   };
-
   animationStart: string;
   animationDone: string;
   startClass = new Subject<boolean>();
   doneClass = new Subject<boolean>();
+
+  @ViewChild(Teximate) teximate: Teximate;
+
+  constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
+    const safeURL = this.sanitizer.bypassSecurityTrustResourceUrl('assets/logo.svg');
+    this.iconRegistry.addSvgIcon('logo', safeURL);
+  }
+
 
   onAnimationStart(e: string) {
     this.startClass.next(true);
@@ -57,7 +68,11 @@ export class AppComponent {
     }
   }
 
-  play() {
-
+  play(e) {
+    if (this.teximate.isPlaying) {
+      this.teximate.players.get(e.id).finish();
+    } else {
+      this.teximate.players.get(e.id).play();
+    }
   }
 }
