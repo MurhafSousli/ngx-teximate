@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
 
 // import { Teximate, TextAnimation } from './teximate';
 import { Teximate, TextAnimation } from 'ngx-teximate';
+import { fadeIn } from 'ng-animate';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,11 @@ import { Teximate, TextAnimation } from 'ngx-teximate';
 export class AppComponent {
   // toggleTeximate = true;
   text = 'Everyday I am 1% better than yesterday';
-  enterAnimation: TextAnimation;
+  enterAnimation: TextAnimation = {
+    type: 'letter',
+    delay: 50,
+    animation: fadeIn
+  };
   leaveAnimation: TextAnimation;
   defaultAnimation: TextAnimation;
   startClass = new Subject<boolean>();

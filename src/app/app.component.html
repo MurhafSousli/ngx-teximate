@@ -47,4 +47,5 @@
 
 <app-github-repo></app-github-repo>
 
-<app-animation-form (value)="onAnimationValue($event)" (play)="play($event)"></app-animation-form>
+<app-animation-form [isPlaying]="teximate?.isPlaying" (value)="onAnimationValue($event)" (play)="play($event)">
+</app-animation-form>
