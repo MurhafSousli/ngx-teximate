@@ -7,11 +7,12 @@
 [![npm](https://img.shields.io/npm/v/ngx-teximate.svg?maxAge=2592000?style=plastic)](https://www.npmjs.com/package/ngx-teximate) 
 [![Travis branch](https://travis-ci.org/MurhafSousli/ngx-teximate.svg?branch=master)](https://travis-ci.org/MurhafSousli/ngx-teximate) 
 [![npm](https://img.shields.io/npm/dt/ngx-teximate.svg?maxAge=2592000?style=plastic)](https://www.npmjs.com/package/ngx-teximate)
+[![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/ngx-teximate.svg)](https://bundlephobia.com/result?p=ngx-teximate)
 [![npm](https://img.shields.io/npm/l/express.svg?maxAge=2592000)](https://github.com/MurhafSousli/ngx-teximate/blob/master/LICENSE)
 
 ___
 
-Text animation plugin built on top of Angular animation engine
+A text animation plugin built on top of Angular animation engine
 
 ## Installation
 
@@ -46,22 +47,26 @@ import { TeximateModule } from 'ngx-teximate';
 })
 ```
 
-Add teximate component to your template
+1. Add `<teximate>` component into your template
+2. Create a `TextAnimation` object and pass it to on of these inputs `[enter]` `[leave]` `[animation]`.
+3. Pick the animation you like from `ng-animate` and set it in the `TextAnimation` object
 
-```xml
-<teximate [text]="text" [enter]="enterAnimation"></teximate>
-```
-
-Currently there are 3 animations inputs `[enter]` `[leave]` `[animation]`, but you can still register more animations using the component functions
-
+#### Example:
 
 ```ts
+import { Component } from '@angular/core';
 import { TextAnimation } from 'ngx-teximate';
 import { fadeInDown } from 'ng-animate';
 
+@Component({
+  selector: 'app-root',
+  template: `
+    <teximate [text]="text" [enter]="enterAnimation"></teximate>
+  `
+})
 export class AppComponent {
 
- text = 'Lorem ipsum dolor sit amet.';
+  text = 'Lorem ipsum dolor sit amet.';
  
   enterAnimation: TextAnimation = {
     animation: fadeInDown,
@@ -71,19 +76,59 @@ export class AppComponent {
 }  
 ```
 
+There are 3 main animations inputs `[enter]`, `[leave]` and `[animation]`, but you can still register more animations
+
+#### Example:
+
+```ts
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { TextAnimation } from 'ngx-teximate';
+import { fadeInDown } from 'ng-animate';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <teximate [text]="text"></teximate>
+    <button (click)="play()"></button>
+  `
+})
+export class AppComponent implements AfterViewInit {
+
+  @ViewChild(Teximate): teximate: Teximate;
+
+  text = 'Lorem ipsum dolor sit amet.';
+  
+  ngAfterViewInit() {
+    const customAnimation: TextAnimation = {
+      id: 'custom',
+      animation: fadeInDown,
+      delay: 50,
+      type: 'letter'
+    };
+    this.teximate.registerAnimation(customAnimation);
+  }
+  
+  play() {
+    if (this.teximate.players.has('custom')) {
+      this.teximate.players.get('custom').play();
+    }
+  }
+}   
+```
+
 ## API
 
-| Name                     | type          | Description                                                     |
-| ------------------------ |-------------- | --------------------------------------------------------------- |
-| **[text]**               | string        | Text to animate                                                 |
-| **[animation]**          | TextAnimation | Default animation, play using `teximate.defaultPlayer.play()`   |
-| **[enter]**              | TextAnimation | Enter animation, if used will play on component init            |
-| **[leave]**              | TextAnimation | Leave animation, if used will play on component destroy (WIP)   |
-| **(play)**               | string        | Stream that emits when text animation is played                 |
-| **(finish)**             | string        | Stream that emits when text animation is finished               |
-| **(paragraphClick)**     | ClickEvent    | Stream that emits when a paragraph is clicked                   |
-| **(wordClick)**          | ClickEvent    | Stream that emits when a word is clicked                        |
-| **(letterClick)**        | ClickEvent    | Stream that emits when a letter is clicked                      |
+| Name                     | type          | Description                                                      |
+| ------------------------ |-------------- | ---------------------------------------------------------------- |
+| **[text]**               | string        | Text to animate                                                  |
+| **[animation]**          | TextAnimation | Default animation, played using `teximate.defaultPlayer.play()`  |
+| **[enter]**              | TextAnimation | Enter animation, played on init                                  |
+| **[leave]**              | TextAnimation | Leave animation, played on destroy (WIP)                         |
+| **(play)**               | string        | Stream that emits when text animation is played                  |
+| **(finish)**             | string        | Stream that emits when text animation is finished                |
+| **(paragraphClick)**     | ClickEvent    | Stream that emits when a paragraph is clicked                    |
+| **(wordClick)**          | ClickEvent    | Stream that emits when a word is clicked                         |
+| **(letterClick)**        | ClickEvent    | Stream that emits when a letter is clicked                       |
 
 
 See the [stackblitz demo](https://stackblitz.com/edit/ngx-teximate).
@@ -92,6 +137,11 @@ See the [stackblitz demo](https://stackblitz.com/edit/ngx-teximate).
 
 If you identify any errors in this module, or have an idea for an improvement, please open an [issue](https://github.com/MurhafSousli/ngx-teximate/issues).
 
+## Support
+
+Please give **Teximate** a :star: 
+
+[![npm](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/bePatron?u=5594898)
 
 ## Author
 
