@@ -21,7 +21,7 @@ import {
 } from '@angular/animations';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { PlayerConfig, TextAnimation } from './teximate.model';
+import { TextAnimation } from './teximate.model';
 
 @Component({
   selector: 'teximate',
@@ -96,7 +96,7 @@ export class Teximate implements AfterViewInit, OnChanges, OnDestroy {
 
   ngAfterViewInit() {
     this._isViewInit = true;
-    this.updateAnimations();
+    this.updateAnimations(true);
   }
 
   ngOnChanges() {
@@ -121,7 +121,7 @@ export class Teximate implements AfterViewInit, OnChanges, OnDestroy {
   /**
    * Register a new animation
    */
-  registerAnimation(config: PlayerConfig): AnimationPlayer {
+  registerAnimation(config: TextAnimation): AnimationPlayer {
     const player = this.buildAnimation(config).create(this.el.nativeElement);
     /** TODO: Investigate why onStart and onDone fire only once */
     player.onStart(() => {
@@ -135,11 +135,13 @@ export class Teximate implements AfterViewInit, OnChanges, OnDestroy {
     return this.players.set(config.id, player).get(config.id);
   }
 
-  private updateAnimations() {
+  private updateAnimations(autoPlayEnter?: boolean) {
     this.zone.runOutsideAngular(() => {
       if (this.enter) {
         const enterPlayer = this.registerAnimation({...this.enter, id: 'enter', isEnter: true});
-        enterPlayer.play();
+        if (autoPlayEnter) {
+          enterPlayer.play();
+        }
       }
       if (this.leave) {
         this.registerAnimation({...this.leave, id: 'leave'});
@@ -153,7 +155,7 @@ export class Teximate implements AfterViewInit, OnChanges, OnDestroy {
   /**
    * Build animation
    */
-  private buildAnimation(config: PlayerConfig): AnimationFactory {
+  private buildAnimation(config: TextAnimation): AnimationFactory {
     /** TODO: Use ':enter' and ':leave' for enter and leave animations */
     return this.animationBuilder.build([
       query(
