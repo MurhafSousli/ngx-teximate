@@ -21,8 +21,7 @@ import {
 } from '@angular/animations';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { teximateFactory } from './teximate.factory';
-import { Paragraph, PlayerConfig, TextAnimation } from './teximate.model';
+import { PlayerConfig, TextAnimation } from './teximate.model';
 
 @Component({
   selector: 'teximate',
@@ -59,17 +58,17 @@ export class Teximate implements AfterViewInit, OnChanges, OnDestroy {
   @Output() letterClick = new EventEmitter();
 
   /** Stream that emits when animation is started */
-  @Output() start = new EventEmitter();
+  @Output('play') playEmitter = new EventEmitter();
 
   /** Stream that emits when animation is done */
-  @Output() done = new EventEmitter();
+  @Output('finish') finishEmitter = new EventEmitter();
 
   /** Teximate animations */
   players = new Map<string, AnimationPlayer>();
 
   /** Teximate state */
   private _state = new BehaviorSubject<string>('');
-  state: Observable<Paragraph[]>;
+  state: Observable<string[][][]>;
 
   /** Teximate playing state */
   private _isPlaying: boolean;
@@ -127,11 +126,11 @@ export class Teximate implements AfterViewInit, OnChanges, OnDestroy {
     /** TODO: Investigate why onStart and onDone fire only once */
     player.onStart(() => {
       this._isPlaying = true;
-      this.start.emit(config.id);
+      this.playEmitter.emit(config.id);
     });
     player.onDone(() => {
       this._isPlaying = false;
-      this.done.emit(config.id);
+      this.finishEmitter.emit(config.id);
     });
     return this.players.set(config.id, player).get(config.id);
   }
@@ -167,4 +166,23 @@ export class Teximate implements AfterViewInit, OnChanges, OnDestroy {
       )
     ]);
   }
+}
+
+/** Convert text string into a workable text */
+export function teximateFactory(text: string): string[][][] {
+  const paragraphs: string[][][] = [];
+  // Split text into paragraphs
+  text.split('\n').map((paragraph: string) => {
+    const words: string[][] = [];
+    // Split paragraph into words
+    paragraph
+      .split(' ')
+      .filter(word => word !== '')
+      .map((word: string) =>
+        // Split word into letters
+        words.push(word.split(/(?!$)/u))
+      );
+    paragraphs.push(words);
+  });
+  return paragraphs;
 }
