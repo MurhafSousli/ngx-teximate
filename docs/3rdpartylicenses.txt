@@ -380,6 +380,9 @@ THE SOFTWARE.
 
 @angular/material/icon
 
+ngx-teximate
+MIT
+
 @angular/material/form-field
 
 @angular/forms

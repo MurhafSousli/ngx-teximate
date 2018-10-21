@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import {
   bounceIn,
@@ -23,14 +23,11 @@ import {
   bounceOutRight,
   lightSpeedIn,
   lightSpeedOut,
-  flipIn,
   flipInX,
   flipInY,
   flipOutX,
   flipOutY,
-  flipOut,
   rotateIn,
-  rotateInDirection,
   rotateInDownLeft,
   rotateInDownRight,
   rotateInUpLeft,
@@ -40,7 +37,9 @@ import {
   rotateOutDownLeft,
   rotateOutDownRight
 } from 'ng-animate';
-import { TextAnimation } from '../teximate';
+import { TextAnimation } from 'ngx-teximate';
+
+// import { TextAnimation } from '../teximate';
 
 @Component({
   selector: 'app-animation-form',
@@ -49,7 +48,6 @@ import { TextAnimation } from '../teximate';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AnimationFormComponent implements OnInit {
-
   animations = {
     enter: enterAnimations,
     leave: leaveAnimations
@@ -57,10 +55,11 @@ export class AnimationFormComponent implements OnInit {
   form = new FormGroup({
     id: new FormControl('enter'),
     type: new FormControl('letter'),
-    delay: new FormControl(0),
+    delay: new FormControl(50),
     animation: new FormControl(fadeIn)
   });
 
+  @Input() isPlaying: boolean;
   @Output() value = new EventEmitter<TextAnimation>();
   @Output() play = new EventEmitter<TextAnimation>();
 

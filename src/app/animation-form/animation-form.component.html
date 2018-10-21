@@ -45,7 +45,8 @@
 
       <div class="lab-control buttons">
         <button mat-fab (click)="play.emit(form.value)">
-          <mat-icon>play_arrow</mat-icon>
+          <mat-icon *ngIf="isPlaying">stop</mat-icon>
+          <mat-icon *ngIf="!isPlaying">play_arrow</mat-icon>
         </button>
       </div>
     </form>

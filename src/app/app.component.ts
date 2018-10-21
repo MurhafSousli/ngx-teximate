@@ -3,8 +3,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material';
 import { Subject } from 'rxjs';
 
-import { fadeInDown, slideOutRight } from 'ng-animate';
-import { Teximate, TextAnimation } from './teximate';
+// import { Teximate, TextAnimation } from './teximate';
+import { Teximate, TextAnimation } from 'ngx-teximate';
+import { fadeIn } from 'ng-animate';
 
 @Component({
   selector: 'app-root',
@@ -15,22 +16,12 @@ export class AppComponent {
   // toggleTeximate = true;
   text = 'Everyday I am 1% better than yesterday';
   enterAnimation: TextAnimation = {
-    animation: fadeInDown,
+    type: 'letter',
     delay: 50,
-    type: 'letter'
+    animation: fadeIn
   };
-  leaveAnimation: TextAnimation = {
-    animation: slideOutRight,
-    delay: 50,
-    type: 'letter'
-  };
-  defaultAnimation: TextAnimation = {
-    animation: slideOutRight,
-    delay: 50,
-    type: 'letter'
-  };
-  animationStart: string;
-  animationDone: string;
+  leaveAnimation: TextAnimation;
+  defaultAnimation: TextAnimation;
   startClass = new Subject<boolean>();
   doneClass = new Subject<boolean>();
 
@@ -41,20 +32,18 @@ export class AppComponent {
     this.iconRegistry.addSvgIcon('logo', safeURL);
   }
 
-  onAnimationStart(e: string) {
+  onAnimationPlay() {
     this.startClass.next(true);
     setTimeout(() => {
       this.startClass.next(false);
     }, 800);
-    this.animationStart = e;
   }
 
-  onAnimationDone(e) {
+  onAnimationFinish() {
     this.doneClass.next(true);
     setTimeout(() => {
       this.doneClass.next(false);
     }, 800);
-    this.animationDone = e;
   }
 
   onAnimationValue(e: TextAnimation) {
