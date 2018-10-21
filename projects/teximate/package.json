@@ -1,7 +1,7 @@
 {
   "name": "ngx-teximate",
   "description": "Angular text animations component",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:MurhafSousli/ngx-teximate.git"
@@ -25,6 +25,7 @@
   "peerDependencies": {
     "@angular/core": ">=6.0.0",
     "@angular/common": ">=6.0.0",
-    "@angular/animations": ">=6.0.0"
+    "@angular/animations": ">=6.0.0",
+    "rxjs": ">=6.0.0"
   }
 }

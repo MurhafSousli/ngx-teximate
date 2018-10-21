@@ -2,10 +2,11 @@
   "name": "ngx-teximate",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
-    "build-demo": "ng build --prod --base-href https://murhafsousli.github.io/ngx-teximate/",
     "build": "ng build",
+    "build-lib": "ng build teximate",
+    "build-demo": "ng build --prod --base-href https://murhafsousli.github.io/ngx-teximate/",
+    "link": "npm link dist/teximate && npm link ngx-teximate",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

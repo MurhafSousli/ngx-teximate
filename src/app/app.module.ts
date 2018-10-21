@@ -14,7 +14,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
-import { TeximateModule } from './teximate';
+// import { TeximateModule } from './teximate';
+import { TeximateModule } from 'ngx-teximate';
 
 import { AppComponent } from './app.component';
 import { AnimationFormComponent } from './animation-form/animation-form.component';

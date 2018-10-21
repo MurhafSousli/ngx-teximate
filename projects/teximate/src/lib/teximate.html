@@ -2,14 +2,14 @@
    class="teximate-paragraph teximate-paragraph-{{i}}"
    (click)="paragraphClick.emit($event)">
 
-    <span *ngFor="let word of paragraph.words; index as j"
+    <span *ngFor="let word of paragraph; index as j"
           class="teximate-word teximate-word-{{j}}"
           (click)="wordClick.emit($event)">
 
-     <span *ngFor="let letter of word.letters; index as k"
+     <span *ngFor="let letter of word; index as k"
            class="teximate-letter teximate-letter-{{k}}"
            (click)="letterClick.emit($event)">
-        {{letter.value}}
+        {{letter}}
       </span>
     </span>
 </p>

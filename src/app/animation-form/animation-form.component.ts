@@ -23,14 +23,11 @@ import {
   bounceOutRight,
   lightSpeedIn,
   lightSpeedOut,
-  flipIn,
   flipInX,
   flipInY,
   flipOutX,
   flipOutY,
-  flipOut,
   rotateIn,
-  rotateInDirection,
   rotateInDownLeft,
   rotateInDownRight,
   rotateInUpLeft,
@@ -40,7 +37,8 @@ import {
   rotateOutDownLeft,
   rotateOutDownRight
 } from 'ng-animate';
-import { TextAnimation } from '../teximate';
+import { TextAnimation } from 'ngx-teximate';
+// import { TextAnimation } from '../teximate';
 
 @Component({
   selector: 'app-animation-form',
@@ -57,7 +55,7 @@ export class AnimationFormComponent implements OnInit {
   form = new FormGroup({
     id: new FormControl('enter'),
     type: new FormControl('letter'),
-    delay: new FormControl(0),
+    delay: new FormControl(50),
     animation: new FormControl(fadeIn)
   });
 
