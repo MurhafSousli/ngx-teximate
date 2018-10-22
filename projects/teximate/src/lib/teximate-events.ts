@@ -5,12 +5,12 @@ import { Teximate } from './teximate';
 
 export class TeximateEvents implements AfterViewInit, OnDestroy {
 
-  private selector: string;
-  private events: SubscriptionLike = Subscription.EMPTY;
+  selector: string;
+  events: SubscriptionLike = Subscription.EMPTY;
   @Output('') click = new EventEmitter();
   @Output('') hover = new EventEmitter();
 
-  constructor(private element: ElementRef, @Inject(forwardRef(() => Teximate)) private teximate: Teximate) {
+  constructor(public element: ElementRef, @Inject(forwardRef(() => Teximate)) public teximate: Teximate) {
   }
 
   ngAfterViewInit() {
@@ -43,11 +43,12 @@ export class TeximateEvents implements AfterViewInit, OnDestroy {
   selector: 'teximate[paragraphClick], teximate[paragraphHover]'
 })
 export class ParagraphEvents extends TeximateEvents {
-  private selector = '.teximate-paragraph';
   @Output('paragraphClick') click = new EventEmitter();
   @Output('paragraphHover') hover = new EventEmitter();
-  constructor(private element: ElementRef, @Inject(forwardRef(() => Teximate)) private teximate: Teximate) {
+
+  constructor(element: ElementRef, @Inject(forwardRef(() => Teximate)) teximate: Teximate) {
     super(element, teximate);
+    this.selector = '.teximate-paragraph';
   }
 }
 
@@ -55,11 +56,12 @@ export class ParagraphEvents extends TeximateEvents {
   selector: 'teximate[wordClick], teximate[wordHover]'
 })
 export class WordEvents extends TeximateEvents {
-  private selector = '.teximate-word';
   @Output('wordClick') click = new EventEmitter();
   @Output('wordHover') hover = new EventEmitter();
-  constructor(private element: ElementRef, @Inject(forwardRef(() => Teximate)) private teximate: Teximate) {
+
+  constructor(element: ElementRef, @Inject(forwardRef(() => Teximate)) teximate: Teximate) {
     super(element, teximate);
+    this.selector = '.teximate-word';
   }
 }
 
@@ -67,10 +69,11 @@ export class WordEvents extends TeximateEvents {
   selector: 'teximate[letterClick], teximate[letterHover]'
 })
 export class LetterEvents extends TeximateEvents {
-  private selector = '.teximate-letter';
   @Output('letterClick') click = new EventEmitter();
   @Output('letterHover') hover = new EventEmitter();
-  constructor(private element: ElementRef, @Inject(forwardRef(() => Teximate)) private teximate: Teximate) {
+
+  constructor(element: ElementRef, @Inject(forwardRef(() => Teximate)) teximate: Teximate) {
     super(element, teximate);
+    this.selector = '.teximate-letter';
   }
 }
