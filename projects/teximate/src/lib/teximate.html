@@ -1,14 +1,11 @@
 <p *ngFor="let paragraph of state | async; index as i"
-   class="teximate-paragraph teximate-paragraph-{{i}}"
-   (click)="paragraphClick.emit($event)">
+   class="teximate-paragraph teximate-paragraph-{{i}}">
 
     <span *ngFor="let word of paragraph; index as j"
-          class="teximate-word teximate-word-{{j}}"
-          (click)="wordClick.emit($event)">
+          class="teximate-word teximate-word-{{j}}">
 
      <span *ngFor="let letter of word; index as k"
-           class="teximate-letter teximate-letter-{{k}}"
-           (click)="letterClick.emit($event)">
+           class="teximate-letter teximate-letter-{{k}}">
         {{letter}}
       </span>
     </span>
