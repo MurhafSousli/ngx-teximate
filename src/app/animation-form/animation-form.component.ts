@@ -37,9 +37,9 @@ import {
   rotateOutDownLeft,
   rotateOutDownRight
 } from 'ng-animate';
-import { TextAnimation } from 'ngx-teximate';
+// import { TextAnimation } from 'ngx-teximate';
 
-// import { TextAnimation } from '../teximate';
+import { TextAnimation } from '../../../projects/teximate/src/public_api';
 
 @Component({
   selector: 'app-animation-form',

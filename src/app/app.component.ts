@@ -3,8 +3,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material';
 import { Subject } from 'rxjs';
 
-// import { Teximate, TextAnimation } from './teximate';
-import { Teximate, TextAnimation } from 'ngx-teximate';
+import { Teximate, TextAnimation } from '../../projects/teximate/src/public_api';
+// import { Teximate, TextAnimation } from 'ngx-teximate';
 import { fadeIn } from 'ng-animate';
 
 @Component({
@@ -62,5 +62,12 @@ export class AppComponent {
     } else {
       this.teximate.players.get(e.id).play();
     }
+  }
+
+  onClick(x, e) {
+    console.log(`${x} click`, e);
+  }
+  onHover(x, e) {
+    console.log(`${x} hover`, e);
   }
 }

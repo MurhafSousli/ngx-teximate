@@ -126,10 +126,12 @@ export class AppComponent implements AfterViewInit {
 | **[leave]**              | TextAnimation | Leave animation, played on destroy (WIP)                         |
 | **(play)**               | string        | Stream that emits when text animation is played                  |
 | **(finish)**             | string        | Stream that emits when text animation is finished                |
-| **(paragraphClick)**     | ClickEvent    | Stream that emits when a paragraph is clicked                    |
-| **(wordClick)**          | ClickEvent    | Stream that emits when a word is clicked                         |
-| **(letterClick)**        | ClickEvent    | Stream that emits when a letter is clicked                       |
-
+| **(paragraphClick)**     | MouseEvent    | Stream that emits when a paragraph is clicked                    |
+| **(wordClick)**          | MouseEvent    | Stream that emits when a word is clicked                         |
+| **(letterClick)**        | MouseEvent    | Stream that emits when a letter is clicked                       |
+| **(paragraphHover)**     | MouseEvent    | Stream that emits when a paragraph is hovered                    |
+| **(wordHover)**          | MouseEvent    | Stream that emits when a word is hovered                         |
+| **(letterHover)**        | MouseEvent    | Stream that emits when a letter is hovered                       |
 
 See the [stackblitz demo](https://stackblitz.com/edit/ngx-teximate).
 
