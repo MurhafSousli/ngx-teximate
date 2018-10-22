@@ -1,3 +1,6 @@
+ngx-teximate
+MIT
+
 hammerjs
 MIT
 The MIT License (MIT)
@@ -379,9 +382,6 @@ THE SOFTWARE.
 
 
 @angular/material/icon
-
-ngx-teximate
-MIT
 
 @angular/material/form-field
 
