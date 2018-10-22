@@ -34,7 +34,7 @@ import { TextAnimation } from './teximate.model';
 })
 export class Teximate implements AfterViewInit, OnChanges, OnDestroy {
 
-  /** Set text */
+  /** Set animated text */
   @Input('text') set setText(text: string) {
     this._state.next(text);
   }
@@ -47,15 +47,6 @@ export class Teximate implements AfterViewInit, OnChanges, OnDestroy {
 
   /** Animation that triggers with the play() function */
   @Input() animation: TextAnimation;
-
-  /** Stream that emits when a paragraph is clicked */
-  @Output() paragraphClick = new EventEmitter();
-
-  /** Stream that emits when a word is clicked */
-  @Output() wordClick = new EventEmitter();
-
-  /** Stream that emits when a letter is clicked */
-  @Output() letterClick = new EventEmitter();
 
   /** Stream that emits when animation is started */
   @Output('play') playEmitter = new EventEmitter();
