@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {ObserversModule} from '@angular/cdk/observers';
 import { Teximate } from './teximate';
-import { ParagraphEvents, WordEvents, LetterEvents } from './teximate-events';
+import {TeximateContent} from './teximate-content';
 
 @NgModule({
-  imports: [CommonModule],
   declarations: [
     Teximate,
-    ParagraphEvents,
-    WordEvents,
-    LetterEvents
+    TeximateContent
+  ],
+  imports: [
+    CommonModule,
+    ObserversModule
   ],
   exports: [
     Teximate,
-    ParagraphEvents,
-    WordEvents,
-    LetterEvents
+    TeximateContent
   ]
 })
 export class TeximateModule {
