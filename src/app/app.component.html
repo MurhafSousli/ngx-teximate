@@ -1,4 +1,11 @@
-<div class="logo">
+<button (click)="title='test'">Load custom elements</button>
+
+<teximate [content]="title">
+<!--  <h1 teximateContent>Hello World</h1>-->
+</teximate>
+
+<!-- 
+    <div class="logo">
   <mat-icon [svgIcon]="'logo'"></mat-icon>
   <p>
     <b>ngx-teximate</b>
@@ -9,24 +16,19 @@
 
   <div class="preview">
     <h1>
-      <!-- *ngIf="toggleTeximate"-->
       <teximate #teximate
-                [text]="text"
-                [enter]="enterAnimation"
-                [leave]="leaveAnimation"
-                [animation]="defaultAnimation"
                 (play)="onAnimationPlay()"
                 (finish)="onAnimationFinish()">
+        <div *ngIf="show"
+              teximateContent
+              [animation]="animation"
+              [animationDelay]="50">
+          {{text}} test
+        </div>
       </teximate>
+      <button (click)="show=!show">test</button>
     </h1>
   </div>
-
-  <!--(paragraphClick)="onClick('paragraph', $event)"
-      (wordClick)="onClick('word', $event)"
-      (letterClick)="onClick('letter', $event)"
-      (paragraphHover)="onHover('paragraph', $event)"
-      (wordHover)="onHover('word', $event)"
-      (letterHover)="onHover('letter', $event)"-->
 
   <div class="editor">
     <div>
@@ -38,7 +40,7 @@
                   cdkAutosizeMaxRows="4"
                   [(ngModel)]="text"></textarea>
       </mat-form-field>
-      <!--<button mat-button color="danger" (click)="toggleTeximate = !toggleTeximate">{{toggleTeximate ? 'OFF' : 'ON'}}</button>-->
+      <button mat-button color="danger" (click)="toggleTeximate = !toggleTeximate">{{toggleTeximate ? 'OFF' : 'ON'}}</button>
     </div>
 
     <div class="events">
@@ -56,3 +58,5 @@
 
 <app-animation-form [isPlaying]="teximate?.isPlaying" (value)="onAnimationValue($event)" (play)="play($event)">
 </app-animation-form>
+
+ -->

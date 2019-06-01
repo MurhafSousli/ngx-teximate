@@ -39,7 +39,7 @@ import {
 } from 'ng-animate';
 // import { TextAnimation } from 'ngx-teximate';
 
-import { TextAnimation } from '../../../projects/teximate/src/public_api';
+// import { TextAnimation } from '../../../projects/teximate/src/public_api';
 
 @Component({
   selector: 'app-animation-form',
@@ -60,11 +60,11 @@ export class AnimationFormComponent implements OnInit {
   });
 
   @Input() isPlaying: boolean;
-  @Output() value = new EventEmitter<TextAnimation>();
-  @Output() play = new EventEmitter<TextAnimation>();
+  @Output() value = new EventEmitter<any>();
+  @Output() play = new EventEmitter<any>();
 
   ngOnInit() {
-    this.form.valueChanges.subscribe((e: TextAnimation) => this.value.emit(e));
+    this.form.valueChanges.subscribe((e: any) => this.value.emit(e));
   }
 
 }
