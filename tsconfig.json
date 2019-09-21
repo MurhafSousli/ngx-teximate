@@ -5,10 +5,10 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
     "typeRoots": [
@@ -19,12 +19,16 @@
       "dom"
     ],
     "paths": {
-      "teximate": [
-        "dist/teximate"
+      "ngx-teximate": [
+        "dist/ngx-teximate"
       ],
-      "teximate/*": [
-        "dist/teximate/*"
+      "ngx-teximate/*": [
+        "dist/ngx-teximate/*"
       ]
     }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }

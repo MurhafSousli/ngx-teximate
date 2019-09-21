@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-teximate": {
+    "ngx-teximate-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,11 +17,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "docs",
+            "outputPath": "dist/ngx-teximate-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "aot": false,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -61,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-teximate:build"
+            "browserTarget": "ngx-teximate-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-teximate:build:production"
+              "browserTarget": "ngx-teximate-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-teximate:build"
+            "browserTarget": "ngx-teximate-demo:build"
           }
         },
         "test": {
@@ -109,43 +110,43 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ngx-teximate:serve"
+            "devServerTarget": "ngx-teximate-demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngx-teximate:serve:production"
+              "devServerTarget": "ngx-teximate-demo:serve:production"
             }
           }
         }
       }
     },
-    "teximate": {
+    "ngx-teximate": {
       "projectType": "library",
-      "root": "projects/teximate",
-      "sourceRoot": "projects/teximate/src",
+      "root": "projects/ngx-teximate",
+      "sourceRoot": "projects/ngx-teximate/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/teximate/tsconfig.lib.json",
-            "project": "projects/teximate/ng-package.json"
+            "tsConfig": "projects/ngx-teximate/tsconfig.lib.json",
+            "project": "projects/ngx-teximate/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/teximate/src/test.ts",
-            "tsConfig": "projects/teximate/tsconfig.spec.json",
-            "karmaConfig": "projects/teximate/karma.conf.js"
+            "main": "projects/ngx-teximate/src/test.ts",
+            "tsConfig": "projects/ngx-teximate/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-teximate/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/teximate/tsconfig.lib.json",
-              "projects/teximate/tsconfig.spec.json"
+              "projects/ngx-teximate/tsconfig.lib.json",
+              "projects/ngx-teximate/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -153,7 +154,6 @@
           }
         }
       }
-    }
-  },
-  "defaultProject": "ngx-teximate"
+    }},
+  "defaultProject": "ngx-teximate-demo"
 }

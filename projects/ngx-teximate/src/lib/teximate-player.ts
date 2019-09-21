@@ -1,9 +1,9 @@
-import {AnimationPlayer, AnimationBuilder, AnimationFactory, query, useAnimation, stagger} from '@angular/animations';
-import {BehaviorSubject, Subject, Observable, of} from 'rxjs';
-import {TeximateTimeline, TeximateAnimation, TeximateBuilderState} from './teximate.model';
-import {TeximateDirective} from './teximate-content';
-import {TeximateBuilder} from './teximate-builder';
-import {tap} from 'rxjs/operators';
+import { AnimationPlayer, AnimationBuilder, AnimationFactory, query, useAnimation, stagger } from '@angular/animations';
+import { BehaviorSubject, Subject, Observable, of } from 'rxjs';
+import { TeximateTimeline, TeximateAnimation, TeximateBuilderState } from './teximate.model';
+import { TeximateDirective } from './teximate-content';
+import { TeximateBuilder } from './teximate-builder';
+import { tap } from 'rxjs/operators';
 
 export class TeximatePlayer {
 
@@ -27,8 +27,8 @@ export class TeximatePlayer {
 
   private player: AnimationPlayer;
 
-  constructor(private animationBuilder: AnimationBuilder,
-              private host: HTMLElement) {
+  constructor(private _animationBuilder: AnimationBuilder,
+    private host: HTMLElement) {
     // this.builder.state.pipe(
     //   tap((state: TeximateBuilderState) => this._state.next({
     //     content: state.content,
@@ -40,9 +40,9 @@ export class TeximatePlayer {
     //     }
     //   }))
     // );
-    this.player.state.pipe(
-      tap((x) => console.log('player', x))
-    );
+    // this.player.state.pipe(
+    //   tap((x) => console.log('player', x))
+    // );
   }
 
   play() {
@@ -64,15 +64,15 @@ export class TeximatePlayer {
    * Create animation player
    * @param config
    */
-  createPlayer(x: TeximateDirective): Observable<any> {
-    const config: TeximateTimeline = {
-      content: x.content,
+  createPlayer(config: TeximateBuilderState): Observable<any> {
+    const initialState: TeximateTimeline = {
+      content: config.content,
       isPlaying: false,
       player: null,
       type: 'word'
     };
-    console.log('text changed', x, config);
-    this.player = this.buildAnimation(config.player).create(this.host);
+    console.log('createPlayer', initialState, config);
+    this.player = this.buildAnimation(initialState.player).create(this.host);
     /** TODO: Investigate why onStart and onDone fire only once */
     this.player.onStart(() => {
       // TODO: Update state
@@ -91,7 +91,7 @@ export class TeximatePlayer {
    */
   private buildAnimation(config: TeximateAnimation): AnimationFactory {
     /** TODO: Use ':enter' and ':leave' for enter and leave animations */
-    return this.animationBuilder.build([
+    return this._animationBuilder.build([
       query(
         `.teximate-${config.selector}`,
         [

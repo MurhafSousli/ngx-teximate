@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,11 +13,11 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
-import {AppComponent} from './app.component';
+import { AppComponent } from './app.component';
 import { AnimationFormComponent } from './animation-form/animation-form.component';
 import { GithubRepoComponent } from './github-repo/github-repo.component';
 
-import {TeximateModule} from 'projects/teximate/src/public-api';
+import { TeximateModule } from 'projects/ngx-teximate/src/public-api';
 
 @NgModule({
   declarations: [

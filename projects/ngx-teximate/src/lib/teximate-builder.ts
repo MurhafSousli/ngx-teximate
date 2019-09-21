@@ -1,10 +1,10 @@
-import {AnimationReferenceMetadata} from '@angular/animations';
-import {BehaviorSubject, Observable, OperatorFunction, Subject} from 'rxjs';
-import {delay as delayTime, tap, catchError, take} from 'rxjs/operators';
-import {pipeFromArray} from 'rxjs/internal/util/pipe';
+import { AnimationReferenceMetadata } from '@angular/animations';
+import { BehaviorSubject, Observable, OperatorFunction, Subject } from 'rxjs';
+import { delay as delayTime, tap, catchError, take } from 'rxjs/operators';
+import { pipeFromArray } from 'rxjs/internal/util/pipe';
 
-import {TeximateBuilderState} from './teximate.model';
-import {teximateFactory} from './utilities';
+import { TeximateBuilderState } from './teximate.model';
+import { teximateFactory } from './utilities';
 
 export class TeximateBuilder {
 

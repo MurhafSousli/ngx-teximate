@@ -4,18 +4,17 @@ import {
   OnDestroy,
   ElementRef,
   EventEmitter,
-  ContentChildren,
-  QueryList,
-  AfterContentInit,
-  OnInit, Input, OnChanges
+  OnInit,
+  Input,
+  OnChanges
 } from '@angular/core';
-import {AnimationBuilder} from '@angular/animations';
-import {Subject} from 'rxjs';
-import {switchMap, mergeAll, takeUntil, tap, map} from 'rxjs/operators';
-import {fadeIn} from 'ng-animate';
-import {TeximateContent, TeximateDirective} from './teximate-content';
-import {TeximateBuilder} from './teximate-builder';
-import {TeximatePlayer} from './teximate-player';
+import { AnimationBuilder } from '@angular/animations';
+import { Subject } from 'rxjs';
+import { switchMap, takeUntil, tap } from 'rxjs/operators';
+import { fadeIn } from 'ng-animate';
+// import { TeximateContent, TeximateDirective } from './teximate-content';
+import { TeximateBuilder } from './teximate-builder';
+import { TeximatePlayer } from './teximate-player';
 
 @Component({
   selector: 'teximate',
@@ -60,7 +59,7 @@ export class Teximate implements OnInit, OnChanges, OnDestroy {
 
   state = new Subject();
 
-  constructor(private animationBuilder: AnimationBuilder, private el: ElementRef) {
+  constructor(private _animationBuilder: AnimationBuilder, private _el: ElementRef) {
 
     this.builder.state.subscribe(x => console.log('builder state', x));
 
@@ -79,7 +78,11 @@ export class Teximate implements OnInit, OnChanges, OnDestroy {
 
   ngOnInit() {
 
-    this.player = new TeximatePlayer(this.animationBuilder, this.el.nativeElement);
+    this.player = new TeximatePlayer(this._animationBuilder, this._el.nativeElement);
+
+    this.player.play();
+
+    // this.player.play();
 
     this.player.onStart.pipe(
       tap((e) => this.playEmitter.emit(e)),
