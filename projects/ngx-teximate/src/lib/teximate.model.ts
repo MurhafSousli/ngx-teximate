@@ -1,27 +1,20 @@
+import { InjectionToken } from '@angular/core';
 import { AnimationReferenceMetadata } from '@angular/animations';
 
-export interface TeximateState {
-  currAnimation?: string;
-  isPlaying: boolean;
-}
+export type TeximateAnimationSelector = 'paragraph' | 'word' | 'letter';
 
 export interface TeximateTimeline {
-  player: TeximateAnimation;
   content: string[][][];
-  type: 'paragraph' | 'word' | 'letter';
+  type: TeximateAnimationSelector;
   isPlaying: boolean;
 }
 
-export interface TeximateAnimation {
-  selector: 'paragraph' | 'word' | 'letter';
-  delay: number;
-  animation: AnimationReferenceMetadata;
+export interface TeximateOptions {
+  type?: 'enter' | 'leave' | 'default';
+  selector?: TeximateAnimationSelector;
+  delay?: number;
+  animation?: AnimationReferenceMetadata;
+  autoPlay?: boolean;
 }
 
-
-export interface TeximateBuilderState {
-  content: string[][][];
-  animation: AnimationReferenceMetadata;
-  animationDelay: number;
-  selector: 'paragraph' | 'word' | 'letter';
-}
+export const TEXIMATE_OPTIONS = new InjectionToken<TeximateOptions>('TEXIMATE_OPTIONS');

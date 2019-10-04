@@ -1,21 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {ObserversModule} from '@angular/cdk/observers';
 import { Teximate } from './teximate';
-// import {TeximateContent} from './teximate-content';
 
 @NgModule({
   declarations: [
-    Teximate,
-    // TeximateContent
+    Teximate
   ],
   imports: [
-    CommonModule,
-    ObserversModule
+    CommonModule
   ],
   exports: [
-    Teximate,
-    // TeximateContent
+    Teximate
   ]
 })
 export class TeximateModule {

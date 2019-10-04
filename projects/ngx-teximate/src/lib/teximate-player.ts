@@ -1,106 +1,120 @@
 import { AnimationPlayer, AnimationBuilder, AnimationFactory, query, useAnimation, stagger } from '@angular/animations';
-import { BehaviorSubject, Subject, Observable, of } from 'rxjs';
-import { TeximateTimeline, TeximateAnimation, TeximateBuilderState } from './teximate.model';
-import { TeximateDirective } from './teximate-content';
-import { TeximateBuilder } from './teximate-builder';
-import { tap } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
+import { TeximateOptions } from './teximate.model';
+import { finalize, switchMap, takeUntil } from 'rxjs/operators';
 
+/**
+ * This class wraps the animation player
+ * We need this class wrapper because of this bug https://github.com/angular/angular/issues/26630
+ */
 export class TeximatePlayer {
 
-  private readonly _state = new BehaviorSubject<TeximateTimeline>({
-    isPlaying: false,
-    player: null,
-    content: null,
-    type: 'word'
-  });
+  private _player: AnimationPlayer;
 
-  readonly state: Observable<TeximateTimeline> = this._state.asObservable();
-
-  // Stream that emits a playing animation is started
+  // Stream that emits the player is started
   onStart = new Subject();
 
-  // Stream that emits a playing animation is ended
+  // Stream that emits the player is finished
   onEnd = new Subject();
 
-  // Stream that emits when instance is destroyed
-  onDestroy = new Subject();
+  // Stream that emits the player should be created
+  private _onCreate = new Subject();
 
-  private player: AnimationPlayer;
+  // Stream that emits the clean up player
+  private _cleanUp = new Subject();
 
-  constructor(private _animationBuilder: AnimationBuilder,
-    private host: HTMLElement) {
-    // this.builder.state.pipe(
-    //   tap((state: TeximateBuilderState) => this._state.next({
-    //     content: state.content,
-    //     isPlaying: true,
-    //     player: {
-    //       animation: state.animation,
-    //       delay: state.animationDelay,
-    //       selector: state.selector
-    //     }
-    //   }))
-    // );
-    // this.player.state.pipe(
-    //   tap((x) => console.log('player', x))
-    // );
+  // Get total time
+  // get totalTime(): number {
+  //   return this._player.totalTime;
+  // }
+
+  constructor(private _animationBuilder: AnimationBuilder, private _host: HTMLElement) {
+    this._onCreate.pipe(
+      switchMap((config: TeximateOptions) => {
+        this._cleanUp.next();
+        // Create new player
+        this._player = this._buildAnimation(config).create(this._host);
+        // Player on start event
+        this._player.onStart(() => this.onStart.next());
+        // Player on done event
+        this._player.onDone(() => this.onEnd.next());
+
+        // Player on destroy event
+        return new Observable((obs) => {
+          this._player.onDestroy(() => {
+            obs.next();
+            obs.complete();
+          });
+        }).pipe(
+          // Player reset
+          finalize(() => this._destroyPlayer()),
+          takeUntil(this._cleanUp)
+        );
+      })
+    ).subscribe();
   }
 
-  play() {
-    this.player.play();
-  }
-
-  destroy() {
-    if (this.player) {
-      this.player.destroy();
+  private _destroyPlayer() {
+    if (this._player) {
+      this._player.destroy();
+      this._player = null;
     }
-
-    this.onEnd.complete();
-    this.onStart.complete();
-    this.onDestroy.next();
-    this.onDestroy.complete();
-  }
-
-  /**
-   * Create animation player
-   * @param config
-   */
-  createPlayer(config: TeximateBuilderState): Observable<any> {
-    const initialState: TeximateTimeline = {
-      content: config.content,
-      isPlaying: false,
-      player: null,
-      type: 'word'
-    };
-    console.log('createPlayer', initialState, config);
-    this.player = this.buildAnimation(initialState.player).create(this.host);
-    /** TODO: Investigate why onStart and onDone fire only once */
-    this.player.onStart(() => {
-      // TODO: Update state
-      this.onStart.next();
-    });
-    this.player.onDone(() => {
-      // TODO: Update state
-      this.player.destroy();
-      this.onEnd.next();
-    });
-    return of();
   }
 
   /**
    * Build animation
    */
-  private buildAnimation(config: TeximateAnimation): AnimationFactory {
-    /** TODO: Use ':enter' and ':leave' for enter and leave animations */
+  private _buildAnimation(config: TeximateOptions): AnimationFactory {
+    /**
+     * ':enter' and ':leave' for enter and leave animations has a bug https://github.com/angular/angular/issues/26612
+     */
     return this._animationBuilder.build([
       query(
-        `.teximate-${config.selector}`,
+        `.tx-${config.selector}`,
         [
-          // This is a workaround for enter animation to work
+          // A workaround for enter animation
           // style({ opacity: config.mode === 'enter' ? 0 : 1 }),
           stagger(config.delay, [useAnimation(config.animation)])
         ]
       )
     ]);
   }
+
+  /**
+   * Create animation player
+   */
+  createPlayer(config: TeximateOptions) {
+    this._onCreate.next(config);
+  }
+
+  play() {
+    if (this._player) {
+      this._player.play();
+    }
+  }
+
+  stop() {
+    if (this._player) {
+      this._player.pause();
+    }
+  }
+
+  destroy() {
+    this._destroyPlayer();
+    this._cleanUp.next();
+    this._cleanUp.complete();
+    this._onCreate.complete();
+    this.onEnd.complete();
+    this.onStart.complete();
+  }
+
+  //
+  // getPosition(): number {
+  //   return this._player.getPosition();
+  // }
+  //
+  // setPosition(position: number): void {
+  //   return this._player.setPosition(position);
+  // }
 }
 
